@@ -1,6 +1,16 @@
 # myLearningPlace
 
-Market place for learning non technical things like freelancer or upwork. Customers will post them requirement like learning Yoga with their prefarable timings, teachers will post about their pricing and experience details. Who ever is the best bidder that guy will get selected.
+We would like to create a marketplace platform that connects customers with service providers.
+ 
+Mainly, this platform is for services related non – technical and extra curricular activities like Yoga, Music, and Signing etc.
+
+For example, a person from Gainesville wants to learn Yoga online. So, after logining into our system the person mentions their preferable timings and the price range they are willing to spend willing to pay on hourly basis. 
+
+This information is shared with various service experts that are  pre-registered on our system. The group of experts then provides a quote for the service requestes.
+
+User selects the expert he wishes based on pricing, matching with timings, rating of the provider and the history.
+
+Like that any person can learn any non-technical skill by sitting at home just through PC with internet connection.
 
 ## Team Members
 * Akshay Ganapathy - 36846922
@@ -12,4 +22,4 @@ Market place for learning non technical things like freelancer or upwork. Custom
 ## TechStack
 * FrontEnd - ReactJS
 * BackEnd - Go
-* Cloud - AWS
+
