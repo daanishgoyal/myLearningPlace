@@ -24,13 +24,17 @@ class HomePage extends Component {
                     onSubmit={this.handleSubmit}
                 >
                     <div className="row justify-content-md-center">
-                        <div className="col-auto">
-                            <label
+                        <div className="row-auto">
+                            <h3>Search for online/home tutors</h3>
+                        </div>
+
+                        <div className="col-auto m-3">
+                            {/* <label
                                 className="visually-hidden"
                                 htmlFor="autoSizingInput"
                             >
                                 Name
-                            </label>
+                            </label> */}
                             <input
                                 type="text"
                                 className="form-control"
@@ -38,13 +42,13 @@ class HomePage extends Component {
                                 placeholder="Subject / Skill"
                             />
                         </div>
-                        <div className="col-auto">
-                            <label
+                        <div className="col-auto m-3">
+                            {/* <label
                                 className="visually-hidden"
                                 htmlFor="autoSizingInputGroup"
                             >
                                 Username
-                            </label>
+                            </label> */}
                             <div className="input-group">
                                 <input
                                     type="text"
@@ -54,7 +58,7 @@ class HomePage extends Component {
                                 />
                             </div>
                         </div>
-                        <div className="col-auto">
+                        <div className="col-auto m-3">
                             <button type="submit" className="btn btn-primary">
                                 Search
                             </button>
