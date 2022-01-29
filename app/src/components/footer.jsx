@@ -57,7 +57,7 @@ class Footer extends Component {
                 </div>
 
                 <div className="col">
-                    <h5>Guide</h5>
+                    <h5>Benefits</h5>
                     <ul className="nav flex-column">
                         <li className="nav-item mb-2">
                             <a href="#" className="nav-link p-0 text-muted">

@@ -20,7 +20,7 @@ class HomePage extends Component {
         return (
             <div>
                 <form
-                    className="row gy-2 gx-3 align-items-center bg-success p-5 m-5 text-white"
+                    className="sticky row gy-2 gx-3 align-items-center bg-success p-5 m-5 text-white"
                     onSubmit={this.handleSubmit}
                 >
                     <div className="row justify-content-md-center">
@@ -65,7 +65,7 @@ class HomePage extends Component {
                         </div>
                     </div>
                 </form>
-                <div className="row gy-2 gx-3 align-items-center bg-dark p-2 text-white">
+                <div className="row gy-2 gx-3 align-items-center bg-dark p-5 m-5 text-white">
                     <h2
                         className="text-center margin-top-20 color-white"
                         style={{ fontSize: "27px" }}
