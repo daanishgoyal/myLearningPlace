@@ -49,3 +49,15 @@
         transform: rotate(360deg);
     }
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    /* this makes sure the padding and the border is included in the box sizing */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
