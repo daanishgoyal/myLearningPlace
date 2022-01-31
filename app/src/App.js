@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+import "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/navbar";
 import HomePage from "./components/homepage";
 import Footer from "./components/footer";
+import { Route, Routes } from "react-router-dom";
 
 class App extends Component {
     state = {};
@@ -13,7 +15,9 @@ class App extends Component {
             <div className="bg-image">
                 <NavBar />
                 <main className="container">
-                    <HomePage />
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                    </Routes>
                 </main>
                 <Footer />
             </div>
