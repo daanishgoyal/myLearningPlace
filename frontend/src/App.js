@@ -21,7 +21,7 @@ class App extends Component {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/teachers" element={<Teachers datatolist={data} />} />
-                        <Route path="/teacher" element={<TeacherSpecificDetails/>} />
+                        <Route path="/teachers:/id" element={<TeacherSpecificDetails/>} />
                     </Routes>
                 </main>
                 <Footer />
