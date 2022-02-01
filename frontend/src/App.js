@@ -4,7 +4,9 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/navbar";
 import HomePage from "./components/homepage";
+import Teachers from "./components/teachers/Teachers.component";
 import Footer from "./components/footer";
+import data from "./constants/data"
 import { Route, Routes } from "react-router-dom";
 
 class App extends Component {
@@ -17,6 +19,7 @@ class App extends Component {
                 <main className="container">
                     <Routes>
                         <Route path="/" element={<HomePage />} />
+                        <Route path="/teachers" element={<Teachers datatolist={data} />} />
                     </Routes>
                 </main>
                 <Footer />

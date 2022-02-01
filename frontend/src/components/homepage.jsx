@@ -1,8 +1,16 @@
 import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./homepage.css";
 
 class HomePage extends Component {
+
+    routeChange = () =>{ 
+        let path = `/teachers`; 
+        const navigate = useNavigate();
+        navigate(path, { replace: true });
+    }
+
     state = {};
     //   constructor(props) {
     //     super(props);
@@ -71,6 +79,7 @@ class HomePage extends Component {
                                             <button
                                                 type="submit"
                                                 className="btn btn-primary"
+                                                onClick={this.routeChange}
                                             >
                                                 Search
                                             </button>
