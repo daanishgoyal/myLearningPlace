@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./homepage.css";
 
@@ -76,13 +76,14 @@ class HomePage extends Component {
                                             </div>
                                         </div>
                                         <div className="col-sm-2 m-3">
-                                            <button
+                                            {/* <button
                                                 type="submit"
                                                 className="btn btn-primary"
                                                 onClick={this.routeChange}
                                             >
                                                 Search
-                                            </button>
+                                            </button> */}
+                                            <Link className= 'searchbutton' to= '/teachers'> Search </Link>
                                         </div>
                                     </div>
                                 </div>

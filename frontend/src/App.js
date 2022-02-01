@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/navbar";
 import HomePage from "./components/homepage";
 import Teachers from "./components/teachers/Teachers.component";
+import TeacherSpecificDetails from "./components/teachers/Teachers.component";
 import Footer from "./components/footer";
 import data from "./constants/data"
 import { Route, Routes } from "react-router-dom";
@@ -20,6 +21,7 @@ class App extends Component {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/teachers" element={<Teachers datatolist={data} />} />
+                        <Route path="/teacher" element={<TeacherSpecificDetails/>} />
                     </Routes>
                 </main>
                 <Footer />

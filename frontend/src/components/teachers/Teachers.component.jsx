@@ -1,5 +1,7 @@
 import React from "react";
 
+import {Link} from 'react-router-dom'
+
 
 const Teachers = ({ datatolist }) => {
   
@@ -34,9 +36,10 @@ const Teachers = ({ datatolist }) => {
                 <p className="description">
                 Description: {description}
                 </p>
-                <a href="" className="btn btn-primary">
+                {/* <a href="" className="btn btn-primary">
                   Click here for more information
-                </a>
+                </a> */}
+                <Link to={{pathname:`/teacher/${id}`}}>More Info</Link>
               </div>
             </div>
         //     <img src={image} />
