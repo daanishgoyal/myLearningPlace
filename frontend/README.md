@@ -1,21 +1,20 @@
-# myLearningPlace
+# myLearningPlace frontend
 
-We would like to create a marketplace platform that connects customers with service providers.
-Mainly, this platform is for services related non – technical and extra curricular activities like Yoga, Music, and Signing etc.
-For example, a person from Gainesville wants to learn Yoga online. So, after logining into our system the person mentions their preferable timings and the price range they are willing to spend willing to pay on hourly basis. 
+This react application is the frontend part of the myLearningPlace project
 
-This information is shared with various service experts that are  pre-registered on our system. The group of experts then provides a quote for the service requestes.
-User selects the expert he wishes based on pricing, matching with timings, rating of the provider and the history.
-Like that any person can learn any non-technical skill by sitting at home just through PC with internet connection.
+## Available Scripts
 
-## Team Members
-* Akshay Ganapathy - 36846922
-* Aman Pathak - 88828029
-* Daanish Goyal - 17673302
-* Yallamandaiah Nandigam - 29451349
+In the project directory, you can run in the following order:
 
+### `npm install`
 
-## TechStack
-* FrontEnd - ReactJS
-* BackEnd - Go
+installs all dependencies from the package.json file
+once this command execution completes you find a folder named 'node_modules' in project directory in local
+node_modules folder contains all the dependencies like react-dom, react-scripts etc.
 
+Note: this command is recommended to run everytime we pull in new code from github, as peers may have used additional dependencies and we might get errors running without those
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
