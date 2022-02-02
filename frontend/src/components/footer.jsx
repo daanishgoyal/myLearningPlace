@@ -1,4 +1,5 @@
 import { React, Component } from "react";
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 class Footer extends Component {
@@ -10,16 +11,16 @@ class Footer extends Component {
                 style={{ background: "black", bottom: 0 }}
             >
                 <div className="col">
-                    <a
-                        href="/"
+                    <Link
+                        to="/"
                         className="d-flex align-items-center mb-3 link-dark text-decoration-none"
                     >
                         <svg className="bi me-2" width={40} height={32}>
                             <use xlinkHref="#bootstrap" />
                         </svg>
-                    </a>
+                    </Link>
                     <p className="text-muted m-4">
-                        © 2022 MyLearningPlace.com. All rights reserved.
+                        © 2022 myLearningPlace. All rights reserved.
                     </p>
                 </div>
 
@@ -29,29 +30,29 @@ class Footer extends Component {
                     <h5>Help and Feedback</h5>
                     <ul className="nav flex-column">
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Testimonials
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Pricing
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 FAQs
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 About us
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -60,29 +61,29 @@ class Footer extends Component {
                     <h5>Benefits</h5>
                     <ul className="nav flex-column">
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Blog
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 How it works - Students
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Premium Membership
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Online Teaching Guide
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 How it works - Teachers
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -91,29 +92,29 @@ class Footer extends Component {
                     <h5>Guide</h5>
                     <ul className="nav flex-column">
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Teacher Rankings
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 How to get jobs
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Applying to jobs
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Share a story
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Refer and earn
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -122,29 +123,29 @@ class Footer extends Component {
                     <h5>Policy</h5>
                     <ul className="nav flex-column">
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Feedback
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Contact us
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Refund policy
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Privacy Policy
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item mb-2">
-                            <a href="#" className="nav-link p-0 text-muted">
+                            <Link to="#" className="nav-link p-0 text-muted">
                                 Terms
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
