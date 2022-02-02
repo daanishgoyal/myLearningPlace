@@ -6,8 +6,8 @@ import {Link} from 'react-router-dom'
 const Teachers = ({ datatolist }) => {
   
   return (
-    <div style={{}}>
-      {datatolist.map((x) => {
+    <div >
+      {datatolist && datatolist.map((x) => {
         const {
           id,
           name,
