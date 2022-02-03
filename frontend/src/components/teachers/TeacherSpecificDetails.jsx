@@ -47,7 +47,25 @@ const TeacherSpecificDetails= ()=> {
            <p> {teacherData.location} </p>
            </div>
 
+           <button type="button" style={{margin:'10px'}} class="btn btn-primary">
+    Message <span class="badge badge-light"></span>
+     <br/>
+       </button>   
 
+       
+
+
+       <button type="button" style={{margin:'10px'}} class="btn btn-success">
+    Phone <span class="badge badge-light"></span>
+     
+       </button>
+
+       <button type="button" style={{margin:'10px'}} class="btn btn-info">
+    Book Appointment <span class="badge badge-light"></span>
+     
+       </button>
+
+    
 
 
         
