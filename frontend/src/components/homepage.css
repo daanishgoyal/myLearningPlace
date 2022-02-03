@@ -1,7 +1,7 @@
 .sticky {
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 2%;
+    top: 3%;
 }
 
 .background {
@@ -17,14 +17,13 @@
     background-size: 100%;
 }
 
-.searchbutton
-{
-  background-color: #000080; /* Green */
-  border: none;
-  color: white;
-  padding: 6px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+.searchbutton {
+    background-color: #000080; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

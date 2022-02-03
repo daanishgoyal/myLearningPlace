@@ -36,8 +36,6 @@ class App extends Component {
                         <Route path="/login" element={<LoginForm />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/not-found" element={<NotFound />} />
-                        <Route path="*" element={<NotFound />} />
                         <Route
                             exact
                             path="/teacher/:id"
@@ -48,6 +46,8 @@ class App extends Component {
                             path="/teachers"
                             element={<Teachers datatolist={data} />}
                         />
+                        <Route path="/not-found" element={<NotFound />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>
                 <Footer />

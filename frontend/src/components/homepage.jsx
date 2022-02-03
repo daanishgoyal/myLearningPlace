@@ -4,12 +4,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./homepage.css";
 
 class HomePage extends Component {
-
-    routeChange = () =>{ 
-        let path = `/teachers`; 
+    routeChange = () => {
+        let path = `/teachers`;
         const navigate = useNavigate();
         navigate(path, { replace: true });
-    }
+    };
 
     state = {};
     //   constructor(props) {
@@ -83,7 +82,13 @@ class HomePage extends Component {
                                             >
                                                 Search
                                             </button> */}
-                                            <Link className= 'searchbutton' to= '/teachers'> Search </Link>
+                                            <Link
+                                                className="searchbutton"
+                                                to="/teachers"
+                                            >
+                                                {" "}
+                                                Search{" "}
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
