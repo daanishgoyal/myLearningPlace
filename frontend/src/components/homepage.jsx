@@ -87,14 +87,14 @@ class HomePage extends Component {
                                     className="text-center margin-top-20 color-white"
                                     style={{ fontSize: "27px" }}
                                 >
-                                    Teachers from over 125 countries
+                                    Teachers from all over the world!
                                 </h2>
                                 <h2
                                     className="text-center margin-top-20 color-white"
                                     style={{ fontSize: "27px" }}
                                 >
-                                    Only 55.1% of our applicants who apply make
-                                    it through to our panel of teachers
+                                    Only 51% of applicants who apply make it
+                                    through to our panel of teachers
                                 </h2>
                             </div>
                         </div>
@@ -110,13 +110,13 @@ class HomePage extends Component {
                                     className="text-center lead color-white"
                                     style={{ fontSize: "20px" }}
                                 >
-                                    MyLearningPlace.com is a free website,
-                                    trusted by thousands of students and
-                                    teachers, all over the world. You can find
-                                    local tutors, online teachers, and teachers
-                                    to help with tutoring, coaching,
-                                    assignments, academic projects, and
-                                    dissertations for over 4500 subjects.
+                                    myLearningPlace is a free website, trusted
+                                    by thousands of students and teachers, all
+                                    over the world. You can find local tutors,
+                                    online teachers, and teachers to help with
+                                    tutoring, coaching, assignments, academic
+                                    projects, and dissertations for over 100
+                                    subjects.
                                 </h4>
                             </div>
                         </div>
