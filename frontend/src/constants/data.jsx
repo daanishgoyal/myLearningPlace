@@ -6,11 +6,13 @@ export default [
       profession: 'Yoga teacher',
       experience: '5 years',
       fees: '10$ per hour',
-      location: 'Gainsevile',
+      location: 'Gainesville',
       teachingmode: 'online, offline',
       description: 'i am a certified yoga trainer. YTT 200 certified from Yoga alliance international',
       image:
         'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
+      subjects: 'Yoga - beginner to intermediate' ,
+      education: 'bsc in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria',
     },
     {
       id: 2,
@@ -24,7 +26,10 @@ export default [
       description: 'i love teaching Yoga and passionate about the same ',
       image:
         'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-3_rxtqvi.jpg',
-    },
+        subjects: 'Yoga - intermediate' ,
+        education: 'MS (Aug, 2016–Jul, 2021) from University of Florida, USA',
+
+      },
     {
       id: 3,
       name: 'Larry Little',
@@ -37,7 +42,10 @@ export default [
       description: 'I prefer to teach in person. I am specialized in Yoga with prps',
       image:
         'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
-    },
+      subjects: 'Yoga - advanced' ,
+      education: 'MS (Aug, 2016–Jul, 2021) from University of Florida, USA',
+
+      },
     {
       id: 4,
       name: 'Sean Walsh',
@@ -50,7 +58,9 @@ export default [
       description: 'I teach yoga in combination with pilates',
       image:
         'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
-    },
+      subjects: 'Yoga - beginner' ,
+      education: 'MS (Aug, 2016–Jul, 2021) from University of South Florida, USA',
+      },
     {
       id: 5,
       name: 'Lola Gardner',
@@ -63,6 +73,8 @@ export default [
       description: 'I teach to all genders',
       image:
         'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
-    },
+      subjects: 'Yoga - advanced' ,
+      education: 'MS (Aug, 2016–Jul, 2021) from University of Central Florida, USA',
+      },
   ];
   
