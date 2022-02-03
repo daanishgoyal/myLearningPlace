@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import data from "../../constants/data";
 
-export function TeacherSpecificDetails() {
+const TeacherSpecificDetails= ()=> {
 
     const {id} = useParams();
     let teacherData = {};
@@ -13,11 +13,71 @@ export function TeacherSpecificDetails() {
         }
     }
 
-    // const {name} = teacherData
+    //  const {name} = teacherData
 
-    console.log(teacherData)
+    // console.log(teacherData)
     
     return (
-        <h1>welcome {teacherData.name}</h1>
+        <div>
+          <h1> Name: {teacherData.name}</h1>
+           <div  className="card" style={{ width: "50rem"}}>
+            <img className="image" src={teacherData.image} alt="Card image cap" />
+           </div>
+
+          <div>
+            <h1>Description</h1>
+           <p> {teacherData.description} </p>
+           </div>
+        <br/>
+        <br/>
+           <div>
+            <h1>Experience</h1>
+           <p> {teacherData.experience} </p>
+           </div>
+
+
+           <div>
+            <h1>Fees</h1>
+           <p> {teacherData.fees} </p>
+           </div>
+
+           
+           <div>
+            <h1>Location</h1>
+           <p> {teacherData.location} </p>
+           </div>
+
+           <button type="button" style={{margin:'10px'}} class="btn btn-primary">
+    Message <span class="badge badge-light"></span>
+     <br/>
+       </button>   
+
+       
+
+
+       <button type="button" style={{margin:'10px'}} class="btn btn-success">
+    Phone <span class="badge badge-light"></span>
+     
+       </button>
+
+       <button type="button" style={{margin:'10px'}} class="btn btn-info">
+    Book Appointment <span class="badge badge-light"></span>
+     
+       </button>
+
+    
+
+
+        
+        
+        
+        </div>
+
+    
+              
+        
+
     )
 }
+
+export default TeacherSpecificDetails;

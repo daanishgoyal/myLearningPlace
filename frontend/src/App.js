@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/navbar";
 import HomePage from "./components/homepage";
 import Teachers from "./components/teachers/Teachers.component";
-import TeacherSpecificDetails from "./components/teachers/Teachers.component";
 import Footer from "./components/footer";
 import data from "./constants/data";
 import RegisterForm from "./components/registerForm";
@@ -13,6 +12,7 @@ import LoginForm from "./components/loginForm";
 import Logout from "./components/logout";
 import NotFound from "./components/notFound";
 import { Route, Routes } from "react-router-dom";
+import TeacherSpecificDetails from "./components/teachers/TeacherSpecificDetails";
 
 class App extends Component {
     state = {};
@@ -36,16 +36,18 @@ class App extends Component {
                         <Route path="/login" element={<LoginForm />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/" element={<HomePage />} />
+                        <Route path="/not-found" element={<NotFound />} />
+                        <Route path="*" element={<NotFound />} />
                         <Route
+                            exact
+                            path="/teacher/:id"
+                            element={<TeacherSpecificDetails />}
+                        />
+                        <Route
+                            exact
                             path="/teachers"
                             element={<Teachers datatolist={data} />}
                         />
-                        <Route
-                            path="/teachers:/id"
-                            element={<TeacherSpecificDetails />}
-                        />
-                        <Route path="/not-found" element={<NotFound />} />
-                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>
                 <Footer />
