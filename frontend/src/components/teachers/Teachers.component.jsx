@@ -23,7 +23,7 @@ const Teachers = ({ datatolist }) => {
         return (
         //   <article key={id}>
         //     <p>hfdjgggfig</p>
-            <div key={id} className="card" style={{ width: "40rem"}}>
+            <div key={id} className="card" style={{ width: "30rem"}}>
               <img className="image" src={image} alt="Card image cap" />
               <div className="card-body">
                 <h1 className="name">{name}</h1>
