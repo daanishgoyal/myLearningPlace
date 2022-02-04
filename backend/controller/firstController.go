@@ -54,3 +54,20 @@ func Login(c *fiber.Ctx) error {
 	}
 
 }
+
+func Search(c *fiber.Ctx) error {
+	var data map[string]string
+	err := c.BodyParser(&data)
+
+	if err != nil {
+		return err
+	}
+
+	var teacher = models.Teacher{}
+	database.DB.Debug().Where("city = ?", data["city"]).Find(&teacher)
+	if teacher.Id == 0 {
+		return c.JSON(fiber.Map{"message": "city not found"})
+	} else {
+		return c.JSON(fiber.Map{"data": teacher})
+	}
+}

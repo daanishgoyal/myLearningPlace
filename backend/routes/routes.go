@@ -11,3 +11,6 @@ func Setup(app *fiber.App) {
 func Login(app *fiber.App) {
 	app.Post("/api/login", controller.Login)
 }
+func Search(app *fiber.App) {
+	app.Post("/api/search", controller.Search)
+

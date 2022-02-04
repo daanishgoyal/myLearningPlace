@@ -11,5 +11,6 @@ func main() {
 	app := fiber.New()
 	routes.Setup(app)
 	routes.Login(app)
+	routes.Search(app)
 	app.Listen(":3000")
 }
