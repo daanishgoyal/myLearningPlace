@@ -17,7 +17,7 @@ const NavBar = ({ user }) => {
                         width="50px"
                         height="40px"
                         src={Logo}
-                        class="d-inline-block align-text-center"
+                        className="d-inline-block align-text-center"
                     />
                     <span className="text-primary">myLearningPlace</span>
                 </NavLink>
