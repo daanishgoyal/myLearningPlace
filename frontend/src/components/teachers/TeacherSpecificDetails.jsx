@@ -18,7 +18,6 @@ const TeacherSpecificDetails = () => {
 
     return (
         <div>
-<<<<<<< Updated upstream
             <br />
             <h1 className="bg-secondary" style={{ width: "50rem" }}>
                 {" "}
@@ -33,10 +32,18 @@ const TeacherSpecificDetails = () => {
             </div>
             <div className="bg-success p-3" style={{ width: "50rem" }}>
                 <div>
-                    <h1>Description</h1>
-                    <p> {teacherData.description} </p>
+                    <h1>About Me</h1>
+                    <p> {teacherData.bio} </p>
                 </div>
-                <br />
+                <div>
+                    <h1>Subjects</h1>
+                    <p> {teacherData.subjects} </p>
+                </div>
+                <div>
+                    <h1>Education</h1>
+                    <p> {teacherData.education} </p>
+                </div>
+                
                 <div>
                     <h1>Experience</h1>
                     <p> {teacherData.experience} </p>
@@ -52,19 +59,25 @@ const TeacherSpecificDetails = () => {
                     <p> {teacherData.location} </p>
                 </div>
 
+                <div>
+                    <h5>Can Teach Online: {teacherData.online}</h5>
+                    <h5>Teaches at Student Home: {teacherData.studenthome}</h5>
+                    
+                </div>
+
                 <button
                     type="button"
                     style={{ margin: "10px" }}
                     class="btn btn-primary"
                 >
-                    Message <span class="badge badge-light"></span>
+                Message <span class="badge badge-light"></span>
                     <br />
                 </button>
 
                 <button
                     type="button"
                     style={{ margin: "10px" }}
-                    class="btn btn-success"
+                    class="btn btn-secondary"
                 >
                     Phone <span class="badge badge-light"></span>
                 </button>
@@ -72,73 +85,15 @@ const TeacherSpecificDetails = () => {
                 <button
                     type="button"
                     style={{ margin: "10px" }}
-                    class="btn btn-info"
+                    class="btn btn-dark"
                 >
                     Book Appointment <span class="badge badge-light"></span>
                 </button>
+            <br/>
+              < input type= "text"  size ="80" value ="comment"/>
+              <button> Submit</button>
+
             </div>
-=======
-          <h1> Name: {teacherData.name}</h1>
-           <div  className="card" style={{ width: "50rem"}}>
-            <img className="image" src={teacherData.image} alt="Card image cap" />
-           </div>
-
-          <div>
-            <h1>Description</h1>
-           <p> {teacherData.description} </p>
-           </div>
-        <br/>
-        <br/>
-           
-
-           
-           <div>
-            <h1>Subjects</h1>
-           <p> {teacherData.subjects} </p>
-           </div>
-
-           <div>
-            <h1>Education</h1>
-           <p> {teacherData.education} </p>
-           </div>
-
-           <div>
-            <h1>Experience</h1>
-           <p> {teacherData.experience} </p>
-           </div>
-
-
-           <div>
-            <h1>Fees</h1>
-           <p> {teacherData.fees} </p>
-           </div>
-
-
-           <button type="button" style={{margin:'10px'}} class="btn btn-primary">
-    Message <span class="badge badge-light"></span>
-     <br/>
-       </button>   
-
-       
-
-
-       <button type="button" style={{margin:'10px'}} class="btn btn-success">
-    Phone <span class="badge badge-light"></span>
-     
-       </button>
-
-       <button type="button" style={{margin:'10px'}} class="btn btn-info">
-    Book Appointment <span class="badge badge-light"></span>
-     
-       </button>
-
-    
-
-
-        
-        
-        
->>>>>>> Stashed changes
         </div>
     );
 };
