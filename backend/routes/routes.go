@@ -13,4 +13,4 @@ func Login(app *fiber.App) {
 }
 func Search(app *fiber.App) {
 	app.Post("/api/search", controller.Search)
-
+}
