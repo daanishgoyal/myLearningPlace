@@ -7,7 +7,7 @@ export default [
       experience: '5 years',
       fees: '$10-12 per hour',
       location: 'gainesville',
-      teachingmode: 'online',
+      teachingmode: 'online, offline',
       description: 'I am a certified yoga trainer. YTT 200 certified from Yoga alliance international',
       image:
         'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
