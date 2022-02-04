@@ -1,7 +1,7 @@
 package database
 
 import (
-	"Sprint1/models"
+	"backend/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
