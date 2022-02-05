@@ -1,6 +1,7 @@
 # Sprint1
 
 Demo Link: https://uflorida-my.sharepoint.com/:v:/g/personal/daanishgoyal_ufl_edu/ETF7QORMvglMk2kNG68KcrAB82nKbV-nyztCcd4CKa_Gdg?e=mRqH9Y
+
 In the Sprint1, we layed the foundation of our application.
 1. We started with gathering the user requirements and decided the scope of the project.
 2. Finalized the user stories for the application.
