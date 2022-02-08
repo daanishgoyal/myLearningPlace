@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"Youtube_GO/database"
-	"Youtube_GO/models"
+	"backend/database"
+	"backend/models"
 	"github.com/gofiber/fiber/v2"
 	"golang.org/x/crypto/bcrypt"
 )
