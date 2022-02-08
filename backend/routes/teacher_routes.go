@@ -5,6 +5,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func Greeting(app *fiber.App) {
-	app.Get("/", controllers.Greeting)
+func Search(app *fiber.App) {
+	app.Post("/api/search", controllers.Search)
 }
