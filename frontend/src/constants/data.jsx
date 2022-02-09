@@ -35,7 +35,7 @@ export default [
         education: 'MS (Aug, 2016–Jul, 2021) from University of Florida, USA',
         online: 'Yes',
         studenthome: 'Yes',
-        bio:'Namaste, My name is Hester Hogan and I am a yoga teacher. I have studied MS from University of Florida, USA but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now',
+        bio:'Namaste, My name is Hester Hogan. I am a yoga teacher. I have studied MS from University of Florida, USA but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now',
 
       },
     {
@@ -47,7 +47,7 @@ export default [
       fees: '$13-14 per hour',
       location: 'Tampa',
       teachingmode: 'offline',
-      description: 'I prefer to teach in person. I am specialized in Yoga with prps',
+      description: 'I prefer to teach in person. I am specialized in Prenatal Yoga and also power yoga',
       image:
         'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
       subjects: 'Yoga - advanced' ,
