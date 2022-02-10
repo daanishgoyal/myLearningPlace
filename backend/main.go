@@ -24,5 +24,5 @@ func main() {
 
 	// Add "/api/search route
 	routes.Search(app)
-	app.Listen(":3000")
+	app.Listen(":8080")
 }
