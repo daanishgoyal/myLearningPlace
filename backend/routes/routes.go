@@ -8,3 +8,7 @@ import (
 func Greeting(app *fiber.App) {
 	app.Get("/", controllers.Greeting)
 }
+
+func GetSkills(app *fiber.App) {
+	app.Get("/api/getskills", controllers.GetSkills)
+}

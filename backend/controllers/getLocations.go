@@ -7,7 +7,7 @@ import (
 
 func getLocations(c *fiber.Ctx) error {
 
-	var teacher = []models.Teacher{}
+	var _ = []models.Teacher{}
 
 	var locations []byte
 

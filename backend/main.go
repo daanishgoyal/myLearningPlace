@@ -24,5 +24,8 @@ func main() {
 
 	// Add "/api/search route
 	routes.Search(app)
+
+	routes.GetSkills(app)
+
 	app.Listen(":3000")
 }

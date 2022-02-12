@@ -14,7 +14,7 @@ var DB *gorm.DB
 
 func Connect() {
 
-	dsn := config.SqlUserName + ":" + config.SqlPassword + "@/" + "CREATE DATABASE IF NOT EXISTS daanish;"
+	dsn := config.SqlUserName + ":" + config.SqlPassword + "@/" + config.SqlDatabaseName
 	connection, err := gorm.Open(mysql.Open(dsn), &gorm.Config{Logger: logger.Default.LogMode(logger.Info)})
 
 	if err != nil {
