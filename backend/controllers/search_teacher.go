@@ -1,8 +1,7 @@
 package controllers
 
 import (
-	"Youtube_GO/database"
-	"Youtube_GO/models"
+	"backend/models"
 	"github.com/gofiber/fiber/v2"
 	"log"
 )
@@ -36,22 +35,22 @@ func Search(c *fiber.Ctx) error {
 	//}
 
 	var skill = models.Skill{}
-	query_skill := data["skill"]
+	//query_skill := data["skill"]
 
-	result := database.DB.Select("ID").Where("skill_name = ?", query_skill).Find(&skill)
+	//result := database.DB.Select("ID").Where("skill_name = ?", query_skill).Find(&skill)
 	// SELECT `id` FROM `skills` WHERE skill_name = 'Music'
 	log.Print(skill.ID)
 
-	var relation = []models.Relation_t_s{}
-	result = database.DB.Select("TeacherID").Where("skill_id = ?", skill.ID).Find(&relation)
+	//var relation = []models.Relation_t_s{}
+	//result = database.DB.Select("TeacherID").Where("skill_id = ?", skill.ID).Find(&relation)
 
 	//log.Print(relation[0].TeacherID)
 
-	if result.RowsAffected == 0 {
-		return c.JSON(fiber.Map{"message": "skill not found"})
-	} else {
-		return c.JSON(fiber.Map{"data": relation})
-	}
+	//if result.RowsAffected == 0 {
+	//	return c.JSON(fiber.Map{"message": "skill not found"})
+	//} else {
+	//	return c.JSON(fiber.Map{"data": relation})
+	//}
 
 	//var teachers = []models.Teacher{}
 	//database.DB.Where()
@@ -62,5 +61,5 @@ func Search(c *fiber.Ctx) error {
 	//} else {
 	//	return c.JSON(fiber.Map{"data": skill})
 	//}
-
+	return nil
 }
