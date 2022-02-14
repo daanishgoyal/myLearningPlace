@@ -17,7 +17,8 @@ const TeacherSpecificDetails = () => {
     // console.log(teacherData)
 
     return (
-        <div>
+<div className="card-deck">
+        <div className="card">
             <br />
             <h2 className="bg-secondary" style={{ width: "50rem" }}>
                 {" "}
@@ -67,7 +68,19 @@ const TeacherSpecificDetails = () => {
                     <h4>Teaches at Student Home: </h4>
                     <p> {teacherData.studenthome} </p>
                 </div>
+                <input
+                    type="text"
+                    size="80"
+                    value=""
+                    placeholder="Comments"
+                    style={{ width: "50", height: "100" }}
+                />
+                <br />
+                <button> Submit</button>
+    </div>
+        </div>
 
+  <div className="card">
                 <button
                     type="button"
                     style={{ margin: "10px" }}
@@ -88,17 +101,11 @@ const TeacherSpecificDetails = () => {
                 </button>
                 <br />
                 <br />
-                <input
-                    type="text"
-                    size="80"
-                    value=""
-                    placeholder="Comments"
-                    style={{ width: "50", height: "100" }}
-                />
-                <br />
-                <button> Submit</button>
-            </div>
-        </div>
+                
+  </div>
+        
+    
+</div>
     );
 };
 
