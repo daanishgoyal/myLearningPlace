@@ -73,17 +73,11 @@ const TeacherSpecificDetails = () => {
                     style={{ margin: "10px" }}
                     className="btn btn-primary"
                 >
-                    Message <span className="badge badge-light"></span>
+                    Contact Details <span className="badge badge-light"></span>
                     <br />
                 </button>
 
-                <button
-                    type="button"
-                    style={{ margin: "10px" }}
-                    className="btn btn-secondary"
-                >
-                    Phone <span className="badge badge-light"></span>
-                </button>
+                
 
                 <button
                     type="button"
