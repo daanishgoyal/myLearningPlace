@@ -8,17 +8,18 @@ import (
 
 func GetLocations(c *fiber.Ctx) error {
 
-	var teacher = []models.Teacher{}
+	var teachers = []models.Teacher{}
+	type Result struct {
+		City string
+	}
+	var result []Result
 
-	//var teacher models.Teacher
-	//
+	database.DB.Select("City").Find(&teachers).Scan(&result)
 
-	database.DB.Table("Teachers").Select("City").Scan(&teacher)
-
-	//database.DB.Select("City").Find(&teachers)
-	//if query.RowsAffected == 0 {
-	//	return c.JSON(fiber.Map{"message": "locations not found"})
-
-	return c.JSON(fiber.Map{"data": teacher})
+	if len(result) == 0 {
+		return c.JSON(fiber.Map{"data": nil, "error": "no record found", "rows_affected": len(result)})
+	} else {
+		return c.JSON(fiber.Map{"data": result, "error": "", "rows_affected": len(result)})
+	}
 
 }

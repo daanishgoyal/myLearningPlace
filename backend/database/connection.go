@@ -32,5 +32,5 @@ func Connect() {
 		&models.Relation_t_s{},
 	)
 
-	PopulateDB()
+	//PopulateDB()
 }
