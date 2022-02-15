@@ -12,3 +12,6 @@ func Greeting(app *fiber.App) {
 func GetSkills(app *fiber.App) {
 	app.Get("/api/getskills", controllers.GetSkills)
 }
+func GetLocations(app *fiber.App) {
+	app.Get("api/getlocations", controllers.GetLocations)
+}

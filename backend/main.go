@@ -27,5 +27,7 @@ func main() {
 
 	routes.GetSkills(app)
 
+	routes.GetLocations(app)
+
 	app.Listen(":3000")
 }
