@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import data from "../../constants/data";
+import "../TeacherSpecificDetails.css"
 
 const TeacherSpecificDetails = () => {
     const { id } = useParams();
@@ -83,7 +84,6 @@ const TeacherSpecificDetails = () => {
   <div className="card">
                 <button
                     type="button"
-                    style={{ margin: "10px" }}
                     className="btn btn-primary"
                 >
                     Contact Details <span className="badge badge-light"></span>
@@ -94,7 +94,6 @@ const TeacherSpecificDetails = () => {
 
                 <button
                     type="button"
-                    style={{ margin: "10px" }}
                     className="btn btn-dark"
                 >
                     Book Appointment <span className="badge badge-light"></span>
