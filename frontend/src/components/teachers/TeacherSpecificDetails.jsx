@@ -1,6 +1,7 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import data from "../../constants/data";
+import "../TeacherSpecificDetails.css"
 
 const TeacherSpecificDetails = () => {
     const { id } = useParams();
@@ -15,7 +16,12 @@ const TeacherSpecificDetails = () => {
     //  const {name} = teacherData
 
     // console.log(teacherData)
-
+    const contactDetailsPath = '';
+    const bookAppointmentPath = '';
+    // const routeTo = useNavigate(); 
+    const NavigateTo = (path) => { 
+        // props.history.push('/home')}
+    }
     return (
 <div className="card-deck">
         <div className="card">
@@ -80,24 +86,23 @@ const TeacherSpecificDetails = () => {
     </div>
         </div>
 
-  <div className="card">
-                <button
+  <div className="button-card">
+               
+  <Link className="button" to="/login">
+                                
+                                ContactDetails
+                            </Link>
+                {/* <button
                     type="button"
-                    style={{ margin: "10px" }}
                     className="btn btn-primary"
                 >
-                    Contact Details <span className="badge badge-light"></span>
-                    <br />
-                </button>
-
-                
-
+                    Contact Details
+                </button> */}
                 <button
                     type="button"
-                    style={{ margin: "10px" }}
                     className="btn btn-dark"
                 >
-                    Book Appointment <span className="badge badge-light"></span>
+                    Book Appointment
                 </button>
                 <br />
                 <br />
