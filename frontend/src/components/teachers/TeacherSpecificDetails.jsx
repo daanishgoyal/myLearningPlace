@@ -101,7 +101,7 @@ const TeacherSpecificDetails = () => {
                     Contact Details
                 </button> */}
                
-               <Link className="button" to="/login">
+               <Link className="button" to="/BookAppointment">
                                 
                                 Book Appointment
                             </Link>

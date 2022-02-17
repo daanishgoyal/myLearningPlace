@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 
 const BookAppointment= ()=>
@@ -6,10 +7,12 @@ const BookAppointment= ()=>
 
 
 return
-{
-    <div className= 'book'>
+    (
+
+    <div >
     <h1>Bookappointment </h1>
     </div>
-}
-}
+ 
+   );
+};
 export default BookAppointment;
