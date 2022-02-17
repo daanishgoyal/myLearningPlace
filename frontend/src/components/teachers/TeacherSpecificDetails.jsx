@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import data from "../../constants/data";
-import "../TeacherSpecificDetails.css"
+import "../TeacherSpecificDetails.css";
+import "../ContactAppointment.css";
 
 const TeacherSpecificDetails = () => {
     const { id } = useParams();
@@ -98,12 +99,18 @@ const TeacherSpecificDetails = () => {
                 >
                     Contact Details
                 </button> */}
-                <button
+               
+               <Link className="button" to="/login">
+                                
+                                Book Appointment
+                            </Link>
+               
+                {/* <button
                     type="button"
                     className="btn btn-dark"
                 >
                     Book Appointment
-                </button>
+                </button> */}
                 <br />
                 <br />
                 
