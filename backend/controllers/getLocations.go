@@ -7,7 +7,6 @@ import (
 )
 
 func GetLocations(c *fiber.Ctx) error {
-
 	var teachers = []models.Teacher{}
 	type Result struct {
 		City string

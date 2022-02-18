@@ -1,5 +1,5 @@
 package config
 
 const SqlUserName string = "root"
-const SqlPassword string = "" // mysql server root password
+const SqlPassword string = "logmein1"
 const SqlDatabaseName string = "BackEnd"

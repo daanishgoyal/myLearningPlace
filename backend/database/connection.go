@@ -13,7 +13,6 @@ import (
 var DB *gorm.DB
 
 func Connect() {
-
 	dsn := config.SqlUserName + ":" + config.SqlPassword + "@/" + config.SqlDatabaseName
 	connection, err := gorm.Open(mysql.Open(dsn), &gorm.Config{Logger: logger.Default.LogMode(logger.Info)})
 
@@ -25,12 +24,16 @@ func Connect() {
 
 	DB = connection
 
-	connection.AutoMigrate(
+	err = connection.AutoMigrate(
 		&models.User{},
 		&models.Teacher{},
 		&models.Skill{},
-		&models.Relation_t_s{},
-	)
+		&models.Relation_t_s{})
+
+	if err != nil {
+		return
+	}
 
 	//PopulateDB()
+
 }

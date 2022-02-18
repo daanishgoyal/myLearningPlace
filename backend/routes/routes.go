@@ -10,8 +10,9 @@ func Greeting(app *fiber.App) {
 }
 
 func GetSkills(app *fiber.App) {
-	app.Get("/api/getskills", controllers.GetSkills)
+	app.Get("/api/getSkills", controllers.GetSkills)
 }
+
 func GetLocations(app *fiber.App) {
-	app.Get("api/getlocations", controllers.GetLocations)
+	app.Get("/api/getLocations", controllers.GetLocations)
 }
