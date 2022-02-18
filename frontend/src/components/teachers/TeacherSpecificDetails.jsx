@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import data from "../../constants/data";
 import "../TeacherSpecificDetails.css";
 import "../ContactAppointment.css";
+import "../BookAppointment.jsx";
 
 const TeacherSpecificDetails = () => {
     const { id } = useParams();
@@ -89,8 +90,8 @@ const TeacherSpecificDetails = () => {
 
   <div className="button-card">
                
-  <Link className="button" to="/login">
-                                
+  <Link className="button" to="/ContactDetails">
+                               
                                 ContactDetails
                             </Link>
                 {/* <button
@@ -100,7 +101,7 @@ const TeacherSpecificDetails = () => {
                     Contact Details
                 </button> */}
                
-               <Link className="button" to="/login">
+               <Link className="button" to="/BookAppointment">
                                 
                                 Book Appointment
                             </Link>

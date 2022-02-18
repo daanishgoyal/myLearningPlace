@@ -13,6 +13,8 @@ import Logout from "./components/logout";
 import NotFound from "./components/notFound";
 import { Route, Routes } from "react-router-dom";
 import TeacherSpecificDetails from "./components/teachers/TeacherSpecificDetails";
+import BookAppointment from "./components/BookAppointment";
+import ContactDetails from "./components/ContactDetails";
 
 class App extends Component {
     state = {};
@@ -36,6 +38,8 @@ class App extends Component {
                         <Route path="/login" element={<LoginForm />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/" element={<HomePage />} />
+                        <Route path="/BookAppointment" element={<BookAppointment/>} />
+                        <Route path="/id/ContactDetails" element={<ContactDetails/>} />
                         <Route
                             exact
                             path="/teacher/:id"
