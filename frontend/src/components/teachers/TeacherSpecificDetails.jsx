@@ -1,6 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import data from "../../constants/data";
+import "../TeacherSpecificDetails.css";
+import "../ContactAppointment.css";
 
 const TeacherSpecificDetails = () => {
     const { id } = useParams();
@@ -15,9 +17,15 @@ const TeacherSpecificDetails = () => {
     //  const {name} = teacherData
 
     // console.log(teacherData)
-
+    const contactDetailsPath = '';
+    const bookAppointmentPath = '';
+    // const routeTo = useNavigate(); 
+    const NavigateTo = (path) => { 
+        // props.history.push('/home')}
+    }
     return (
-        <div>
+<div className="card-deck">
+        <div className="card">
             <br />
             <h2 className="bg-secondary" style={{ width: "50rem" }}>
                 {" "}
@@ -67,33 +75,6 @@ const TeacherSpecificDetails = () => {
                     <h4>Teaches at Student Home: </h4>
                     <p> {teacherData.studenthome} </p>
                 </div>
-
-                <button
-                    type="button"
-                    style={{ margin: "10px" }}
-                    className="btn btn-primary"
-                >
-                    Message <span className="badge badge-light"></span>
-                    <br />
-                </button>
-
-                <button
-                    type="button"
-                    style={{ margin: "10px" }}
-                    className="btn btn-secondary"
-                >
-                    Phone <span className="badge badge-light"></span>
-                </button>
-
-                <button
-                    type="button"
-                    style={{ margin: "10px" }}
-                    className="btn btn-dark"
-                >
-                    Book Appointment <span className="badge badge-light"></span>
-                </button>
-                <br />
-                <br />
                 <input
                     type="text"
                     size="80"
@@ -103,8 +84,40 @@ const TeacherSpecificDetails = () => {
                 />
                 <br />
                 <button> Submit</button>
-            </div>
+    </div>
         </div>
+
+  <div className="button-card">
+               
+  <Link className="button" to="/login">
+                                
+                                ContactDetails
+                            </Link>
+                {/* <button
+                    type="button"
+                    className="btn btn-primary"
+                >
+                    Contact Details
+                </button> */}
+               
+               <Link className="button" to="/login">
+                                
+                                Book Appointment
+                            </Link>
+               
+                {/* <button
+                    type="button"
+                    className="btn btn-dark"
+                >
+                    Book Appointment
+                </button> */}
+                <br />
+                <br />
+                
+  </div>
+        
+    
+</div>
     );
 };
 
