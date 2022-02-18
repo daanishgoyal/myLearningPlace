@@ -90,7 +90,7 @@ const TeacherSpecificDetails = () => {
 
   <div className="button-card">
                
-  <Link className="button" to="ContactDetails">
+  <Link className="button" to="/ContactDetails">
                                
                                 ContactDetails
                             </Link>
