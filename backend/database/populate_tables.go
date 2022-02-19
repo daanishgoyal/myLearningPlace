@@ -114,11 +114,30 @@ func Populate_Rel_Teachers_Skills() {
 
 }
 
+//func Populate_Comments() {
+//	const recordcount int = 6
+//
+//	var commentby = [recordcount]string{"A", "B", "C", "D", "E", "F"}
+//	var commentext = [recordcount]string{"abc", "abc", "abc", "abc", "abc", "abc"}
+//
+//	var tempComment []mode
+//	for i := 0; i < recordcount; i++ {
+//		tempComment = append(tempComment, models.Comments{
+//			commentBy:   commentby[i],
+//			commentText: commentext[i],
+//		})
+//
+//	}
+//	DB.Create(&tempComment)
+//
+//}
+
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
-	PopulateUsers()
-	PopulateTeachers()
-	PopulateSkills()
-	Populate_Rel_Teachers_Skills()
+	//PopulateUsers()
+	//PopulateTeachers()
+	//PopulateSkills()
+	//Populate_Rel_Teachers_Skills()
+	//s
 }
