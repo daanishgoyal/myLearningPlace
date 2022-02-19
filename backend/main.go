@@ -34,8 +34,10 @@ func main() {
 	routes.GetSkills(app)
 
 	routes.GetLocations(app)
+
+	routes.GetComments(app)
 	//
 	//// Add "/api/search route
 	routes.Search(app)
-	app.Listen(":8080")
+	app.Listen(":6211")
 }

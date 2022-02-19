@@ -114,23 +114,25 @@ func Populate_Rel_Teachers_Skills() {
 
 }
 
-//func Populate_Comments() {
-//	const recordcount int = 6
-//
-//	var commentby = [recordcount]string{"A", "B", "C", "D", "E", "F"}
-//	var commentext = [recordcount]string{"abc", "abc", "abc", "abc", "abc", "abc"}
-//
-//	var tempComment []mode
-//	for i := 0; i < recordcount; i++ {
-//		tempComment = append(tempComment, models.Comments{
-//			commentBy:   commentby[i],
-//			commentText: commentext[i],
-//		})
-//
-//	}
-//	DB.Create(&tempComment)
-//
-//}
+func Populate_Comments() {
+	const recordcount int = 25
+
+	var commentby = [recordcount]string{"Sam", "Tim", "John", "Anakin", "Luke", "Ray", "Sam", "Tim", "John", "Anakin", "Luke", "Ray", "Sam", "Tim", "John", "Anakin", "Luke", "Ray", "Sam", "Tim", "John", "Anakin", "Luke", "Ray", "Sam"}
+	var commentext = [recordcount]string{"Good", "okayish", "average", "ok", "ok", "ok", "Good", "okayish", "average", "ok", "ok", "ok", "Good", "okayish", "average", "ok", "ok", "ok", "Good", "okayish", "average", "ok", "ok", "ok", "Good"}
+	var teacher_ids = [recordcount]uint{1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5}
+
+	var tempComment []models.Comments
+	for i := 0; i < recordcount; i++ {
+		tempComment = append(tempComment, models.Comments{
+			CommentBy:   commentby[i],
+			CommentText: commentext[i],
+			TeacherID:   teacher_ids[i],
+		})
+
+	}
+	DB.Create(&tempComment)
+
+}
 
 func PopulateDB() {
 	// To be run only when database doesn't exists.
@@ -139,5 +141,5 @@ func PopulateDB() {
 	//PopulateTeachers()
 	//PopulateSkills()
 	//Populate_Rel_Teachers_Skills()
-	//s
+	Populate_Comments()
 }
