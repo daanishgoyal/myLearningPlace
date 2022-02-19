@@ -15,13 +15,15 @@ import { Route, Routes } from "react-router-dom";
 import TeacherSpecificDetails from "./components/teachers/TeacherSpecificDetails";
 import BookAppointment from "./components/BookAppointment";
 import ContactDetails from "./components/ContactDetails";
+import auth from "./services/authService";
 
 class App extends Component {
     state = {};
 
     componentDidMount() {
         try {
-            const user = JSON.parse(localStorage.getItem("currentUser"));
+            //const user = JSON.parse(localStorage.getItem("currentUser"));
+            const user = auth.getCurrentUser();
             this.setState({ user });
         } catch {}
     }
@@ -38,8 +40,14 @@ class App extends Component {
                         <Route path="/login" element={<LoginForm />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/BookAppointment" element={<BookAppointment/>} />
-                        <Route path="/id/ContactDetails" element={<ContactDetails/>} />
+                        <Route
+                            path="/BookAppointment"
+                            element={<BookAppointment />}
+                        />
+                        <Route
+                            path="/id/ContactDetails"
+                            element={<ContactDetails />}
+                        />
                         <Route
                             exact
                             path="/teacher/:id"
