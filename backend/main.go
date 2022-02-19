@@ -4,6 +4,7 @@ import (
 	"backend/database"
 	"backend/routes"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 func main() {
@@ -16,6 +17,10 @@ func main() {
 	//
 	//// App object creation
 	app := fiber.New()
+
+	app.Use(cors.New(cors.Config{
+		AllowCredentials: true,
+	}))
 	//
 	//// Add "/" route
 	routes.Greeting(app)
