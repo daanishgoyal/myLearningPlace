@@ -35,6 +35,6 @@ func Connect() {
 		return
 	}
 
-	//PopulateDB()
+	PopulateDB()
 
 }
