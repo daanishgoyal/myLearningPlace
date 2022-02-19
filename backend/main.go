@@ -7,22 +7,30 @@ import (
 )
 
 func main() {
+
+	//database.Create("NEW_DB")
+	//fmt.Println(database.ReadJson())
+
 	// DataBase Connection Setup
 	database.Connect()
-
-	// App object creation
+	//
+	//// App object creation
 	app := fiber.New()
-
-	// Add "/" route
+	//
+	//// Add "/" route
 	routes.Greeting(app)
-
-	// Add "/api/register" route
+	//
+	//// Add "/api/register" route
 	routes.Register(app)
-
-	// Add "/api/login" route
+	//
+	//// Add "/api/login" route
 	routes.Login(app)
 
-	// Add "/api/search route
+	routes.GetSkills(app)
+
+	routes.GetLocations(app)
+	//
+	//// Add "/api/search route
 	routes.Search(app)
 	app.Listen(":8080")
 }
