@@ -90,7 +90,7 @@ const TeacherSpecificDetails = () => {
 
   <div className="button-card">
                
-  <Link className="button" to="/ContactDetails">
+  <Link className="button" to="/login">
                                
                                 ContactDetails
                             </Link>
@@ -101,7 +101,7 @@ const TeacherSpecificDetails = () => {
                     Contact Details
                 </button> */}
                
-               <Link className="button" to="/BookAppointment">
+               <Link className="button" to="/login">
                                 
                                 Book Appointment
                             </Link>
