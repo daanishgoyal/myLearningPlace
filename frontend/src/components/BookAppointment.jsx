@@ -20,6 +20,15 @@ return
        </select>
        <button>select slot</button> <br/>
        <button> Confirm Appointment</button>
+       <input
+                    type="text"
+                    size="80"
+                    value=""
+                    placeholder="Comments"
+                    style={{ width: "50", height: "100" }}
+                />
+                <br />
+                <button> Submit</button>
        
     </div>
  

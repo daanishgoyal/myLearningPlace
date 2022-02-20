@@ -1,12 +1,21 @@
-import React from "react";
 
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import React, { useState } from 'react';
 
 const Teachers = ({ datatolist }) => {
+    const [data, setData] = useState(datatolist);
+    // axios.post("http://localhost:8080/api/search",{"city": "Tampa","skill":"Yoga"})
+    //      .then(res => {
+    //         setData(res.data.data);
+    //         console.log(res)
+    //      });
+
     return (
+        
         <div>
-            {datatolist &&
-                datatolist.map((x) => {
+            {
+                data.map((x) => {
                     const {
                         id,
                         name,
