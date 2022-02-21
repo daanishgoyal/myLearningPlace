@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import React, { useState } from 'react';
 
-const Teachers = ({ datatolist }) => {
-    const [data, setData] = useState(datatolist);
+const Teachers = ({ dataToList }) => {
+    //const [data, setData] = useState(datatolist);
     // axios.post("http://localhost:8080/api/search",{"city": "Tampa","skill":"Yoga"})
     //      .then(res => {
     //         setData(res.data.data);
     //         console.log(res)
     //      });
-
+console.log('list', dataToList)
     return (
         
         <div>
-            {
-                data.map((x) => {
+            {   
+               dataToList && dataToList.map((x) => {
                     const {
                         id,
                         name,
