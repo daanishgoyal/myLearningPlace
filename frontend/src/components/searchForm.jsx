@@ -14,13 +14,13 @@ class SearchForm extends Component {
    
     
 
-    handleChangeSubject = (event) => {
+    handleChangeSubject = (event) => { //storing the subject or skill and then settings state
        //console.log('event: ', event); //event.target.value
        this.setState({subject:event.target.value});
     };
  
 
-    handleChangeLocation = (event) => {
+    handleChangeLocation = (event) => { //storing the location and setting the state
         //console.log('event: ', event); //event.target.value
         this.setState({location:event.target.value});
      };
@@ -32,7 +32,7 @@ class SearchForm extends Component {
         axios.post("http://localhost:8080/api/search",{city: this.state.location,skill:this.state.subject})
          .then(res => {
             console.log('props', this.props);
-            this.props.setSearchResult(res.data.data);
+            this.props.setSearchResult(res.data.data);//calling setsearch rsult function with params
            // this.setState({searchResult: res.data.data});
             console.log(res)
          });

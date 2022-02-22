@@ -17,27 +17,27 @@ console.log('list', dataToList)
             {   
                dataToList && dataToList.map((x) => {
                     const {
-                        id,
-                        name,
-                        age,
-                        profession,
-                        experience,
-                        fees,
-                        location,
-                        teachingmode,
-                        description,
+                        ID,
+                        Name,
+                        Age,
+                        Profession,
+                        Experience,
+                        Fees,
+                        City,
+                        Education,
+                        Description,
                         image,
                         subjects,
-                        education,
-                        online,
-                        studenthome,
-                        bio,
+                        Rating,
+                        IsTeachesOnline,
+                        Cancommute,
+                        Bio,
                     } = x;
                     return (
                         //   <article key={id}>
                         //     <p>hfdjgggfig</p>
                         <div
-                            key={id}
+                            key={ID}
                             className="container card"
                             style={{ marginTop: "10px" }}
                         >
@@ -54,27 +54,27 @@ console.log('list', dataToList)
                                 <div className="col-sm-7 bg-success">
                                     <div className="card-body">
                                         <h1 className="name bg-secondary">
-                                            {name}
+                                            {Name}
                                         </h1>
-                                        <h3>Profession: {profession}</h3>
+                                        <h3>Profession: {Profession}</h3>
                                         <h5>
-                                            Teaching experience: {experience}
+                                            Teaching experience: {Experience}
                                         </h5>
-                                        <h5>Fees: {fees}</h5>
-                                        <h5>Location: {location}</h5>
+                                        <h5>Fees: {Fees}</h5>
+                                        <h5>Location: {City}</h5>
                                         <h6>
-                                            Teaching mode: {teachingmode}
+                                            Teaching mode: {IsTeachesOnline}
                                         </h6>{" "}
-                                        <h6> Age: {age} years</h6>
+                                        <h6> Age: {Age} years</h6>
                                         <p className="description">
-                                            Description: {description}
+                                            Description: {Description}
                                         </p>
                                         {/* <a href="" className="btn btn-primary">
                     Click here for more information
                   </a> */}
                                         <Link
                                             to={{
-                                                pathname: `/teacher/${id}`,
+                                                pathname: `/teacher/${ID}`,
                                             }}
                                             className="text-dark"
                                         >
