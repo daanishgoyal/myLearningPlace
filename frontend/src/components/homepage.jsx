@@ -28,7 +28,7 @@ class HomePage extends Component {
   };
 
   render() {
-    console.log('list 0', this.state.searchList)
+    console.log('homepage list 0', this.state.searchList)
 
     return (
       <div className="container">
@@ -36,7 +36,7 @@ class HomePage extends Component {
         <div className="col">
           <div className="row-sm-1 sticky">
             <div className="col-sm-12">
-              <SearchForm setSearchResult={this.setSearchResult}/>
+              <SearchForm setSearchResult={this.setSearchResult}/> {/*//callback function */}
             </div>
           </div>
 
@@ -45,7 +45,6 @@ class HomePage extends Component {
               <Teachers dataToList={this.state.searchList}/>
             </div>
           </div>
-
 
           <div className="row-sm-1">
             <div className="col-sm-12">

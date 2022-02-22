@@ -39,7 +39,7 @@ class SearchForm extends Component {
     };
 
     render() {
-    console.log('list1', this.state)
+    console.log('searchform list1', this.state)
         return (
             <div
                 className="row gy-2 gx-3 align-items-center bg-success p-5 m-5 text-white"

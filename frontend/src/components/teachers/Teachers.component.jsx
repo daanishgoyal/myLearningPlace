@@ -10,7 +10,7 @@ const Teachers = ({ dataToList }) => {
     //         setData(res.data.data);
     //         console.log(res)
     //      });
-console.log('list', dataToList)
+console.log('teacherspage list', dataToList)
     return (
         
         <div>
