@@ -6,9 +6,9 @@
 }
 
 .button-card {
-    background-color: #fff;
+    background-color: #43d9cf;
     flex-grow: 1;
-    max-height: 200px;
+    max-height: 400px;
     height: min-content;
     padding: 24px;
     display: flex;
