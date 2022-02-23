@@ -1,21 +1,29 @@
 
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 
-const Teachers = ({ dataToList }) => {
+
+class Teachers extends Component {
+constructor (props)
+{
+   super(props);
+}
+// const Teachers = ({ dataToList }) => {
     //const [data, setData] = useState(datatolist);
     // axios.post("http://localhost:8080/api/search",{"city": "Tampa","skill":"Yoga"})
     //      .then(res => {
     //         setData(res.data.data);
     //         console.log(res)
     //      });
+render () {
 console.log('teacherspage list', dataToList)
+const { dataToList } = this.props
     return (
         
         <div>
             {   
-               dataToList && dataToList.map((x) => {
+                dataToList && dataToList.map((x) => {
                     const {
                         ID,
                         Name,
@@ -89,5 +97,6 @@ console.log('teacherspage list', dataToList)
         </div>
     );
 };
+}
 
 export default Teachers;

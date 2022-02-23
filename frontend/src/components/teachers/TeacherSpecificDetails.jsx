@@ -5,6 +5,11 @@ import "../TeacherSpecificDetails.css";
 import "../ContactAppointment.css";
 import "../BookAppointment.jsx";
 
+// class  TeacherSpecificDetails extends Component {
+// constructor (props)
+// {
+//    super(props);
+// }
 const TeacherSpecificDetails = () => {
     const { id } = useParams();
     let teacherData = {};
@@ -24,7 +29,9 @@ const TeacherSpecificDetails = () => {
     const NavigateTo = (path) => { 
         // props.history.push('/home')}
     }
-    return (
+//render()
+
+return (
 <div className="card-deck">
         <div className="card">
             <br />
