@@ -13,8 +13,9 @@ func GetLocations(c *fiber.Ctx) error {
 	}
 	var result []Result
 
-	database.DB.Select("City").Find(&teachers).Scan(&result)
-
+	database.DB.Select("City").Distinct().Find(&teachers).Scan(&result)
+	//.Find(&teachers).Scan(&result)
+	//
 	if len(result) == 0 {
 		return c.JSON(fiber.Map{"data": nil, "error": "no record found", "rows_affected": len(result)})
 	} else {
