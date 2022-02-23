@@ -5,12 +5,6 @@ import "./homepage.css";
 import SearchForm from "./searchForm";
 
 class HomePage extends Component {
-    routeChange = () => {
-        let path = `/teachers`;
-        const navigate = useNavigate();
-        navigate(path, { replace: true });
-    };
-
     state = {};
     //   constructor(props) {
     //     super(props);
