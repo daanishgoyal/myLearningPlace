@@ -16,5 +16,5 @@ type Teacher struct {
 	Rating           float32
 	CanCommute       bool
 	Bio              string // long_desc
-	//Photo            TBD
+	ImagePath        string
 }
