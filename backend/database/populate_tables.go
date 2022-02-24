@@ -70,7 +70,7 @@ func PopulateTeachers() {
 		"Namaste, My name is Bertie Yates and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 		"Namaste, My name is Bertie Yates and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 	}
-	var imagepath = [teachercount]string{"backend/img/T_1.jpg", "backend/img/T_1.jpg", "backend/img/T_1.jpg", "backend/img/T_1.jpg", "backend/img/T_1.jpg"}
+	var imagepath = [teachercount]string{"backend/img/Teacher_1.jpg", "backend/img/Teacher_2.jpg", "backend/img/Teacher_3.jpg", "backend/img/Teacher_4.jpg", "backend/img/Teacher_5.jpg"}
 
 	var teachers []models.Teacher
 
