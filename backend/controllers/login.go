@@ -19,7 +19,7 @@ func Login(c *fiber.Ctx) error {
 
 	// If email address is not found
 	if loginUser.ID == 0 {
-		return c.JSON(fiber.Map{"err": "NotFound", "error_message": "email address not found", "status": fiber.StatusNotFound})
+		return c.JSON(fiber.Map{"error": "NotFound", "error_message": "email address not found", "status": fiber.StatusNotFound})
 	}
 
 	// If email address is found
@@ -27,10 +27,10 @@ func Login(c *fiber.Ctx) error {
 
 	err = bcrypt.CompareHashAndPassword(loginUser.Password, []byte(data["password"]))
 	if err != nil {
-		return c.JSON(fiber.Map{"err": "Unauthorized", "error_message": "Incorrect Password", "status": fiber.StatusUnauthorized})
+		return c.JSON(fiber.Map{"error": "Unauthorized", "error_message": "Incorrect Password", "status": fiber.StatusUnauthorized})
 	} else {
 		return c.JSON(fiber.Map{"data": loginUser,
-			"err":     err,
+			"error":   err,
 			"status":  fiber.StatusOK,
 			"message": "User Validated"})
 	}
