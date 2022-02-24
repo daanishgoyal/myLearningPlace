@@ -29,12 +29,13 @@ func Connect() {
 		&models.Teacher{},
 		&models.Skill{},
 		&models.Relation_t_s{},
-		&models.Comments{})
+		&models.Comments{},
+		&models.MiscImages{})
 
 	if err != nil {
 		return
 	}
 
-	PopulateDB()
+	//PopulateDB()
 
 }

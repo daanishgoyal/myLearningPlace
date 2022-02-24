@@ -17,7 +17,7 @@ func PopulateUsers() {
 	var users = []models.User{}
 
 	for i := 0; i < usercount; i++ {
-		password := []byte(basePassword + "_" + strconv.Itoa(i))
+		password := []byte(basePassword + "_" + strconv.Itoa(i+1))
 		hash, _ := bcrypt.GenerateFromPassword(password, 14)
 
 		users = append(users, models.User{
@@ -70,6 +70,7 @@ func PopulateTeachers() {
 		"Namaste, My name is Bertie Yates and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 		"Namaste, My name is Bertie Yates and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 	}
+	var imagepath = [teachercount]string{"backend/img/T_1.jpg", "backend/img/T_1.jpg", "backend/img/T_1.jpg", "backend/img/T_1.jpg", "backend/img/T_1.jpg"}
 
 	var teachers []models.Teacher
 
@@ -89,6 +90,7 @@ func PopulateTeachers() {
 			IsTeachesOffline: isTeachesOffline[i],
 			CanCommute:       canCommute[i],
 			Bio:              bio[i],
+			ImagePath:        imagepath[i],
 		})
 	}
 	DB.Create(&teachers)
@@ -134,12 +136,29 @@ func Populate_Comments() {
 
 }
 
+func PopulateMiscImages() {
+	const recordcount int = 3
+	var imageCaption = [recordcount]string{"Background", "HomeInfo", "Logo"}
+	var imagepath = [recordcount]string{"backend/img/misc/bgimage.jpg", "backend/img/misc/homeinfo.jpg", "backend/img/misc/logo.png"}
+
+	var images []models.MiscImages
+	for i := 0; i < recordcount; i++ {
+		images = append(images, models.MiscImages{
+			ImageCaption: imageCaption[i],
+			ImagePath:    imagepath[i],
+		})
+
+	}
+	DB.Create(&images)
+}
+
 func PopulateDB() {
 	// To be run only when database doesn't exists.
-	//
-	//PopulateUsers()
-	//PopulateTeachers()
-	//PopulateSkills()
-	//Populate_Rel_Teachers_Skills()
-	//Populate_Comments()
+
+	PopulateUsers()
+	PopulateTeachers()
+	PopulateSkills()
+	Populate_Rel_Teachers_Skills()
+	Populate_Comments()
+	PopulateMiscImages()
 }
