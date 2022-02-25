@@ -6,7 +6,7 @@ import NavBar from "./components/navbar";
 import HomePage from "./components/homepage";
 import Teachers from "./components/teachers/Teachers.component";
 import Footer from "./components/footer";
-import data from "./constants/data";
+import teacherConstants from "./constants/data";
 import RegisterForm from "./components/registerForm";
 import LoginForm from "./components/loginForm";
 import Logout from "./components/logout";
@@ -56,7 +56,9 @@ class App extends Component {
                         <Route
                             exact
                             path="/teachers"
-                            element={<Teachers datatolist={data} />}
+                            element={
+                                <Teachers teacherList={teacherConstants} />
+                            }
                         />
                         <Route path="/not-found" element={<NotFound />} />
                         <Route path="*" element={<NotFound />} />

@@ -1,21 +1,22 @@
-
 import { Link } from "react-router-dom";
-import axios from 'axios';
-import React, { useState } from 'react';
+import React, { Component } from "react";
 
-const Teachers = ({ datatolist }) => {
-    const [data, setData] = useState(datatolist);
-    // axios.post("http://localhost:8080/api/search",{"city": "Tampa","skill":"Yoga"})
-    //      .then(res => {
-    //         setData(res.data.data);
-    //         console.log(res)
-    //      });
+class Teachers extends Component {
+    state = {
+        teacherList: [],
+    };
 
-    return (
-        
-        <div>
-            {
-                data.map((x) => {
+    componentDidMount() {
+        try {
+            const { teacherList } = this.props;
+            this.setState({ teacherList });
+        } catch {}
+    }
+
+    render() {
+        return (
+            <div>
+                {this.state.teacherList.map((teacher) => {
                     const {
                         id,
                         name,
@@ -27,15 +28,8 @@ const Teachers = ({ datatolist }) => {
                         teachingmode,
                         description,
                         image,
-                        subjects,
-                        education,
-                        online,
-                        studenthome,
-                        bio,
-                    } = x;
+                    } = teacher;
                     return (
-                        //   <article key={id}>
-                        //     <p>hfdjgggfig</p>
                         <div
                             key={id}
                             className="container card"
@@ -48,7 +42,7 @@ const Teachers = ({ datatolist }) => {
                                         width={40}
                                         height={360}
                                         src={image}
-                                        alt="Card image cap"
+                                        alt=""
                                     />
                                 </div>
                                 <div className="col-sm-7 bg-success">
@@ -70,8 +64,8 @@ const Teachers = ({ datatolist }) => {
                                             Description: {description}
                                         </p>
                                         {/* <a href="" className="btn btn-primary">
-                    Click here for more information
-                  </a> */}
+                        Click here for more information
+                    </a> */}
                                         <Link
                                             to={{
                                                 pathname: `/teacher/${id}`,
@@ -86,8 +80,8 @@ const Teachers = ({ datatolist }) => {
                         </div>
                     );
                 })}
-        </div>
-    );
-};
-
+            </div>
+        );
+    }
+}
 export default Teachers;
