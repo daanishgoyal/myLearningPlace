@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { getSkills } from "./../services/skillsService";
 import { getLocations } from "./../services/locationsService";
@@ -42,6 +41,14 @@ class SearchForm extends Component {
         const { data: teachers } = await searchTeachers(this.state.current);
 
         window.location = "/teachers";
+    };
+
+    validate = () => {
+        const current = { ...this.state.current };
+        return (
+            (current.skill === "" || current.skill === "Subject/Skill") &&
+            (current.city === "" || current.city === "Location")
+        );
     };
 
     render() {
@@ -119,7 +126,11 @@ class SearchForm extends Component {
                             </div>
                         </div>
                         <div className="col-sm-2 m-3">
-                            <button type="submit" className="btn btn-primary">
+                            <button
+                                type="submit"
+                                className="btn btn-primary"
+                                disabled={this.validate()}
+                            >
                                 Search
                             </button>
                         </div>
