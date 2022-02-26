@@ -1,24 +1,33 @@
 import React from "react";
 import Joi from "joi-browser";
 import Form from "../common/form";
+import * as userService from "../services/userService";
+import auth from "../services/authService";
 
 class RegisterForm extends Form {
     state = {
-        data: { username: "", password: "", name: "" },
+        data: { email: "", password: "", firstName: "", lastName: "" },
         errors: {},
     };
 
     schema = {
-        username: Joi.string().required().email().label("Username"),
+        email: Joi.string().required().email().label("Email"),
         password: Joi.string().required().min(5).label("Password"),
-        name: Joi.string().required().label("Name"),
+        firstName: Joi.string().required().label("First Name"),
+        lastName: Joi.string().required().label("Last Name"),
     };
 
-    doSubmit = () => {
+    doSubmit = async () => {
         try {
+            const response = await userService.register(this.state.data);
+            auth.loginWithJwt(response.headers["x-auth-token"]);
             window.location = "/login";
         } catch (ex) {
-            console.log(ex);
+            if (ex.response && ex.response.status === 400) {
+                const errors = { ...this.state.errors };
+                errors.username = ex.response.data;
+                this.setState({ errors });
+            }
         }
     };
 
@@ -39,7 +48,7 @@ class RegisterForm extends Form {
                             <div className="row mt-4" />
                             <div className="row">
                                 <div className="col-sm-8">
-                                    {this.renderInput("username", "Username")}
+                                    {this.renderInput("email", "Email")}
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
@@ -57,7 +66,17 @@ class RegisterForm extends Form {
                             <div className="row mt-3" />
                             <div className="row">
                                 <div className="col-sm-8">
-                                    {this.renderInput("name", "Name")}
+                                    {this.renderInput(
+                                        "firstName",
+                                        "First Name"
+                                    )}
+                                </div>
+                                <div className="col-sm-8" />
+                            </div>
+                            <div className="row mt-3" />
+                            <div className="row">
+                                <div className="col-sm-8">
+                                    {this.renderInput("lastName", "Last Name")}
                                 </div>
                                 <div className="col-sm-8" />
                             </div>

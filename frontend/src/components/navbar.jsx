@@ -62,7 +62,7 @@ const NavBar = ({ user }) => {
                                 role="button"
                                 data-bs-toggle="dropdown"
                             >
-                                {user.username}
+                                {user.Email}
                             </NavLink>
                             <ul className="dropdown-menu me-5 bg-dark">
                                 <li>
