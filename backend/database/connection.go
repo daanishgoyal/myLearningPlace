@@ -30,7 +30,8 @@ func Connect() {
 		&models.Skill{},
 		&models.Relation_t_s{},
 		&models.Comments{},
-		&models.MiscImages{})
+		&models.MiscImages{},
+		&models.Slots{})
 
 	if err != nil {
 		return

@@ -3,8 +3,10 @@ package database
 import (
 	"backend/models"
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/datatypes"
 	"log"
 	"strconv"
+	"time"
 )
 
 func PopulateUsers() {
@@ -152,6 +154,29 @@ func PopulateMiscImages() {
 	DB.Create(&images)
 }
 
+func PopulateSlots() {
+	const recordcount int = 2
+	var dates = [recordcount]datatypes.Date{
+		datatypes.Date(time.Date(2022, 01, 02, 0, 0, 0, 0, time.Local)),
+		datatypes.Date(time.Date(2022, 02, 15, 0, 0, 0, 0, time.Local)),
+	}
+
+	var times = [recordcount]datatypes.Time{
+		datatypes.NewTime(18, 30, 0, 0),
+		datatypes.NewTime(10, 00, 0, 0),
+	}
+
+	var slots []models.Slots
+	for i := 0; i < recordcount; i++ {
+		slots = append(slots, models.Slots{
+			Day:  dates[i],
+			Time: times[i],
+		})
+
+	}
+	DB.Create(&slots)
+}
+
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
@@ -161,4 +186,5 @@ func PopulateDB() {
 	Populate_Rel_Teachers_Skills()
 	Populate_Comments()
 	PopulateMiscImages()
+	PopulateSlots()
 }
