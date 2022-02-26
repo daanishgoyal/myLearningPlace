@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, useParams } from "react-router-dom";
-import teacherConstants from "../../constants/data.jsx";
+import teacherConstants from "../../constants/data";
 import "../TeacherSpecificDetails.css";
 import "../ContactAppointment.css";
 import "../BookAppointment.jsx";
