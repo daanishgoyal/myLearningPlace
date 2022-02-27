@@ -28,18 +28,18 @@ const TeacherSpecificDetails = () => {
 <div className="card-deck">
         <div className="card">
             <br />
-            <h2 className="bg-secondary" style={{ width: "50rem" }}>
+            <h2 className="bg-secondary" style={{ width: "30rem" }}>
                 {" "}
                 Name: {teacherData.name}
             </h2>
-            <div className="card" style={{ width: "50rem" }}>
+            <div className="card" style={{ width: "30rem" }}>
                 <img
                     className="image"
                     src={teacherData.image}
                     alt="Card image cap"
                 />
             </div>
-            <div className="bg-success p-3" style={{ width: "50rem" }}>
+            <div className="bg-success p-3" style={{ width: "30rem" }}>
                 <div>
                     <h4>About Me</h4>
                     <p> {teacherData.bio} </p>
@@ -78,10 +78,10 @@ const TeacherSpecificDetails = () => {
                 </div>
                 <input
                     type="text"
-                    size="80"
+                    size="53"
                     value=""
                     placeholder="Comments"
-                    style={{ width: "50", height: "100" }}
+                    style={{ width: "10", height: "30" }}
                 />
                 <br />
                 <button> Submit</button>
@@ -90,7 +90,7 @@ const TeacherSpecificDetails = () => {
 
   <div className="button-card">
                
-  <Link className="button" to="/login">
+  <Link className="button appointment" to="/login">
                                
                                 ContactDetails
                             </Link>
