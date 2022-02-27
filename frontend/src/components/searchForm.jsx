@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { getSkills } from "./../services/skillsService";
 import { getLocations } from "./../services/locationsService";
-import { searchTeachers } from "./../services/searchService";
 
 class SearchForm extends Component {
     state = {
@@ -28,7 +27,15 @@ class SearchForm extends Component {
     async componentDidMount() {
         await this.populateSkills();
         await this.populateLocations();
+        this.loadCurrentSelection();
     }
+
+    loadCurrentSelection = () => {
+        try {
+            const current = JSON.parse(localStorage.getItem("currentSearch"));
+            if (current) this.setState({ current });
+        } catch {}
+    };
 
     handleChange = (e) => {
         const current = { ...this.state.current };
@@ -36,10 +43,12 @@ class SearchForm extends Component {
         this.setState({ current });
     };
 
-    handleSubmit = async (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
-        const { data: teachers } = await searchTeachers(this.state.current);
+        const { current } = this.state;
+        localStorage.setItem("currentSearch", JSON.stringify(current));
 
+        this.props.onSubmit(current);
         window.location = "/teachers";
     };
 

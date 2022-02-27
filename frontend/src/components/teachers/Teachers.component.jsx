@@ -2,18 +2,41 @@ import React, { Component } from "react";
 import SearchForm from "./../searchForm";
 import TeachersCard from "./TeachersCard";
 import "./Teachers.component.css";
+import { searchTeachers } from "../../services/searchService";
 
 class Teachers extends Component {
     state = {
+        currentSearch: {},
         teacherList: [],
     };
 
-    componentDidMount() {
+    async componentDidMount() {
         try {
-            const { teacherList } = this.props;
-            this.setState({ teacherList });
+            this.loadCurrentSelection(); // when loading from home page
+            const { data: teachers } = await searchTeachers(
+                this.state.currentSearch
+            );
+            //this.setState({ teacherList: teachers });
+
+            // for now displaying dummy data using props as below; have to eventually use line above;
+            this.setState({ teacherList: this.props.teacherList });
         } catch {}
     }
+
+    loadCurrentSelection = () => {
+        try {
+            if (this.state.currentSearch) return;
+            const currentSearch = JSON.parse(
+                localStorage.getItem("currentSearch")
+            );
+            if (currentSearch) this.setState({ currentSearch });
+        } catch {}
+    };
+
+    handleSubmit = (currentSelection) => {
+        if (currentSelection)
+            this.setState({ currentSearch: currentSelection });
+    };
 
     render() {
         return (
@@ -22,7 +45,7 @@ class Teachers extends Component {
                 <div className="col">
                     <div className="row-sm-1 sticky">
                         <div className="col-sm-12">
-                            <SearchForm />
+                            <SearchForm onSubmit={this.handleSubmit} />
                         </div>
                     </div>
                     <div className="row-sm-12">

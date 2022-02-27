@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./homepage.css";
 import SearchForm from "./searchForm";
@@ -16,6 +15,17 @@ class HomePage extends Component {
     handleChange = () => {};
     handleSubmit = () => {};
 
+    componentDidMount() {
+        this.resetSearch();
+    }
+
+    resetSearch() {
+        try {
+            const current = JSON.parse(localStorage.getItem("currentSearch"));
+            if (current) localStorage.removeItem("currentSearch");
+        } catch {}
+    }
+
     render() {
         return (
             <div className="container">
@@ -23,7 +33,7 @@ class HomePage extends Component {
                 <div className="col">
                     <div className="row-sm-1 sticky">
                         <div className="col-sm-12">
-                            <SearchForm />
+                            <SearchForm onSubmit={this.handleSubmit} />
                         </div>
                     </div>
                     <div className="row-sm-1">
