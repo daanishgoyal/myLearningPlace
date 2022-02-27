@@ -1,6 +1,8 @@
 import React from "react";
 import Joi from "joi-browser";
+import { Navigate } from "react-router-dom";
 import Form from "../common/form";
+import auth from "../services/authService";
 
 class LoginForm extends Form {
     state = {
@@ -13,15 +15,28 @@ class LoginForm extends Form {
         password: Joi.string().required().label("Password"),
     };
 
-    doSubmit = () => {
+    doSubmit = async () => {
         try {
             const { data } = this.state;
-            localStorage.setItem("currentUser", JSON.stringify(data));
+            await auth.login(data.username, data.password);
+
+            //const { state } = this.props.location;
+            //console.log(this.props);
+            //console.log(state);
+            //window.location = state ? state.from.pathname : "/";
             window.location = "/";
-        } catch (ex) {}
+        } catch (ex) {
+            if (ex.response && ex.response.status === 400) {
+                const errors = { ...this.state.errors };
+                errors.username = ex.response.data;
+                this.setState({ errors });
+            }
+        }
     };
 
     render() {
+        if (auth.getCurrentUser()) return <Navigate to="/" />;
+
         return (
             <div className="container-fluid min-vh-100">
                 <div className="row mt-5" />

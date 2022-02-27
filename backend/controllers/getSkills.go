@@ -14,7 +14,7 @@ func GetSkills(c *fiber.Ctx) error {
 	}
 	var result []Result
 
-	database.DB.Select("SkillName").Find(&skills).Scan(&result)
+	database.DB.Select("SkillName").Distinct().Find(&skills).Scan(&result)
 
 	if len(result) == 0 {
 		return c.JSON(fiber.Map{"data": nil, "error": "no record found", "rows_affected": len(result)})

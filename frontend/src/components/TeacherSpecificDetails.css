@@ -15,3 +15,14 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.button {
+    background-color: #fff;
+    flex-grow: 1;
+    max-height: 200px;
+    height: min-content;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
