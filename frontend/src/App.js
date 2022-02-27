@@ -13,8 +13,8 @@ import Logout from "./components/logout";
 import NotFound from "./components/notFound";
 import { Route, Routes } from "react-router-dom";
 import TeacherSpecificDetails from "./components/teachers/TeacherSpecificDetails";
-import BookAppointment from "./components/BookAppointment";
-import ContactDetails from "./components/ContactDetails";
+import BookAppointment from "./components/teachers/BookAppointment";
+import ContactDetails from "./components/teachers/ContactDetails";
 import auth from "./services/authService";
 import TeachersNotFound from "./components/teachers/TeachersNotFoundComponent";
 

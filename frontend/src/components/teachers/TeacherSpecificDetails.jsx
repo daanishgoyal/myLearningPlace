@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link, useParams } from "react-router-dom";
 import teacherConstants from "../../constants/data";
-import "../TeacherSpecificDetails.css";
-import "../ContactAppointment.css";
-import "../BookAppointment.jsx";
+import "../teachers/TeacherSpecificDetails.css";
+import "../teachers/ContactAppointment.css";
+import "../teachers/BookAppointment.jsx";
 
 export function withRouter(Children) {
     return (props) => {
