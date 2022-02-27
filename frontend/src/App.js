@@ -16,6 +16,7 @@ import TeacherSpecificDetails from "./components/teachers/TeacherSpecificDetails
 import BookAppointment from "./components/BookAppointment";
 import ContactDetails from "./components/ContactDetails";
 import auth from "./services/authService";
+import TeachersNotFound from "./components/teachers/TeachersNotFoundComponent";
 
 class App extends Component {
     state = {};
@@ -59,6 +60,10 @@ class App extends Component {
                             element={
                                 <Teachers teacherList={teacherConstants} />
                             }
+                        />
+                        <Route
+                            path="/teachersNotFound"
+                            element={<TeachersNotFound />}
                         />
                         <Route path="/not-found" element={<NotFound />} />
                         <Route path="*" element={<NotFound />} />
