@@ -6,16 +6,17 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func GetLocations(c *fiber.Ctx) error {
-	var teachers = []models.Teacher{}
+func GetMiscImages(c *fiber.Ctx) error {
+	var image = []models.MiscImages{}
 	type Result struct {
-		City string
+		ImageID      uint8
+		ImageCaption string
+		ImagePath    string
 	}
 	var result []Result
 
-	database.DB.Select("City").Distinct().Find(&teachers).Scan(&result)
-	//.Find(&teachers).Scan(&result)
-	//
+	database.DB.Find(&image).Scan(&result)
+
 	if len(result) == 0 {
 		return c.JSON(fiber.Map{"data": nil, "error": "no record found", "rows_affected": len(result)})
 	} else {

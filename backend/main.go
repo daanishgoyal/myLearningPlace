@@ -34,6 +34,10 @@ func main() {
 	routes.GetSkills(app)
 
 	routes.GetLocations(app)
+
+	routes.GetMiscImages(app)
+
+	routes.GetComments(app)
 	//
 	//// Add "/api/search route
 	routes.Search(app)

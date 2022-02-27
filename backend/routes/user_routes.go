@@ -12,3 +12,7 @@ func Login(app *fiber.App) {
 func Register(app *fiber.App) {
 	app.Post("/api/register", controllers.Register)
 }
+
+func GetComments(app *fiber.App) {
+	app.Post("/api/getComments", controllers.GetComments)
+}

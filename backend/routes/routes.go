@@ -16,3 +16,7 @@ func GetSkills(app *fiber.App) {
 func GetLocations(app *fiber.App) {
 	app.Get("/api/getLocations", controllers.GetLocations)
 }
+
+func GetMiscImages(app *fiber.App) {
+	app.Get("/api/getMiscImages", controllers.GetMiscImages)
+}
