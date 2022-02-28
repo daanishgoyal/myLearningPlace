@@ -1,14 +1,26 @@
 .card-deck
 {
+    
     display:flex;
     flex-direction: row;
     justify-content:flex-start;
 }
 
+
+
+.card-specific
+{
+    
+    background-color:#228660;
+}
+
 .button-card {
-    background-color: #fff;
+    background-color:#228660;
+    margin-top: 30vh;
+    margin-left: 30vh;
     flex-grow: 1;
-    max-height: 200px;
+    max-height: 120px;
+    max-width: 400px;
     height: min-content;
     padding: 24px;
     display: flex;
@@ -17,12 +29,12 @@
 }
 
 .button {
-    background-color: #fff;
-    flex-grow: 1;
-    max-height: 200px;
-    height: min-content;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: #863e22; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
