@@ -10,7 +10,7 @@ class TeachersNotFound extends Component {
         return (
             <div className="ontainer-fluid min-vh-100">
                 <br />
-                <div className="row-sm-1 sticky">
+                <div className="row">
                     <div className="col-sm-12">
                         <SearchForm onSubmit={this.handleSubmit} />
                     </div>
