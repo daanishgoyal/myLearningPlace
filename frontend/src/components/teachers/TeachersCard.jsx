@@ -62,7 +62,7 @@ class TeachersCard extends Component {
                             className="card-img"
                             width={40}
                             height={360}
-                            src={`../${imagePath}`}
+                            src={require(`../../${imagePath}`)}
                             alt=""
                         />
                     </div>
