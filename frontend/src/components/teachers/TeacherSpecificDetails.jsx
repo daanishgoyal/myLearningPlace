@@ -25,7 +25,8 @@ class TeacherSpecificDetails extends Component {
     //     );
     //     this.setState({ teacherData });
     // }
- 
+    
+    
     
     getTeacherDetails = (teacherData) => (
         <>
@@ -78,6 +79,8 @@ class TeacherSpecificDetails extends Component {
                             <p> {(teacherData.IsTeachesOffline)? "Yes": "No"} </p>
                         </div>
                         
+                        
+
                         {/* <div>
                             <h4>Teaches at Student Home: </h4>
                             <p> {teacherData.studenthome} </p>
