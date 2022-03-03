@@ -9,26 +9,23 @@ import (
 
 func main() {
 
-	//database.Create("NEW_DB")
-	//fmt.Println(database.ReadJson())
-
-	// DataBase Connection Setup
+	//DataBase Connection Setup
 	database.Connect()
-	//
-	//// App object creation
+
+	// App object creation
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,
 	}))
-	//
-	//// Add "/" route
+
+	// Add "/" route
 	routes.Greeting(app)
-	//
-	//// Add "/api/register" route
+
+	// Add "/api/register" route
 	routes.Register(app)
-	//
-	//// Add "/api/login" route
+
+	// Add "/api/login" route
 	routes.Login(app)
 
 	routes.GetSkills(app)
@@ -38,8 +35,8 @@ func main() {
 	routes.GetMiscImages(app)
 
 	routes.GetComments(app)
-	//
-	//// Add "/api/search route
+
+	// Add "/api/search route
 	routes.Search(app)
 	app.Listen(":8080")
 }

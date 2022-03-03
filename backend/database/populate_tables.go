@@ -76,13 +76,13 @@ func PopulateTeachers() {
 		"Namaste, My name is Judy King and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 	}
 	var imagepath = [teachercount]string{
-		"frontend/img/teacher/Teacher_1.jpg",
-		"frontend/img/teacher/Teacher_2.jpg",
-		"frontend/img/teacher/Teacher_3.jpg",
-		"frontend/img/teacher/Teacher_4.jpg",
-		"frontend/img/teacher/Teacher_5.jpg",
-		"frontend/img/teacher/Teacher_6.jpg",
-		"frontend/img/teacher/Teacher_7.jpg",
+		"img/teacher/Teacher_1.jpg",
+		"img/teacher/Teacher_2.jpg",
+		"img/teacher/Teacher_3.jpg",
+		"img/teacher/Teacher_4.jpg",
+		"img/teacher/Teacher_5.jpg",
+		"img/teacher/Teacher_6.jpg",
+		"img/teacher/Teacher_7.jpg",
 	}
 
 	var teachers []models.Teacher
