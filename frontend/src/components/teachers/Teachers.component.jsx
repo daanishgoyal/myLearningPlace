@@ -6,7 +6,10 @@ import { searchTeachers } from "../../services/searchService";
 
 class Teachers extends Component {
     state = {
-        currentSearch: {},
+        currentSearch: {
+            city: "",
+            skill: "",
+        },
         teacherList: [],
     };
 
@@ -16,20 +19,33 @@ class Teachers extends Component {
             const { data: teachers } = await searchTeachers(
                 this.state.currentSearch
             );
-            //this.setState({ teacherList: teachers });
+
+            if (!teachers) {
+                window.location = "/teachersNotFound";
+                return;
+            }
+            this.setState({ teacherList: teachers });
 
             // for now displaying dummy data using props as below; have to eventually use line above;
-            this.setState({ teacherList: this.props.teacherList });
+            //this.setState({ teacherList: this.props.teacherList });
         } catch {}
     }
 
     loadCurrentSelection = () => {
         try {
-            if (this.state.currentSearch) return;
-            const currentSearch = JSON.parse(
-                localStorage.getItem("currentSearch")
-            );
-            if (currentSearch) this.setState({ currentSearch });
+            if (
+                this.state.currentSearch.city !== "" &&
+                this.state.currentSearch.skill !== ""
+            )
+                return;
+            const search = JSON.parse(localStorage.getItem("currentSearch"));
+            if (search) {
+                const { city, skill } = search;
+                const { currentSearch } = { ...this.state };
+                currentSearch.city = city;
+                currentSearch.skill = skill;
+                this.setState({ currentSearch: currentSearch });
+            }
         } catch {}
     };
 
@@ -54,7 +70,7 @@ class Teachers extends Component {
                                 {this.state.teacherList.map((teacher) => {
                                     return (
                                         <TeachersCard
-                                            key={teacher.id}
+                                            key={teacher.ID}
                                             teacherData={teacher}
                                         />
                                     );

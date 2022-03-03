@@ -1,87 +1,98 @@
 import React, { Component } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import teacherConstants from "../../constants/data";
-import "../TeacherSpecificDetails.css";
-import "../ContactAppointment.css";
-import "../BookAppointment.jsx";
+import "../teachers/TeacherSpecificDetails.css";
+import "../teachers/ContactAppointment.css";
+import "../teachers/BookAppointment.jsx";
 
 export function withRouter(Children) {
     return (props) => {
         const match = { params: useParams() };
-        return <Children {...props} match={match} />;
+        const location = useLocation();
+        return <Children {...props} match={match} teacherData={location.state.teacherData}/>;
     };
 }
 
 class TeacherSpecificDetails extends Component {
-    state = {
-        teacherData: [],
-    };
+    // state = {
+    //     teacherData: [],
+    // };
 
-    componentDidMount() {
-        const teacherId = this.props.match.params.id;
-        const teacherData = teacherConstants.find(
-            (t) => t.id === Number(teacherId)
-        );
-        this.setState({ teacherData });
-    }
-
+    // componentDidMount() {
+    //     const teacherId = this.props.match.params.id;
+    //     const teacherData = teacherConstants.find(
+    //         (t) => t.id === Number(teacherId)
+    //     );
+    //     this.setState({ teacherData });
+    // }
+    
+    
+    
     getTeacherDetails = (teacherData) => (
         <>
             <div className="card-deck">
-                <div className="card">
+                <div className="card-specific">
                     <br />
-                    <h2 className="bg-secondary" style={{ width: "50rem" }}>
+                    <br/>
+                    <h2 className="bg-secondary" style={{ width: "30rem" }}>
                         {" "}
-                        Name: {teacherData.name}
+                        Name: {teacherData.Name}
                     </h2>
-                    <div className="card" style={{ width: "50rem" }}>
+                    <div className="card" style={{ width: "30rem" }}>
                         <img className="image" src={teacherData.image} alt="" />
                     </div>
-                    <div className="bg-success p-3" style={{ width: "50rem" }}>
+                    <div className="bg-success p-3" style={{ width: "30rem" }}>
                         <div>
                             <h4>About Me</h4>
-                            <p> {teacherData.bio} </p>
+                            <p> {teacherData.Bio} </p>
                         </div>
                         <div>
                             <h4>Subjects</h4>
-                            <p> {teacherData.subjects} </p>
+                            <p> {teacherData.Subject} </p>
                         </div>
                         <div>
                             <h4>Education</h4>
-                            <p> {teacherData.education} </p>
+                            <p> {teacherData.Education} </p>
                         </div>
 
                         <div>
                             <h4>Experience</h4>
-                            <p> {teacherData.experience} </p>
+                            <p> {teacherData.Experience} </p>
                         </div>
 
                         <div>
                             <h4>Fees</h4>
-                            <p> {teacherData.fees} </p>
+                            <p> {teacherData.Fees} $ per hour </p>
                         </div>
 
                         <div>
                             <h4>Location</h4>
-                            <p> {teacherData.location} </p>
+                            <p> {teacherData.City} </p>
                         </div>
 
                         <div>
                             <h4>Can Teach Online: </h4>
-                            <p> {teacherData.online} </p>
+                            <p> {(teacherData.IsTeachesOnline)? "Yes": "No"} </p>
                         </div>
                         <div>
+                        <h4>Can Teach Offline: </h4>
+                            <p> {(teacherData.IsTeachesOffline)? "Yes": "No"} </p>
+                        </div>
+                        
+                        
+
+                        {/* <div>
                             <h4>Teaches at Student Home: </h4>
                             <p> {teacherData.studenthome} </p>
-                        </div>
-                        <input
+                        </div> */}
+                        {/* <input
                             type="text"
-                            size="80"
+                            size="50"
                             placeholder="Comments"
-                            style={{ width: "50", height: "100" }}
-                        />
-                        <br />
-                        <button> Submit</button>
+                            style={{ width: "8", height: "20" }}
+                        /> */}
+                        {/* <br />
+                        <button> Submit</button> */}
                     </div>
                 </div>
 
@@ -114,7 +125,7 @@ class TeacherSpecificDetails extends Component {
     );
 
     render() {
-        const { teacherData } = this.state;
+        const { teacherData } = this.props;
         return <>{teacherData && this.getTeacherDetails(teacherData)}</>;
     }
 }
