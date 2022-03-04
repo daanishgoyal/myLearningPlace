@@ -52,8 +52,8 @@ class TeachersCard extends Component {
             Description,
             imagePath,
         } = this.state;
-console.log(teachingmode);
-console.log(imagePath);
+//console.log(teachingmode);
+//console.log(imagePath);
         return (
             <div key={ID} className="container" style={{ marginTop: "20px" }}>
                 <div className="row no-gutters">
@@ -62,7 +62,7 @@ console.log(imagePath);
                             className="card-img"
                             width={40}
                             height={360}
-                            src={`../${imagePath}`}
+                            src={require(`../../${imagePath}`)}
                             alt=""
                         />
                     </div>

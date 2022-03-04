@@ -3,7 +3,6 @@ package database
 import (
 	"backend/models"
 	"golang.org/x/crypto/bcrypt"
-	"gorm.io/datatypes"
 	"log"
 	"strconv"
 	"time"
@@ -76,7 +75,15 @@ func PopulateTeachers() {
 		"Namaste, My name is John Matthews and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 		"Namaste, My name is Judy King and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 	}
-	var imagepath = [teachercount]string{"backend/img/Teacher_1.jpg", "backend/img/Teacher_2.jpg", "backend/img/Teacher_3.jpg", "backend/img/Teacher_4.jpg", "backend/img/Teacher_5.jpg", "backend/img/Teacher_6.jpg", "backend/img/Teacher_7.jpg"}
+	var imagepath = [teachercount]string{
+		"img/teacher/Teacher_1.jpg",
+		"img/teacher/Teacher_2.jpg",
+		"img/teacher/Teacher_3.jpg",
+		"img/teacher/Teacher_4.jpg",
+		"img/teacher/Teacher_5.jpg",
+		"img/teacher/Teacher_6.jpg",
+		"img/teacher/Teacher_7.jpg",
+	}
 
 	var teachers []models.Teacher
 
@@ -160,21 +167,26 @@ func PopulateMiscImages() {
 
 func PopulateSlots() {
 	const recordcount int = 2
-	var dates = [recordcount]datatypes.Date{
-		datatypes.Date(time.Date(2022, 01, 02, 0, 0, 0, 0, time.Local)),
-		datatypes.Date(time.Date(2022, 02, 15, 0, 0, 0, 0, time.Local)),
-	}
+	//var days = [36]string{
+	//	time.Weekday(1).String(), time.Weekday(1).String(),
+	//	time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(),
+	//	time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(),
+	//	time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(),
+	//	time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(),
+	//	time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(),
+	//	time.Weekday(7).String(), time.Weekday(7).String(), time.Weekday(7).String(), time.Weekday(7).String(),
+	//}
+	var days = [2]string{time.Weekday(1).String(), time.Weekday(1).String()}
 
-	var times = [recordcount]datatypes.Time{
-		datatypes.NewTime(18, 30, 0, 0),
-		datatypes.NewTime(10, 00, 0, 0),
-	}
+	var startTimes = [2]string{"10:00 AM", "11:30 AM"}
+	var endTimes = [2]string{"11:00 AM", "12:30 PM"}
 
 	var slots []models.Slots
 	for i := 0; i < recordcount; i++ {
 		slots = append(slots, models.Slots{
-			Day:  dates[i],
-			Time: times[i],
+			Day:       days[i],
+			StartTime: startTimes[i],
+			EndTime:   endTimes[i],
 		})
 
 	}
