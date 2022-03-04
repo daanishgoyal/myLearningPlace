@@ -29,7 +29,8 @@ class TeacherSpecificDetails extends Component {
     
     
     getTeacherDetails = (teacherData) => (
-        <>
+        
+   <>
             <div className="card-deck">
                 <div className="card-specific">
                     <br />
@@ -39,7 +40,7 @@ class TeacherSpecificDetails extends Component {
                         Name: {teacherData.Name}
                     </h2>
                     <div className="card" style={{ width: "30rem" }}>
-                        <img className="image" src={teacherData.image} alt="" />
+                        <img className="image" src={require(`../../${teacherData.ImagePath}`)} alt="" />
                     </div>
                     <div className="bg-success p-3" style={{ width: "30rem" }}>
                         <div>
