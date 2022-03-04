@@ -8,7 +8,7 @@ import (
 	"testing"
 )
 
-func TestgetComments(t *testing.T) {
+func TestGetComments(t *testing.T) {
 	dsn := config.SqlUserName + ":" + config.SqlPassword + "@/" + config.SqlDatabaseName
 	connection, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
