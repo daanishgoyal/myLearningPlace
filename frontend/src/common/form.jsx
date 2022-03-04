@@ -71,7 +71,7 @@ class Form extends Component {
         );
     }
 
-    renderInput(name, label, type = "text") {
+    renderInput(name, label, type = "text", autoFocus=false) {
         const { data, errors } = this.state;
 
         return (
@@ -82,6 +82,7 @@ class Form extends Component {
                 label={label}
                 onChange={this.handleChange}
                 error={errors[name]}
+                autoFocus={autoFocus}
             />
         );
     }
