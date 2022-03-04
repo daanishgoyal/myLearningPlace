@@ -35,12 +35,12 @@ class TeacherSpecificDetails extends Component {
                 <div className="card-specific">
                     <br />
                     <br/>
-                    <h2 className="bg-secondary" style={{ width: "30rem" }}>
+                    <h2 className="bg-secondary" style={{ width: "30rem"  }}>
                         {" "}
                         Name: {teacherData.Name}
                     </h2>
                     <div className="card" style={{ width: "30rem" }}>
-                        <img className="image" src={require(`../../${teacherData.ImagePath}`)} alt="" />
+                        <img className="image" style={{ width: "30rem" ,maxHeight:"20rem"}} src={require(`../../${teacherData.ImagePath}`)} alt="" />
                     </div>
                     <div className="bg-success p-3" style={{ width: "30rem" }}>
                         <div>
