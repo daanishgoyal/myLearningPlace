@@ -26,7 +26,7 @@ class LoginForm extends Form {
             //window.location = state ? state.from.pathname : "/";
             window.location = "/";
         } catch (ex) {
-            if (ex.response && ex.response.status === 400) {
+            if (ex.response && ex.response.status === 401) {
                 const errors = { ...this.state.errors };
                 errors.username = ex.response.data;
                 this.setState({ errors });
@@ -53,7 +53,12 @@ class LoginForm extends Form {
                             <div className="row mt-4" />
                             <div className="row">
                                 <div className="col-sm-8">
-                                    {this.renderInput("username", "Username", "text", true)}
+                                    {this.renderInput(
+                                        "username",
+                                        "Username",
+                                        "text",
+                                        true
+                                    )}
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
