@@ -17,6 +17,7 @@ import BookAppointment from "./components/teachers/BookAppointment";
 import ContactDetails from "./components/teachers/ContactDetails";
 import auth from "./services/authService";
 import TeachersNotFound from "./components/teachers/TeachersNotFoundComponent";
+import BookingHistory from "./components/bookingHistory";
 
 class App extends Component {
     state = {};
@@ -41,6 +42,10 @@ class App extends Component {
                         <Route path="/login" element={<LoginForm />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/" element={<HomePage />} />
+                        <Route
+                            path="/bookingHistory"
+                            element={<BookingHistory />}
+                        />
                         <Route
                             path="/BookAppointment"
                             element={<BookAppointment />}
