@@ -31,17 +31,18 @@ class TeacherSpecificDetails extends Component {
     getTeacherDetails = (teacherData) => (
         
    <>
-            <div className="card-deck">
-                <div className="card-specific">
-                    <br />
-                    <br/>
+     
+            <div className="card-group">
+                <div className="card">
+                     {/* <br /> */}
+                    {/* <br/>  */}
                     <h2 className="bg-secondary" style={{ width: "30rem"  }}>
                         {" "}
                         Name: {teacherData.Name}
                     </h2>
-                    <div className="card" style={{ width: "30rem" }}>
+                    {/* <div className="card" style={{ width: "30rem" }}>
                         <img className="image" style={{ width: "30rem" ,maxHeight:"20rem"}} src={require(`../../${teacherData.ImagePath}`)} alt="" />
-                    </div>
+                    </div> */}
                     <div className="bg-success p-3" style={{ width: "30rem" }}>
                         <div>
                             <h4>About Me</h4>
@@ -91,13 +92,46 @@ class TeacherSpecificDetails extends Component {
                             size="50"
                             placeholder="Comments"
                             style={{ width: "8", height: "20" }}
-                        /> */}
-                        {/* <br />
+                        /> 
+                         <br />
                         <button> Submit</button> */}
+
+              {/* <textarea class="scrollabletextbox" name="note">
+                 Comments 
+                 </textarea> */}
+
+<div class="comment-section">
+    <h4> Comments</h4>
+           <div class="comment">
+             This is first comment.
+           </div>
+           <div class="comment">
+             This is second comment.
+            </div>
+            <div class="comment">
+              This is third comment.
+            </div>
+            <div class="comment">
+              This is fourth comment.
+            </div>
+            <div class="comment">
+              This is fifth comment.
+            </div>
+            <div class="comment">
+              This is sixth comment.
+            </div>
+        </div>
+
                     </div>
                 </div>
 
-                <div className="button-card">
+                <div className="card">
+
+                   <div className="card" style={{ width: "30rem" }}>
+                        <img className="image" style={{ width: "30rem" ,maxHeight:"20rem"}} src={require(`../../${teacherData.ImagePath}`)} alt="" />
+                   </div>
+
+                    <div className="card-specific">
                     <Link className="button" to="/login">
                         ContactDetails
                     </Link>
@@ -111,7 +145,7 @@ class TeacherSpecificDetails extends Component {
                     <Link className="button" to="/login">
                         Book Appointment
                     </Link>
-
+                    </div>
                     {/* <button
                 type="button"
                 className="btn btn-dark"
