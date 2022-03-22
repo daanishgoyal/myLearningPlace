@@ -53,7 +53,7 @@ class LoginForm extends Form {
                             <div className="row mt-4" />
                             <div className="row">
                                 <div className="col-sm-8">
-                                    {this.renderInput("username", "Username")}
+                                    {this.renderInput("username", "Username", "text", true)}
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
