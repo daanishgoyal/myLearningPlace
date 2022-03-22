@@ -44,5 +44,8 @@ func GetComments(c *fiber.Ctx) error {
 	//	return c.JSON(fiber.Map{"data": result, "error": nil, "rows_affected": len(result)})
 	//}
 
-	return c.JSON(fiber.Map{"data": result})
+	return c.JSON(fiber.Map{
+		"data":   result,
+		"status": fiber.StatusOK,
+	})
 }
