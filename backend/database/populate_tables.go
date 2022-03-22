@@ -246,6 +246,43 @@ func PopulateTeacherSchedule() {
 
 	}
 	DB.Create(&tempTeacherSch)
+func PopulateBookings() {
+	location := time.Now().Location()
+	const recordcount int = 15
+	var skillId = [recordcount]uint{1, 2, 3, 3, 3, 4, 4, 4, 5, 6, 6, 6, 7, 7, 7}
+	var teacherId = [recordcount]uint{1, 2, 7, 2, 3, 1, 4, 2, 5, 7, 6, 6, 3, 5, 7}
+	var slotId = [recordcount]uint{12, 32, 11, 34, 1, 7, 6, 7, 4, 15, 29, 34, 22, 11, 15}
+	var userId = [recordcount]uint{1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}
+	var datebooked = [recordcount]time.Time{
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 02, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 12, 0, 0, 0, 0, location),
+		time.Date(2021, 12, 01, 0, 0, 0, 0, location),
+		time.Date(2022, 04, 06, 0, 0, 0, 0, location),
+		time.Date(2022, 02, 27, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 02, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2023, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 29, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 24, 0, 0, 0, 0, location),
+		time.Date(2022, 04, 22, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+	}
+
+	var booking []models.Booking
+	for i := 0; i < recordcount; i++ {
+		booking = append(booking, models.Booking{
+			SkillID:    skillId[i],
+			TeacherID:  teacherId[i],
+			UserID:     userId[i],
+			SlotID:     slotId[i],
+			DateBooked: datebooked[i],
+		})
+
+	}
+	DB.Create(&booking)
 
 }
 
@@ -261,4 +298,5 @@ func PopulateDB() {
 	PopulateSlots()
 	PopulateContactDetails()
 	PopulateTeacherSchedule()
+	PopulateBookings()
 }
