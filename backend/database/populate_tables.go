@@ -246,6 +246,7 @@ func PopulateTeacherSchedule() {
 
 	}
 	DB.Create(&tempTeacherSch)
+}
 func PopulateBookings() {
 	location := time.Now().Location()
 	const recordcount int = 15

@@ -38,7 +38,7 @@ func Connect() {
 		&models.MiscImages{},
 		&models.Slot{},
 		&models.ContactDetails{},
-		&models.TeacherSchedule{})
+		&models.TeacherSchedule{},
 		&models.Booking{})
 
 	if err != nil {
@@ -46,6 +46,6 @@ func Connect() {
 	}
 
 	//TODO: AUTOCREATE DB
-	//PopulateDB()
+	PopulateDB()
 
 }
