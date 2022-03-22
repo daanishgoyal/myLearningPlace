@@ -14,7 +14,7 @@ func GetComments(c *fiber.Ctx) error {
 		return err
 	}
 
-	teacherID := data["id"]
+	teacherID := data["teacher_id"]
 
 	var comments []models.Comments
 	type Result struct {
