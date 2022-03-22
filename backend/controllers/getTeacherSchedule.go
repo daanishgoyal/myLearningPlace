@@ -68,7 +68,10 @@ func GetTeacherSchedule(c *fiber.Ctx) error {
 
 	}
 
-	return c.JSON(fiber.Map{"data": output})
+	return c.JSON(fiber.Map{
+		"data":   output,
+		"status": fiber.StatusOK,
+	})
 
 }
 

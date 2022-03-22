@@ -29,5 +29,8 @@ func GetContactDetails(c *fiber.Ctx) error {
 
 	database.DB.Where("teacher_id = ?", teacherID).Find(&contactdetails).Scan(&result)
 
-	return c.JSON(fiber.Map{"data": result})
+	return c.JSON(fiber.Map{
+		"data":   result,
+		"status": fiber.StatusOK,
+	})
 }
