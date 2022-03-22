@@ -31,7 +31,7 @@ func Connect() {
 		&models.Relation_t_s{},
 		&models.Comments{},
 		&models.MiscImages{},
-		&models.Slots{},
+		&models.Slot{},
 		&models.ContactDetails{},
 		&models.TeacherSchedule{})
 
@@ -39,6 +39,6 @@ func Connect() {
 		return
 	}
 
-	PopulateDB()
+	//PopulateDB()
 
 }

@@ -195,9 +195,9 @@ func PopulateSlots() {
 		"11:00 AM", "12:30 AM", "1:00 PM", "5:00 PM",
 	}
 
-	var slots []models.Slots
+	var slots []models.Slot
 	for i := 0; i < recordcount; i++ {
-		slots = append(slots, models.Slots{
+		slots = append(slots, models.Slot{
 			Day:       days[i],
 			StartTime: startTimes[i],
 			EndTime:   endTimes[i],
@@ -233,15 +233,15 @@ func PopulateTeacherSchedule() {
 	const recordcount int = 7
 
 	var slotid = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
-	//var availability = [recordcount]bool{true, false, true, false, true, false, true}
+	var availability = [recordcount]bool{true, false, true, false, true, false, true}
 	var teacher_ids = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
 
 	var tempTeacherSch []models.TeacherSchedule
 	for i := 0; i < recordcount; i++ {
 		tempTeacherSch = append(tempTeacherSch, models.TeacherSchedule{
-			SlotId: slotid[i],
-			//Availability: availability[i],
-			TeacherID: teacher_ids[i],
+			SlotId:       slotid[i],
+			Availability: availability[i],
+			TeacherID:    teacher_ids[i],
 		})
 
 	}
@@ -252,13 +252,13 @@ func PopulateTeacherSchedule() {
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
-	//PopulateUsers()
-	//PopulateTeachers()
-	//PopulateSkills()
-	//Populate_Rel_Teachers_Skills()
-	//Populate_Comments()
-	//PopulateMiscImages()
-	//PopulateSlots()
-	//PopulateContactDetails()
+	PopulateUsers()
+	PopulateTeachers()
+	PopulateSkills()
+	Populate_Rel_Teachers_Skills()
+	Populate_Comments()
+	PopulateMiscImages()
+	PopulateSlots()
+	PopulateContactDetails()
 	PopulateTeacherSchedule()
 }

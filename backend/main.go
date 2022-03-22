@@ -38,7 +38,7 @@ func main() {
 
 	routes.GetContactDetails(app)
 
-	//routes.GetTeacherSchedule(app)
+	routes.GetTeacherSchedule(app)
 
 	// Add "/api/search route
 	routes.Search(app)

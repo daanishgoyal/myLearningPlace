@@ -21,6 +21,6 @@ func GetContactDetails(app *fiber.App) {
 	app.Post("/api/getContactDetails", controllers.GetContactDetails)
 }
 
-//func GetTeacherSchedule(app *fiber.App) {
-//	app.Post("/api/getTeacherSchedule", controllers.GetTeacherSchedule)
-//}
+func GetTeacherSchedule(app *fiber.App) {
+	app.Post("/api/getTeacherSchedule", controllers.GetTeacherSchedule)
+}

@@ -2,7 +2,9 @@ package models
 
 type TeacherSchedule struct {
 	SlotId uint
-	Slots  Slots
+	Slot   Slot
+
+	Availability bool
 
 	TeacherID uint `gorm:"primary_key"`
 	Teacher   Teacher
