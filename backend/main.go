@@ -36,6 +36,10 @@ func main() {
 
 	routes.GetComments(app)
 
+	routes.CreateBookings(app)
+
+	routes.SearchBookingByUserId(app)
+
 	// Add "/api/search route
 	routes.Search(app)
 	app.Listen(":8080")
