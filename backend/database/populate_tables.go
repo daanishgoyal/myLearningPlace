@@ -166,20 +166,34 @@ func PopulateMiscImages() {
 }
 
 func PopulateSlots() {
-	const recordcount int = 2
-	//var days = [36]string{
-	//	time.Weekday(1).String(), time.Weekday(1).String(),
-	//	time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(),
-	//	time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(),
-	//	time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(),
-	//	time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(),
-	//	time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(),
-	//	time.Weekday(7).String(), time.Weekday(7).String(), time.Weekday(7).String(), time.Weekday(7).String(),
-	//}
-	var days = [2]string{time.Weekday(1).String(), time.Weekday(1).String()}
-
-	var startTimes = [2]string{"10:00 AM", "11:30 AM"}
-	var endTimes = [2]string{"11:00 AM", "12:30 PM"}
+	const recordcount int = 36
+	var days = [recordcount]string{
+		time.Weekday(0).String(), time.Weekday(0).String(),
+		time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(),
+		time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(),
+		time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(),
+		time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(),
+		time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(),
+		time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(),
+	}
+	var startTimes = [recordcount]string{
+		"10:00 AM", "11:30 AM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "4:00 PM",
+	}
+	var endTimes = [recordcount]string{
+		"11:00 AM", "12:30 AM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "5:00 PM",
+	}
 
 	var slots []models.Slots
 	for i := 0; i < recordcount; i++ {
