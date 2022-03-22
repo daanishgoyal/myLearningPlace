@@ -36,6 +36,8 @@ func main() {
 
 	routes.GetComments(app)
 
+	routes.GetContactDetails(app)
+
 	// Add "/api/search route
 	routes.Search(app)
 	app.Listen(":8080")

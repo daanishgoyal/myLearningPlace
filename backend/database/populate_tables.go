@@ -207,6 +207,27 @@ func PopulateSlots() {
 	DB.Create(&slots)
 }
 
+func PopulateContactDetails() {
+
+	const recordcount int = 7
+
+	var mobileNumber = [recordcount]string{"123456789", "098765432", "01234567", "01234567", "01234567", "01234567", "01234567"}
+	var emailId = [recordcount]string{"email1@email.com", "email2@email.com", "email3@email.com", "email4@email.com", "email5@email.com", "email6@email.com", "email7@email.com"}
+	var teacher_ids = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
+
+	var tempCD []models.ContactDetails
+	for i := 0; i < recordcount; i++ {
+		tempCD = append(tempCD, models.ContactDetails{
+			Teacher_MobileNumber: mobileNumber[i],
+			Teacher_Email:        emailId[i],
+			TeacherID:            teacher_ids[i],
+		})
+
+	}
+	DB.Create(&tempCD)
+
+}
+
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
@@ -217,4 +238,5 @@ func PopulateDB() {
 	Populate_Comments()
 	PopulateMiscImages()
 	PopulateSlots()
+	PopulateContactDetails()
 }
