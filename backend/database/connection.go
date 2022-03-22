@@ -32,7 +32,8 @@ func Connect() {
 		&models.Comments{},
 		&models.MiscImages{},
 		&models.Slots{},
-		&models.ContactDetails{})
+		&models.ContactDetails{},
+		&models.TeacherSchedule{})
 
 	if err != nil {
 		return

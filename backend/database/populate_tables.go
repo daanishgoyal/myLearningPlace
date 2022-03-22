@@ -228,15 +228,37 @@ func PopulateContactDetails() {
 
 }
 
+func PopulateTeacherSchedule() {
+
+	const recordcount int = 7
+
+	var slotid = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
+	//var availability = [recordcount]bool{true, false, true, false, true, false, true}
+	var teacher_ids = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
+
+	var tempTeacherSch []models.TeacherSchedule
+	for i := 0; i < recordcount; i++ {
+		tempTeacherSch = append(tempTeacherSch, models.TeacherSchedule{
+			SlotId: slotid[i],
+			//Availability: availability[i],
+			TeacherID: teacher_ids[i],
+		})
+
+	}
+	DB.Create(&tempTeacherSch)
+
+}
+
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
-	PopulateUsers()
-	PopulateTeachers()
-	PopulateSkills()
-	Populate_Rel_Teachers_Skills()
-	Populate_Comments()
-	PopulateMiscImages()
-	PopulateSlots()
-	PopulateContactDetails()
+	//PopulateUsers()
+	//PopulateTeachers()
+	//PopulateSkills()
+	//Populate_Rel_Teachers_Skills()
+	//Populate_Comments()
+	//PopulateMiscImages()
+	//PopulateSlots()
+	//PopulateContactDetails()
+	PopulateTeacherSchedule()
 }
