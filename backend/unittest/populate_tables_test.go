@@ -27,7 +27,7 @@ func TestPopulateTables(t *testing.T) {
 	var slots []models.Slots
 
 	tableModels := []interface{}{teachers, users, skills, comments, relTS, miscImage, slots}
-	table := []string{"Teachers", "User", "Skills", "Comments", "RelationTS", "MiscImages", "Slots"}
+	table := []string{"Teachers", "User", "Skills", "Comments", "RelationTS", "MiscImages", "Slot"}
 
 	for i := 0; i < len(tableModels); i++ {
 		count := DB.Find(&tableModels[i])

@@ -38,6 +38,8 @@ func main() {
 
 	routes.GetContactDetails(app)
 
+	routes.GetTeacherSchedule(app)
+
 	// Add "/api/search route
 	routes.Search(app)
 	app.Listen(":8080")
