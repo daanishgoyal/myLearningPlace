@@ -292,13 +292,13 @@ func PopulateBookings() {
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
-	//PopulateUsers()
-	//PopulateTeachers()
-	//PopulateSkills()
-	//Populate_Rel_Teachers_Skills()
-	//Populate_Comments()
-	//PopulateMiscImages()
-	//PopulateSlots()
+	PopulateUsers()
+	PopulateTeachers()
+	PopulateSkills()
+	Populate_Rel_Teachers_Skills()
+	Populate_Comments()
+	PopulateMiscImages()
+	PopulateSlots()
 	PopulateContactDetails()
 	PopulateTeacherSchedule()
 	PopulateBookings()
