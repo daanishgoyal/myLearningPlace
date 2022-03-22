@@ -18,9 +18,9 @@ func GetComments(c *fiber.Ctx) error {
 
 	var comments []models.Comments
 	type Result struct {
-		commentby   string
-		commenttext string
-		teacherid   uint
+		CommentBy   string
+		CommentText string
+		TeacherID   uint
 	}
 
 	var result []Result
