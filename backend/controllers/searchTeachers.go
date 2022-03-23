@@ -37,9 +37,9 @@ func Search(c *fiber.Ctx) error {
 		database.DB.Where("id IN ? AND city = ?", teacherIds, queryCity).Find(&teacher)
 
 		if len(teacher) == 0 {
-			return c.JSON(fiber.Map{"data": nil, "error": "No teacher found", "rows_affected": len(teacher)})
+			return c.JSON(fiber.Map{"data": nil, "error": "No teacher found", "rows_affected": len(teacher), "status": fiber.StatusNotFound})
 		} else {
-			return c.JSON(fiber.Map{"data": teacher, "error": nil, "rows_affected": len(teacher)})
+			return c.JSON(fiber.Map{"data": teacher, "error": nil, "rows_affected": len(teacher), "status": fiber.StatusOK})
 		}
 
 	} else if containsCity {
@@ -49,9 +49,9 @@ func Search(c *fiber.Ctx) error {
 		result := database.DB.Where("city = ?", queryCity).Find(&teachers)
 
 		if result.RowsAffected == 0 {
-			return c.JSON(fiber.Map{"data": nil, "error": "No teacher found", "rows_affected": result.RowsAffected})
+			return c.JSON(fiber.Map{"data": nil, "error": "No teacher found", "rows_affected": result.RowsAffected, "status": fiber.StatusNotFound})
 		} else {
-			return c.JSON(fiber.Map{"data": teachers, "error": nil, "rows_affected": result.RowsAffected})
+			return c.JSON(fiber.Map{"data": teachers, "error": nil, "rows_affected": result.RowsAffected, "status": fiber.StatusOK})
 		}
 
 	} else {
@@ -73,9 +73,9 @@ func Search(c *fiber.Ctx) error {
 		database.DB.Where("id IN ?", teacherIds).Find(&teacher)
 
 		if len(teacher) == 0 {
-			return c.JSON(fiber.Map{"data": nil, "error": "No teacher found", "rows_affected": len(teacher)})
+			return c.JSON(fiber.Map{"data": nil, "error": "No teacher found", "rows_affected": len(teacher), "status": fiber.StatusNotFound})
 		} else {
-			return c.JSON(fiber.Map{"data": teacher, "error": nil, "rows_affected": len(teacher)})
+			return c.JSON(fiber.Map{"data": teacher, "error": nil, "rows_affected": len(teacher), "status": fiber.StatusOK})
 		}
 	}
 
