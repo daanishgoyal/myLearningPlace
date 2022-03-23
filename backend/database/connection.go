@@ -46,6 +46,6 @@ func Connect() {
 	}
 
 	//TODO: AUTOCREATE DB
-	PopulateDB()
+	//PopulateDB()
 
 }

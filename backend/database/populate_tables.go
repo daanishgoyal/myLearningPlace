@@ -230,12 +230,11 @@ func PopulateContactDetails() {
 
 func PopulateTeacherSchedule() {
 
-	const recordcount int = 7
+	const recordcount int = 50
 
-	var slotid = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
-	var availability = [recordcount]bool{true, false, true, false, true, false, true}
-	var teacher_ids = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
-
+	var slotid = [recordcount]uint{1, 12, 6, 7, 32, 1, 32, 4, 11, 34, 7, 1, 22, 28, 11, 32, 7, 16, 15, 2, 24, 25, 5, 7, 9, 6, 1, 4, 11, 15, 25, 8, 2, 9, 22, 11, 29, 31, 19, 34, 35, 15, 11, 8, 28, 29, 2, 4, 34, 36}
+	var teacher_ids = [recordcount]uint{1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7}
+	var availability = [recordcount]bool{true, false, true, false, true, true, false, true, true, false, false, false, false, true, true, true, true, true, false, true, true, true, true, true, true, false, true, false, false, true, true, true, true, true, true, true, false, true, true, false, true, false, false, true, true, true, true, true, true, true}
 	var tempTeacherSch []models.TeacherSchedule
 	for i := 0; i < recordcount; i++ {
 		tempTeacherSch = append(tempTeacherSch, models.TeacherSchedule{
@@ -253,7 +252,7 @@ func PopulateBookings() {
 	location := time.Now().Location()
 	const recordcount int = 15
 	var skillId = [recordcount]uint{1, 2, 3, 3, 3, 4, 4, 4, 5, 6, 6, 6, 7, 7, 7}
-	var teacherId = [recordcount]uint{1, 2, 7, 2, 3, 1, 4, 2, 5, 7, 6, 6, 3, 5, 7}
+	var teacherId = [recordcount]uint{1, 2, 7, 2, 3, 1, 4, 2, 5, 4, 6, 6, 3, 5, 7}
 	var slotId = [recordcount]uint{12, 32, 11, 34, 1, 7, 6, 7, 4, 15, 29, 34, 22, 11, 15}
 	var userId = [recordcount]uint{1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}
 	var datebooked = [recordcount]time.Time{
@@ -292,13 +291,13 @@ func PopulateBookings() {
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
-	//PopulateUsers()
-	//PopulateTeachers()
-	//PopulateSkills()
-	//Populate_Rel_Teachers_Skills()
-	//Populate_Comments()
-	//PopulateMiscImages()
-	//PopulateSlots()
+	PopulateUsers()
+	PopulateTeachers()
+	PopulateSkills()
+	Populate_Rel_Teachers_Skills()
+	Populate_Comments()
+	PopulateMiscImages()
+	PopulateSlots()
 	PopulateContactDetails()
 	PopulateTeacherSchedule()
 	PopulateBookings()
