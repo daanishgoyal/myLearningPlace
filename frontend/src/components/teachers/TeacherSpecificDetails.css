@@ -1,4 +1,4 @@
-.card-deck
+.card-group
 {
     
     display:flex;
@@ -8,21 +8,21 @@
 
 
 
-.card-specific
+.card
 {
-    
+    margin-top: 0.01vh;
     background-color:#228660;
 }
 
-.button-card {
+.card-specific {
     background-color:#228660;
-    margin-top: 30vh;
-    margin-left: 30vh;
+    /* margin-top: 30vh;
+    margin-left: 30vh; */
     flex-grow: 1;
     max-height: 120px;
     max-width: 400px;
     height: min-content;
-    padding: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,3 +38,13 @@
     display: inline-block;
     font-size: 16px;
 }
+
+
+
+/* .scrollabletextbox {
+    height:100px;
+    width:200px;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 82%;
+    overflow:scroll;
+} */

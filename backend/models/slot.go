@@ -1,6 +1,6 @@
 package models
 
-type Slots struct {
+type Slot struct {
 	SlotID    uint `gorm:"primary_key"`
 	Day       string
 	StartTime string

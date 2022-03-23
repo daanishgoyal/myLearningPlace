@@ -1,0 +1,13 @@
+.comment-section{
+    max-height: 25vh;
+    max-width: 90%;
+    background-color: hsl(128, 16%, 37%);
+    overflow-y:scroll;
+}
+.comment{
+    height: 10%;
+    padding: 2%;
+    margin: 2%;
+    background-color: #ffff;
+    color: black;
+}

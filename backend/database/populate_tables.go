@@ -166,24 +166,38 @@ func PopulateMiscImages() {
 }
 
 func PopulateSlots() {
-	const recordcount int = 2
-	//var days = [36]string{
-	//	time.Weekday(1).String(), time.Weekday(1).String(),
-	//	time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(),
-	//	time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(),
-	//	time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(),
-	//	time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(),
-	//	time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(),
-	//	time.Weekday(7).String(), time.Weekday(7).String(), time.Weekday(7).String(), time.Weekday(7).String(),
-	//}
-	var days = [2]string{time.Weekday(1).String(), time.Weekday(1).String()}
+	const recordcount int = 36
+	var days = [recordcount]string{
+		time.Weekday(0).String(), time.Weekday(0).String(),
+		time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(), time.Weekday(1).String(),
+		time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(), time.Weekday(2).String(),
+		time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(), time.Weekday(3).String(),
+		time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(), time.Weekday(4).String(),
+		time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(), time.Weekday(5).String(),
+		time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(), time.Weekday(6).String(),
+	}
+	var startTimes = [recordcount]string{
+		"10:00 AM", "11:30 AM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "4:00 PM",
+	}
+	var endTimes = [recordcount]string{
+		"11:00 AM", "12:30 AM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "5:00 PM",
+	}
 
-	var startTimes = [2]string{"10:00 AM", "11:30 AM"}
-	var endTimes = [2]string{"11:00 AM", "12:30 PM"}
-
-	var slots []models.Slots
+	var slots []models.Slot
 	for i := 0; i < recordcount; i++ {
-		slots = append(slots, models.Slots{
+		slots = append(slots, models.Slot{
 			Day:       days[i],
 			StartTime: startTimes[i],
 			EndTime:   endTimes[i],
@@ -193,14 +207,99 @@ func PopulateSlots() {
 	DB.Create(&slots)
 }
 
+func PopulateContactDetails() {
+
+	const recordcount int = 7
+
+	var mobileNumber = [recordcount]string{"123456789", "098765432", "01234567", "01234567", "01234567", "01234567", "01234567"}
+	var emailId = [recordcount]string{"email1@email.com", "email2@email.com", "email3@email.com", "email4@email.com", "email5@email.com", "email6@email.com", "email7@email.com"}
+	var teacher_ids = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
+
+	var tempCD []models.ContactDetails
+	for i := 0; i < recordcount; i++ {
+		tempCD = append(tempCD, models.ContactDetails{
+			Teacher_MobileNumber: mobileNumber[i],
+			Teacher_Email:        emailId[i],
+			TeacherID:            teacher_ids[i],
+		})
+
+	}
+	DB.Create(&tempCD)
+
+}
+
+func PopulateTeacherSchedule() {
+
+	const recordcount int = 7
+
+	var slotid = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
+	var availability = [recordcount]bool{true, false, true, false, true, false, true}
+	var teacher_ids = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
+
+	var tempTeacherSch []models.TeacherSchedule
+	for i := 0; i < recordcount; i++ {
+		tempTeacherSch = append(tempTeacherSch, models.TeacherSchedule{
+			SlotId:       slotid[i],
+			Availability: availability[i],
+			TeacherID:    teacher_ids[i],
+		})
+
+	}
+	DB.Create(&tempTeacherSch)
+
+}
+
+func PopulateBookings() {
+	location := time.Now().Location()
+	const recordcount int = 15
+	var skillId = [recordcount]uint{1, 2, 3, 3, 3, 4, 4, 4, 5, 6, 6, 6, 7, 7, 7}
+	var teacherId = [recordcount]uint{1, 2, 7, 2, 3, 1, 4, 2, 5, 7, 6, 6, 3, 5, 7}
+	var slotId = [recordcount]uint{12, 32, 11, 34, 1, 7, 6, 7, 4, 15, 29, 34, 22, 11, 15}
+	var userId = [recordcount]uint{1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}
+	var datebooked = [recordcount]time.Time{
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 02, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 12, 0, 0, 0, 0, location),
+		time.Date(2021, 12, 01, 0, 0, 0, 0, location),
+		time.Date(2022, 04, 06, 0, 0, 0, 0, location),
+		time.Date(2022, 02, 27, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 02, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2023, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 29, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 24, 0, 0, 0, 0, location),
+		time.Date(2022, 04, 22, 0, 0, 0, 0, location),
+		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
+	}
+
+	var booking []models.Booking
+	for i := 0; i < recordcount; i++ {
+		booking = append(booking, models.Booking{
+			SkillID:    skillId[i],
+			TeacherID:  teacherId[i],
+			UserID:     userId[i],
+			SlotID:     slotId[i],
+			DateBooked: datebooked[i],
+		})
+
+	}
+	DB.Create(&booking)
+
+}
+
 func PopulateDB() {
 	// To be run only when database doesn't exists.
 
-	PopulateUsers()
-	PopulateTeachers()
-	PopulateSkills()
-	Populate_Rel_Teachers_Skills()
-	Populate_Comments()
-	PopulateMiscImages()
-	PopulateSlots()
+	//PopulateUsers()
+	//PopulateTeachers()
+	//PopulateSkills()
+	//Populate_Rel_Teachers_Skills()
+	//Populate_Comments()
+	//PopulateMiscImages()
+	//PopulateSlots()
+	PopulateContactDetails()
+	PopulateTeacherSchedule()
+	PopulateBookings()
 }
