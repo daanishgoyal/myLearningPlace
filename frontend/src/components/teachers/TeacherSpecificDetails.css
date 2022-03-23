@@ -48,17 +48,3 @@
     font-size: 82%;
     overflow:scroll;
 } */
-
-.comment-section{
-    max-height: 25vh;
-    max-width: 90%;
-    background-color: #6e4f4f;
-    overflow-y:scroll;
-}
-.comment{
-    height: 10%;
-    padding: 2%;
-    margin: 2%;
-    background-color: #ffff;
-    color: black;
-}
