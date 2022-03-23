@@ -50,6 +50,7 @@ func SearchBookingByUserId(c *fiber.Ctx) error {
 
 	// Validation
 	userId, err1 := strconv.Atoi(data["userId"])
+
 	if err1 != nil {
 		return c.JSON(fiber.Map{
 			"data":   nil,
@@ -64,6 +65,11 @@ func SearchBookingByUserId(c *fiber.Ctx) error {
 			"status": fiber.StatusBadRequest,
 			"error":  "includePast is not an boolean. String parsing failed",
 		})
+	}
+
+	// Check Valid UserId
+	if !ValidateIds(userId, models.User{}, "id") {
+		return fiber.NewError(fiber.StatusNotFound, "UserId not found")
 	}
 
 	var bookingInstance []models.Booking
@@ -93,4 +99,12 @@ func SearchBookingByUserId(c *fiber.Ctx) error {
 			"error":         result.Error,
 			"rows_affected": result.RowsAffected})
 	}
+}
+
+func ValidateIds(checkId int, model interface{}, IdColumnInDb string) bool {
+	checkId_ := uint(checkId)
+	var exists bool
+	query := IdColumnInDb + "= ?"
+	_ = database.DB.Model(model).Select("count(*) > 0").Where(query, checkId_).Find(&exists).Error
+	return exists
 }
