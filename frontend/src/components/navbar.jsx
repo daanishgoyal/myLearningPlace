@@ -68,6 +68,14 @@ const NavBar = ({ user }) => {
                                 <li>
                                     <NavLink
                                         className="dropdown-item bg-dark text-light"
+                                        to="/bookingHistory"
+                                    >
+                                        Booking History
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        className="dropdown-item bg-dark text-light"
                                         to="/logout"
                                     >
                                         Logout
