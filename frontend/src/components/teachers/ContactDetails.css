@@ -1,0 +1,36 @@
+body {
+    background: green
+}
+
+.container mt-5 {
+    height: 6px;
+    width: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0px;
+    background-color: rgb(48, 134, 48);
+    border-radius: 20%;
+    display: inline-block
+}
+span {
+    content: "\1F4DE";
+}
+span {
+  content: "\2709";
+}
+.name {
+    font-size: 18px
+}
+
+.date {
+    font-size: 12px
+}
+
+.rating i {
+    color: green;
+    font-size: 13px
+}
+
+.comment-text {
+    font-size: 18px
+}

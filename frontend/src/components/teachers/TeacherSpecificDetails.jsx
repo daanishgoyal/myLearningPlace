@@ -6,6 +6,7 @@ import "../teachers/ContactAppointment.css";
 import "../teachers/BookAppointment.jsx";
 import auth from "../../services/authService";
 import CommentsComponent from "./CommentsComponent";
+import ContactDetails from "./ContactDetails";
 
 export function withRouter(Children) {
   return (props) => {
@@ -46,7 +47,7 @@ class TeacherSpecificDetails extends Component {
     } catch {}
   }
 
-  getTeacherDetails = (teacherData, name) => (
+  getTeacherDetails = (teacherData, name, currentUser) => (
     <>
       <div className="card-group">
         <div className="card">
@@ -116,7 +117,7 @@ class TeacherSpecificDetails extends Component {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card image-card">
           <div className="card" style={{ width: "30rem" }}>
             <img
               className="image"
@@ -136,7 +137,11 @@ class TeacherSpecificDetails extends Component {
             >
                 Contact Details
             </button> */}
-
+            <div>
+              {JSON.stringify(currentUser) !== "{}" && (
+                <ContactDetails teacherId={teacherData.ID} />
+              )}
+            </div>
             <Link className="button" to="/login">
               Book Appointment
             </Link>

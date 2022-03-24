@@ -38,8 +38,15 @@
     display: inline-block;
     font-size: 16px;
 }
+.image
+{
+    align-items: center;
+}
 
-
+.image-card {
+    display: flex;
+    align-items: center;
+}
 
 /* .scrollabletextbox {
     height:100px;
