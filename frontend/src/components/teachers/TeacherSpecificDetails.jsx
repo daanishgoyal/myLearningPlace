@@ -49,8 +49,8 @@ class TeacherSpecificDetails extends Component {
 
   getTeacherDetails = (teacherData, name, currentUser) => (
     <>
-      <div className="card-group">
-        <div className="card">
+      <div className="card-group bg-success">
+        <div className="card bg-success">
           {/* <br /> */}
           {/* <br/>  */}
           <h2 className="bg-secondary" style={{ width: "30rem" }}>
@@ -60,9 +60,9 @@ class TeacherSpecificDetails extends Component {
           {/* <div className="card" style={{ width: "30rem" }}>
                         <img className="image" style={{ width: "30rem" ,maxHeight:"20rem"}} src={require(`../../${teacherData.ImagePath}`)} alt="" />
                     </div> */}
-          <div className="bg-success p-3" style={{ width: "30rem" }}>
-            <div>
-              <h4>About Me</h4>
+          <div className="bg-success p-3 " style={{ width: "30rem" }}>
+            <div className="bg-success">
+              <h4>About Me </h4>
               <p> {teacherData.Bio} </p>
             </div>
             <div>
@@ -117,7 +117,7 @@ class TeacherSpecificDetails extends Component {
           </div>
         </div>
 
-        <div className="card image-card">
+        <div className="card image-card bg-success">
           <div className="card" style={{ width: "30rem" }}>
             <img
               className="image"
@@ -126,8 +126,10 @@ class TeacherSpecificDetails extends Component {
               alt=""
             />
           </div>
-
-          <div className="card-specific">
+          <div>
+            <h5>Rating: {teacherData.Rating}</h5>
+          </div>
+          <div className="card-specific bg-success">
             <Link className="button" to="/login">
               ContactDetails
             </Link>
