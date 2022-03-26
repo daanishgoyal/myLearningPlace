@@ -45,11 +45,11 @@ class CommentsComponent extends Component {
       //       </div>
       //     </div>
       //   </div>
-      <div className="container">
+      <div className="container bg-success -3">
         <br />
         <div className="row justify-content-center">
           <h4 className="card"> Comments</h4>
-          <div class="card comments-card p-3 mb-2">
+          <div class="card comments-card p-3 mb-2 bg-success -3">
             <div class="d-flex flex-row">
               <div class="d-flex flex-column ms-2">
                 {comments.map((comment, index) => {
