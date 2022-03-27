@@ -35,7 +35,9 @@ func GetTeacherSchedule(c *fiber.Ctx) error {
 	var slotIds []uint
 
 	for i := 0; i < len(teacherSch); i++ {
-		slotIds = append(slotIds, teacherSch[i].SlotId)
+		if teacherSch[i].Availability == true {
+			slotIds = append(slotIds, teacherSch[i].SlotId)
+		}
 	}
 
 	database.DB.Where("slot_id IN ?", slotIds).Find(&slots).Scan(&result1)
