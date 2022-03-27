@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 import "../teachers/TeacherSpecificDetails.css";
 import "../teachers/ContactAppointment.css";
-import "../teachers/BookAppointment.jsx";
 import auth from "../../services/authService";
 import CommentsComponent from "./CommentsComponent";
 import ContactDetails from "./ContactDetails";
@@ -10,6 +9,7 @@ import { Button, Modal, Dropdown } from "react-bootstrap";
 import { getTeacherSchedule } from "../../services/getTeacherScheduleService";
 import { getSkillId } from "../../services/getSkillIDService";
 import { createBooking } from "../../services/createBookingService";
+import BookStatus from "./BookingStatus";
 
 export function withRouter(Children) {
     return (props) => {
@@ -40,8 +40,7 @@ class TeacherSpecificDetails extends Component {
 
     async componentDidMount() {
         try {
-            const teacherId = this.props.match.params.id;
-            const { teacherData: teacherData } = this.props;
+            const { teacherData } = this.props;
             this.setState({ teacherData });
 
             const currentUser = auth.getCurrentUser();
@@ -85,7 +84,7 @@ class TeacherSpecificDetails extends Component {
 
     onBookAppointmentSelect = () => {
         try {
-            console.log("reached onBookAppointmentSelect()");
+            //console.log("reached onBookAppointmentSelect()");
             const {
                 teacherData,
                 currentUser,
@@ -100,12 +99,13 @@ class TeacherSpecificDetails extends Component {
                 this.getSlotID(selectedDay, selectedSlot)
             );
             this.onShowHideModal();
+            window.location.reload();
         } catch {}
     };
 
     handleDayChange = (changeEvent) => {
         const day = changeEvent.target.value;
-        console.log(day);
+        //console.log(day);
         const slotsForSpecificDay = this.state.slotsAvailable.get(day);
         const selectedSlot = slotsForSpecificDay[0];
         this.setState({
@@ -116,7 +116,7 @@ class TeacherSpecificDetails extends Component {
     };
 
     handleSlotChange = (changeEvent) => {
-        console.log(changeEvent.target.value);
+        //console.log(changeEvent.target.value);
         this.setState({
             selectedSlot: changeEvent.target.value,
         });
@@ -148,8 +148,8 @@ class TeacherSpecificDetails extends Component {
         slotsForSpecificDay
     ) => (
         <>
-            <div className="card-group">
-                <div className="card">
+            <div className="card-group bg-success">
+                <div className="card bg-success">
                     {/* <br /> */}
                     {/* <br/>  */}
                     <h2 className="bg-secondary" style={{ width: "30rem" }}>
@@ -226,7 +226,7 @@ class TeacherSpecificDetails extends Component {
                     </div>
                 </div>
 
-                <div className="card image-card">
+                <div className="card image-card bg-success">
                     <div className="card" style={{ width: "30rem" }}>
                         <img
                             className="image"
@@ -236,7 +236,7 @@ class TeacherSpecificDetails extends Component {
                         />
                     </div>
 
-                    <div className="card-specific">
+                    <div className="card-specific bg-success">
                         <Link className="button" to="/login">
                             ContactDetails
                         </Link>
@@ -339,6 +339,9 @@ class TeacherSpecificDetails extends Component {
                                     </Button>
                                 </Modal.Footer>
                             </Modal>
+                            <div className="ms-5 mt-5">
+                                <BookStatus teacherName={teacherData.Name} />
+                            </div>
                         </div>
                     </div>
                     {/* <button
