@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
-import teacherConstants from "../../constants/data";
 import "../teachers/TeacherSpecificDetails.css";
 import "../teachers/ContactAppointment.css";
 import "../teachers/BookAppointment.jsx";
@@ -42,16 +41,14 @@ class TeacherSpecificDetails extends Component {
     async componentDidMount() {
         try {
             const teacherId = this.props.match.params.id;
-            const teacherData = teacherConstants.find(
-                (t) => t.id === Number(teacherId)
-            );
+            const { teacherData: teacherData } = this.props;
             this.setState({ teacherData });
 
             const currentUser = auth.getCurrentUser();
             this.setState({ currentUser });
 
             const { data: teacherSchedule } = await getTeacherSchedule(
-                teacherData.id
+                teacherData.ID
             );
             this.setState({ teacherSchedule });
 
@@ -86,8 +83,9 @@ class TeacherSpecificDetails extends Component {
         this.setState({ show: !this.state.show });
     }
 
-    onBookAppointmentSelect = async () => {
+    onBookAppointmentSelect = () => {
         try {
+            console.log("reached onBookAppointmentSelect()");
             const {
                 teacherData,
                 currentUser,
@@ -95,12 +93,13 @@ class TeacherSpecificDetails extends Component {
                 selectedDay,
                 selectedSlot,
             } = this.state;
-            const { data: bookingConfirmation } = await createBooking(
-                teacherData.id,
+            const { data: bookingConfirmation } = createBooking(
+                teacherData.ID,
                 currentUser.ID,
                 skill.ID,
                 this.getSlotID(selectedDay, selectedSlot)
             );
+            this.onShowHideModal();
         } catch {}
     };
 
@@ -130,7 +129,7 @@ class TeacherSpecificDetails extends Component {
         const eTime = split[1];
         let first = teacherSchedule.find(myFunction);
 
-        function myFunction(value, selectedDay) {
+        function myFunction(value) {
             return (
                 value.Day + " " + value.Date === selectedDay &&
                 value.StartTime === sTime &&

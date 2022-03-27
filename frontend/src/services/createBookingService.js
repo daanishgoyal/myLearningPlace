@@ -5,10 +5,10 @@ const apiEndpoint = config.apiUrl + "/booking/create";
 
 export async function createBooking(teacherId, userId, skillId, slotId) {
     const { data: bookingConfirmation } = await http.post(apiEndpoint, {
-        teacher_id: Number(teacherId),
-        userId: Number(userId),
-        skillId: Number(skillId),
-        slotId: Number(slotId),
+        teacherId: String(teacherId),
+        userId: String(userId),
+        skillId: String(skillId),
+        slotId: String(slotId),
     });
     return bookingConfirmation;
 }
