@@ -13,7 +13,6 @@ import Logout from "./components/logout";
 import NotFound from "./components/notFound";
 import { Route, Routes } from "react-router-dom";
 import TeacherSpecificDetails from "./components/teachers/TeacherSpecificDetails";
-import BookAppointment from "./components/teachers/BookAppointment";
 import ContactDetails from "./components/teachers/ContactDetails";
 import auth from "./services/authService";
 import TeachersNotFound from "./components/teachers/TeachersNotFoundComponent";
@@ -45,10 +44,6 @@ class App extends Component {
                         <Route
                             path="/bookingHistory"
                             element={<BookingHistory />}
-                        />
-                        <Route
-                            path="/BookAppointment"
-                            element={<BookAppointment />}
                         />
                         <Route
                             path="/id/ContactDetails"
