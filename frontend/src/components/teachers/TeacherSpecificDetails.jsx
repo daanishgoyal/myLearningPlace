@@ -256,7 +256,7 @@ class TeacherSpecificDetails extends Component {
             </Link> */}
                         <div className="modalClass">
                             <Button onClick={() => this.onShowHideModal()}>
-                                Click To Open Modal
+                                Book Appointment
                             </Button>
                             <Modal
                                 show={this.state.show}
