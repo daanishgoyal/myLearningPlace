@@ -38,6 +38,7 @@ func main() {
 
 	routes.GetContactDetails(app)
 
+	routes.GetSkillidByName(app)
 	routes.GetTeacherSchedule(app)
 	routes.CreateBookings(app)
 

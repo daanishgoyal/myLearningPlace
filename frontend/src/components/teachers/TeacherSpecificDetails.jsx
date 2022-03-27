@@ -36,7 +36,7 @@ class TeacherSpecificDetails extends Component {
         selectedDay: "",
         selectedSlot: "",
         slotsForSpecificDay: [],
-        skillId: 0,
+        skill: {},
     };
 
     async componentDidMount() {
@@ -75,10 +75,10 @@ class TeacherSpecificDetails extends Component {
             this.setState({ slotsForSpecificDay, selectedDay, selectedSlot });
 
             const current = JSON.parse(localStorage.getItem("currentSearch"));
-            const { city, skill } = current;
+            const { skill: skillName } = current;
 
-            const { data: skillId } = await getSkillId(skill);
-            this.setState({ skillId });
+            const { data: skillData } = await getSkillId(skillName);
+            this.setState({ skill: skillData });
         } catch {}
     }
 
@@ -91,14 +91,14 @@ class TeacherSpecificDetails extends Component {
             const {
                 teacherData,
                 currentUser,
-                skillId,
+                skill,
                 selectedDay,
                 selectedSlot,
             } = this.state;
             const { data: bookingConfirmation } = await createBooking(
                 teacherData.id,
                 currentUser.ID,
-                skillId,
+                skill.ID,
                 this.getSlotID(selectedDay, selectedSlot)
             );
         } catch {}
