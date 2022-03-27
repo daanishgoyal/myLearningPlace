@@ -16,7 +16,7 @@ class ContactDetails extends Component {
 
   render() {
     const { contactDetails } = this.state;
-    console.log(contactDetails);
+    //console.log(contactDetails);
 
     return (
       <div className="container ">

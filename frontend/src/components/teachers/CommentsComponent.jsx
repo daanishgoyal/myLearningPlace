@@ -9,10 +9,12 @@ class CommentsComponent extends Component {
   };
 
   async componentDidMount() {
-    const { teacherId } = this.props;
-    this.setState({ teacherId });
-    const { data: comments } = await getComments(teacherId);
-    this.setState({ comments });
+    try {
+      const { teacherId } = this.props;
+      this.setState({ teacherId });
+      const { data: comments } = await getComments(teacherId);
+      this.setState({ comments });
+    } catch (error) {}
   }
 
   render() {
@@ -49,19 +51,27 @@ class CommentsComponent extends Component {
         <br />
         <div className="row justify-content-center">
           <h4 className="card"> Comments</h4>
-          <div class="card comments-card p-3 mb-2 bg-success -3">
-            <div class="d-flex flex-row">
-              <div class="d-flex flex-column ms-2">
-                {comments.map((comment, index) => {
-                  return (
-                    <div key={index}>
-                      <label className="ms">{comment.CommentBy}</label>
-                      <div className="text-white ms-2">
-                        {comment.CommentText}
+          <div className="card comments-card p-3 mb-2 bg-success -3">
+            <div className="d-flex flex-row">
+              <div className="d-flex flex-column ms-2">
+                {comments &&
+                  comments.map((comment, index) => {
+                    return (
+                      <div key={index}>
+                        <label className="ms">{comment.CommentBy}</label>
+                        <div className="text-white ms-2">
+                          {comment.CommentText}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                {!comments && (
+                  <div>
+                    <label className="ms">
+                      No comments yet for this teacher
+                    </label>
+                  </div>
+                )}
               </div>
             </div>
           </div>
