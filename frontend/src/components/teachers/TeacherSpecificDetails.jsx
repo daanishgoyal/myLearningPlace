@@ -143,8 +143,8 @@ class TeacherSpecificDetails extends Component {
 
     getTeacherDetails = (teacherData, slotsAvailable, slotsForSpecificDay) => (
         <>
-            <div className="card-group bg-success ">
-                <div className="card bg-success">
+            <div className="card-group bg-success bg-dark text-light ">
+                <div className="card bg-success bg-dark text-light">
                     {/* <br /> */}
                     {/* <br/>  */}
                     <h2 className="bg-secondary" style={{ width: "30rem" }}>
@@ -166,37 +166,54 @@ class TeacherSpecificDetails extends Component {
                     {/* <div className="card" style={{ width: "30rem" }}>
                         <img className="image" style={{ width: "30rem" ,maxHeight:"20rem"}} src={require(`../../${teacherData.ImagePath}`)} alt="" />
                     </div> */}
-                    <div className="bg-success p-3" style={{ width: "30rem" }}>
-                        <div>
+                    <div
+                        className="bg-success p-3 bg-dark text-light"
+                        style={{ width: "30rem" }}
+                    >
+                        <div className="bg-success">
                             <h4>About Me</h4>
+                        </div>
+                        <div>
                             <p> {teacherData.Bio} </p>
                         </div>
-                        <div>
+                        <div className=" bg-success">
                             <h4>Subjects</h4>
-                            <p> {teacherData.Subject} </p>
                         </div>
                         <div>
+                            <p> {teacherData.Subject} </p>
+                        </div>
+                        <div className=" bg-success">
                             <h4>Education</h4>
+                        </div>
+                        <div>
                             <p> {teacherData.Education} </p>
                         </div>
 
-                        <div>
+                        <div className=" bg-success">
                             <h4>Experience</h4>
+                        </div>
+                        <div>
                             <p> {teacherData.Experience} </p>
                         </div>
 
-                        <div>
+                        <div className=" bg-success">
                             <h4>Fees</h4>
+                        </div>
+                        <div>
                             <p> {teacherData.Fees} $ per hour </p>
                         </div>
 
-                        <div>
+                        <div className=" bg-success">
                             <h4>Location</h4>
+                        </div>
+                        <div>
                             <p> {teacherData.City} </p>
                         </div>
 
-                        <div>
+                        <div className=" bg-success">
                             <h4>Can Teach Online: </h4>
+                        </div>
+                        <div>
                             <p>
                                 {" "}
                                 {teacherData.IsTeachesOnline
@@ -204,8 +221,10 @@ class TeacherSpecificDetails extends Component {
                                     : "No"}{" "}
                             </p>
                         </div>
-                        <div>
+                        <div className=" bg-success">
                             <h4>Can Teach Offline: </h4>
+                        </div>
+                        <div>
                             <p>
                                 {" "}
                                 {teacherData.IsTeachesOffline
@@ -233,8 +252,8 @@ class TeacherSpecificDetails extends Component {
                     </div>
                 </div>
 
-                <div className="card image-card bg-success">
-                    <div className="card bg-success" style={{ width: "30rem" }}>
+                <div className="card image-card  bg-dark text-light">
+                    <div className="card " style={{ width: "30rem" }}>
                         <img
                             className="image"
                             style={{ width: "30rem", maxHeight: "20rem" }}
@@ -242,104 +261,124 @@ class TeacherSpecificDetails extends Component {
                             alt=""
                         />
                     </div>
-
-                    <div className="card-specific bg-success">
-                        <Link className="button" to="/login">
-                            ContactDetails
-                        </Link>
-
-                        <div>
-                            {auth.getCurrentUser() !== null && (
-                                <ContactDetails teacherId={teacherData.ID} />
-                            )}
-                        </div>
-                        <div className="modalClass">
-                            <Button onClick={() => this.onShowHideModal()}>
-                                Book Appointment
-                            </Button>
-                            <Modal
-                                show={this.state.show}
-                                onHide={() => this.onShowHideModal()}
+                    <br />
+                    <div className="card-group bg-dark">
+                        <div className="card-specific bg-dark   ">
+                            <Link
+                                className="button bg-primary contact"
+                                to="/login"
                             >
-                                <Modal.Header closeButton>
+                                ContactDetails
+                            </Link>
+
+                            <div>
+                                {auth.getCurrentUser() !== null && (
+                                    <ContactDetails
+                                        teacherId={teacherData.ID}
+                                    />
+                                )}
+                            </div>
+                            <br />
+                            <div className="modalClass  ">
+                                <Button
+                                    className="button bg-primary appointment"
+                                    onClick={() => this.onShowHideModal()}
+                                >
                                     Book Appointment
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <Dropdown>
-                                        Select Day
-                                        {[...slotsAvailable.keys()].map(
-                                            (day, index) => {
-                                                return (
-                                                    <div key={index}>
-                                                        <div className="radio ms-4">
-                                                            <label>
-                                                                <input
-                                                                    type="radio"
-                                                                    value={day}
-                                                                    checked={
-                                                                        this
-                                                                            .state
-                                                                            .selectedDay ===
-                                                                        day
-                                                                    }
-                                                                    onChange={
-                                                                        this
-                                                                            .handleDayChange
-                                                                    }
-                                                                />
+                                </Button>
+                                <Modal
+                                    show={this.state.show}
+                                    onHide={() => this.onShowHideModal()}
+                                >
+                                    <Modal.Header closeButton>
+                                        Book Appointment
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <Dropdown>
+                                            Select Day
+                                            {[...slotsAvailable.keys()].map(
+                                                (day, index) => {
+                                                    return (
+                                                        <div key={index}>
+                                                            <div className="radio ms-4">
+                                                                <label>
+                                                                    <input
+                                                                        type="radio"
+                                                                        value={
+                                                                            day
+                                                                        }
+                                                                        checked={
+                                                                            this
+                                                                                .state
+                                                                                .selectedDay ===
+                                                                            day
+                                                                        }
+                                                                        onChange={
+                                                                            this
+                                                                                .handleDayChange
+                                                                        }
+                                                                    />
 
-                                                                {" " + day}
-                                                            </label>
+                                                                    {" " + day}
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                );
-                                            }
-                                        )}
-                                    </Dropdown>
-                                    <Dropdown>
-                                        Select Slot
-                                        {slotsForSpecificDay.map(
-                                            (slot, index) => {
-                                                return (
-                                                    <div key={index}>
-                                                        <div className="radio ms-4">
-                                                            <label>
-                                                                <input
-                                                                    type="radio"
-                                                                    value={slot}
-                                                                    checked={
-                                                                        this
-                                                                            .state
-                                                                            .selectedSlot ===
-                                                                        slot
-                                                                    }
-                                                                    onChange={
-                                                                        this
-                                                                            .handleSlotChange
-                                                                    }
-                                                                />
+                                                    );
+                                                }
+                                            )}
+                                        </Dropdown>
+                                        <Dropdown>
+                                            Select Slot
+                                            {slotsForSpecificDay.map(
+                                                (slot, index) => {
+                                                    return (
+                                                        <div key={index}>
+                                                            <div className="radio ms-4">
+                                                                <label>
+                                                                    <input
+                                                                        type="radio"
+                                                                        value={
+                                                                            slot
+                                                                        }
+                                                                        checked={
+                                                                            this
+                                                                                .state
+                                                                                .selectedSlot ===
+                                                                            slot
+                                                                        }
+                                                                        onChange={
+                                                                            this
+                                                                                .handleSlotChange
+                                                                        }
+                                                                    />
 
-                                                                {" " + slot}
-                                                            </label>
+                                                                    {" " + slot}
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                );
+                                                    );
+                                                }
+                                            )}
+                                        </Dropdown>
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button
+                                            onClick={() =>
+                                                this.onBookAppointmentSelect()
                                             }
-                                        )}
-                                    </Dropdown>
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Button
-                                        onClick={() =>
-                                            this.onBookAppointmentSelect()
-                                        }
-                                    >
-                                        Confirm Booking
-                                    </Button>
-                                </Modal.Footer>
-                            </Modal>
-                            <div className="ms-5 mt-5">
-                                <BookStatus teacherName={teacherData.Name} />
+                                        >
+                                            Confirm Booking
+                                        </Button>
+                                    </Modal.Footer>
+                                </Modal>
+                                <br />
+                                <br />
+                                <br />
+                                <div className="text-center appointment">
+                                    <BookStatus
+                                        teacherName={teacherData.Name}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -349,9 +388,12 @@ class TeacherSpecificDetails extends Component {
             >
                 Book Appointment
             </button> */}
-                    <br />
-                    <br />
                 </div>
+                <br />
+                <br />
+            </div>
+            <div className="">
+                <br />
                 <CommentsComponent teacherId={teacherData.ID} />
             </div>
         </>

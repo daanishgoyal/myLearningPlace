@@ -1,5 +1,5 @@
 body {
-    background: green
+    background: rgb(154, 197, 154)
 }
 
 .container mt-5 {
@@ -8,7 +8,7 @@ body {
     margin-left: 3px;
     margin-right: 3px;
     margin-top: 0px;
-    background-color: rgb(48, 134, 48);
+    background-color: rgb(94, 134, 94);
     border-radius: 20%;
     display: inline-block
 }
