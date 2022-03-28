@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import auth from "../../services/authService";
 import { getBookingHistory } from "../../services/bookingHistoryService";
+import "../teachers/TeacherSpecificDetails.css";
+import "../teachers/BookingStatus.css";
 
 class BookStatus extends Component {
     state = {
@@ -35,24 +37,29 @@ class BookStatus extends Component {
         const { appointment } = this.state;
         //const date = new Date(appointment.SlotDate);
         return (
-            <div className="container-fluid">
-                <div className="row mt-5" />
-                <div className="row col-sm-8" />
-                <div className="row col-sm-8 mt-4 ms-5 bg-success">
-                    <h4 className="text-center">Last Booked Appointment:</h4>
+            <div className="   container-fluid card bg-dark">
+                <div className="row mt-2" />
+                <div className="row " />
+                <div className="row  booked font-weight-bold ">
+                    <br />
+                    <div className="card bg-success wbook">
+                        <h6 className=" font-weight-bold ms-3 mt-2 appointmentconfirmation">
+                            Last Booked Appointment Details :{" "}
+                        </h6>
+                    </div>
                 </div>
                 {appointment && (
-                    <div className="row col-sm-16 ms-5 text-dark">
-                        <div className="row col-sm-11 mt-2 ms-4">
+                    <div className="row ">
+                        <div className="row ">
                             {/* <h5 className="bg-success text-dark">
-                                {appointment.SlotDay},{" "}
+                                {appointment.SlotDay},{" "}font-weight-bold
                                 {date.toDateString().substring(4)}
                             </h5> */}
                             <div className="row mt-2 ms-5">
-                                <div className="col-sm-2 h6">
+                                <div className="col-sm-2 font-weight-bold">
                                     <label>Date:</label>
                                 </div>
-                                <div className="col-sm-10 h6">
+                                <div className="col-sm-10 font-weight-bold">
                                     <label>
                                         {appointment.SlotDay},{" "}
                                         {appointment.SlotDate}
@@ -61,21 +68,22 @@ class BookStatus extends Component {
                                 <div className="col-sm-8" />
                             </div>
                             <div className="row mt-2 ms-5">
-                                <div className="col-sm-2 h6">
+                                <div className="col-sm-2 font-weight-bold">
                                     <label>Skill:</label>
                                 </div>
-                                <div className="col-sm-10 h6">
-                                    <label>{appointment.SkillName}</label>
+                                <div className="col-sm-10 font-weight-bold">
+                                    <label> {appointment.SkillName}</label>
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
                             <div className="row mt-2 ms-5">
-                                <div className="col-sm-2 h6">
-                                    <label>Slot:</label>
+                                <div className="col-sm-2 font-weight-bold">
+                                    <label>Slot: </label>
                                 </div>
-                                <div className="col-sm-10 h6">
+                                <div className="col-sm-10 font-weight-bold">
                                     <label>
-                                        {appointment.SlotStartTime +
+                                        {"   " +
+                                            appointment.SlotStartTime +
                                             "-" +
                                             appointment.SlotEndTime}
                                     </label>
@@ -88,7 +96,7 @@ class BookStatus extends Component {
                 )}
 
                 {!appointment && (
-                    <h4 className="ms-5 mt-5 text-center text-dark">
+                    <h4 className="ms-5 mt-5 text-center text-dark font-weight-bold">
                         No Bookings made so far!
                     </h4>
                 )}

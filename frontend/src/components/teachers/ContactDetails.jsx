@@ -20,17 +20,17 @@ class ContactDetails extends Component {
 
         return (
             <div className="container ">
-                <h4 className="d-flex flex-row align-items-center"> </h4>
+                <h6 className="d-flex flex-row align-items-center"> </h6>
                 {contactDetails.map((contact, index) => {
                     return (
                         <div key={index}>
-                            <label className="name font-weight-bold">
+                            <label className="name comment-text font-weight-bold h6">
                                 <span>&#128222; </span> Phone Number:{" "}
                                 {contact.Teacher_MobileNumber}
                             </label>
                             <br />
 
-                            <label className="comment-text">
+                            <label className=" comment-text font-weight-bold h6">
                                 {" "}
                                 <span>&#9993; </span>
                                 Email:{contact.Teacher_Email}

@@ -29,14 +29,16 @@
 }
 
 .button {
-    background-color: #863e22; /* Green */
+    background-color: hsl(17, 60%, 33%); /* Green */
     border: none;
-    color: white;
+    border-color:rgb(148, 28, 28) ;
+
+    color: rgb(148, 28, 28);
     padding: 6px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
 }
 .image
 {
@@ -55,3 +57,15 @@
     font-size: 82%;
     overflow:scroll;
 } */
+
+.contact
+{
+    border-color: aqua;
+}
+.appointment
+{
+   block-size:30px;
+   border-block-width: 100px;
+   width: 360px;
+   height: 40px;
+}
