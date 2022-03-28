@@ -10,6 +10,7 @@ import { getTeacherSchedule } from "../../services/getTeacherScheduleService";
 import { getSkillId } from "../../services/getSkillIDService";
 import { createBooking } from "../../services/createBookingService";
 import { Rating } from "react-simple-star-rating";
+import BookStatus from "./BookingStatus";
 
 export function withRouter(Children) {
     return (props) => {
@@ -41,7 +42,7 @@ class TeacherSpecificDetails extends Component {
     async componentDidMount() {
         try {
             const teacherId = this.props.match.params.id;
-            const { teacherData: teacherData } = this.props;
+            const { teacherData } = this.props;
             this.setState({ teacherData });
 
             const currentUser = auth.getCurrentUser();
@@ -85,7 +86,7 @@ class TeacherSpecificDetails extends Component {
 
     onBookAppointmentSelect = () => {
         try {
-            console.log("reached onBookAppointmentSelect()");
+            //console.log("reached onBookAppointmentSelect()");
             const {
                 teacherData,
                 currentUser,
@@ -100,12 +101,13 @@ class TeacherSpecificDetails extends Component {
                 this.getSlotID(selectedDay, selectedSlot)
             );
             this.onShowHideModal();
+            window.location.reload();
         } catch {}
     };
 
     handleDayChange = (changeEvent) => {
         const day = changeEvent.target.value;
-        console.log(day);
+        //console.log(day);
         const slotsForSpecificDay = this.state.slotsAvailable.get(day);
         const selectedSlot = slotsForSpecificDay[0];
         this.setState({
@@ -116,7 +118,7 @@ class TeacherSpecificDetails extends Component {
     };
 
     handleSlotChange = (changeEvent) => {
-        console.log(changeEvent.target.value);
+        //console.log(changeEvent.target.value);
         this.setState({
             selectedSlot: changeEvent.target.value,
         });
@@ -336,6 +338,9 @@ class TeacherSpecificDetails extends Component {
                                     </Button>
                                 </Modal.Footer>
                             </Modal>
+                            <div className="ms-5 mt-5">
+                                <BookStatus teacherName={teacherData.Name} />
+                            </div>
                         </div>
                     </div>
                     {/* <button
