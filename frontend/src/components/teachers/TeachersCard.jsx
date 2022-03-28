@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Rating } from "react-simple-star-rating";
 
 class TeachersCard extends Component {
   state = {
@@ -12,7 +13,7 @@ class TeachersCard extends Component {
     Location: "",
     teachingmode: "",
     Description: "",
-    Rating: "",
+    rating: "",
     imagePath: "",
   };
 
@@ -32,7 +33,7 @@ class TeachersCard extends Component {
       isTeachesOffline: teacherData.IsTeachesOffline,
       Description: teacherData.Description,
       imagePath: teacherData.ImagePath,
-      Rating: teacherData.Rating,
+      rating: teacherData.Rating,
     });
   }
 
@@ -50,7 +51,7 @@ class TeachersCard extends Component {
       teachingmode,
       Description,
       imagePath,
-      Rating,
+      rating,
     } = this.state;
     //console.log(teachingmode);
     //console.log(imagePath);
@@ -69,7 +70,18 @@ class TeachersCard extends Component {
           <div className="col-sm-7 bg-dark">
             <div className="card-body">
               <h1 className="Name bg-success text-light">{Name}</h1>
-              <h5>Rating: {Rating}</h5>
+              <h5>
+                Rating:{" "}
+                <Rating
+                  readonly={true}
+                  allowHover={false}
+                  initialValue={0}
+                  ratingValue={rating * 10}
+                  allowHalfIcon={false}
+                  iconsCount={5}
+                  size={25}
+                />
+              </h5>
               <h5>Profession: {Profession}</h5>
               <h5>Teaching Experience: {Experience} years</h5>
               <h5>Fees: {Fees} $ per hour</h5>
