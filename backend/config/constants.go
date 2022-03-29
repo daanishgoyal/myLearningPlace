@@ -3,7 +3,7 @@ package config
 import "time"
 
 const SqlUserName string = "root"
-const SqlPassword string = ""
+const SqlPassword string = "logmein1"
 const SqlDatabaseName string = "BackEnd"
 
 // Const Map
