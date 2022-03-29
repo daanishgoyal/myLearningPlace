@@ -24,17 +24,13 @@ class ContactDetails extends Component {
                 {contactDetails.map((contact, index) => {
                     return (
                         <div className="text-center" key={index}>
-                            <label className="name comment-text font-weight-bold h6">
-                                <span>&#128222; </span>{" "}
-                                {contact.Teacher_MobileNumber}
-                            </label>
-                            <br />
+                            <div className="name comment-text font-weight-bold h6">
+                                &#128222; {contact.Teacher_MobileNumber}
+                            </div>
 
-                            <label className=" comment-text font-weight-bold h6">
-                                {" "}
-                                <span>&#9993; </span>
-                                {contact.Teacher_Email}
-                            </label>
+                            <div className="comment-text font-weight-bold h6">
+                                &#9993; {contact.Teacher_Email}
+                            </div>
                         </div>
                     );
                 })}

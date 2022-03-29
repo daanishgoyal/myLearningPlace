@@ -151,8 +151,8 @@ class TeacherSpecificDetails extends Component {
     getTeacherDetails = (teacherData, slotsAvailable, slotsForSpecificDay) => (
         <>
             <div className="card-group bg-success bg-dark text-light ">
-                <div className="card bg-success bg-dark text-light">
-                    {/* <br /> */}
+                <div className="card-first bg-success bg-dark text-light">
+                    {/*  */}
                     {/* <br/>  */}
                     <h2 className="bg-secondary" style={{ width: "30rem" }}>
                         {" "}
@@ -250,7 +250,7 @@ class TeacherSpecificDetails extends Component {
                             placeholder="Comments"
                             style={{ width: "8", height: "20" }}
                         /> 
-                         <br />
+                         
                         <button> Submit</button> */}
 
                         {/* <textarea class="scrollabletextbox" name="note">
@@ -259,8 +259,11 @@ class TeacherSpecificDetails extends Component {
                     </div>
                 </div>
 
-                <div className="card image-card  bg-dark text-light">
-                    <div className="card " style={{ width: "30rem" }}>
+                <div className="card-second bg-dark">
+                    <div
+                        className="card image-card bg-dark text-light"
+                        style={{ width: "30rem" }}
+                    >
                         <img
                             className="image"
                             style={{ width: "30rem", maxHeight: "20rem" }}
@@ -268,9 +271,37 @@ class TeacherSpecificDetails extends Component {
                             alt=""
                         />
                     </div>
-                    <br />
-                    <div className="card-group bg-dark">
-                        <div className="card-specific bg-dark   ">
+                    <div className="card-specific bg-dark">
+                        {auth.getCurrentUser() === null && (
+                            <Link
+                                className="button bg-primary appointment"
+                                to="/login"
+                                state={{
+                                    from: `/teacher/${teacherData.ID}`,
+                                    teacherData: teacherData,
+                                }}
+                            >
+                                Contact Details
+                            </Link>
+                        )}
+
+                        <div>
+                            {auth.getCurrentUser() !== null && (
+                                <div>
+                                    <Button
+                                        className="button bg-primary appointment"
+                                        aria-readonly={true}
+                                    >
+                                        Contact Details
+                                    </Button>
+                                    <ContactDetails
+                                        teacherId={teacherData.ID}
+                                    />
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="mt-4 modalClass">
                             {auth.getCurrentUser() === null && (
                                 <Link
                                     className="button bg-primary appointment"
@@ -280,184 +311,131 @@ class TeacherSpecificDetails extends Component {
                                         teacherData: teacherData,
                                     }}
                                 >
-                                    Contact Details
+                                    Book Appointment
                                 </Link>
                             )}
-
-                            <div>
-                                {auth.getCurrentUser() !== null && (
-                                    <div>
-                                        <Button
-                                            className="button bg-primary appointment"
-                                            aria-readonly={true}
-                                        >
-                                            Contact Details
-                                        </Button>
-                                        <ContactDetails
-                                            teacherId={teacherData.ID}
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                            <br />
-                            <br />
-                            <div className="modalClass  ">
-                                {auth.getCurrentUser() === null && (
-                                    <Link
+                            {auth.getCurrentUser() !== null && (
+                                <div>
+                                    <Button
                                         className="button bg-primary appointment"
-                                        to="/login"
-                                        state={{
-                                            from: `/teacher/${teacherData.ID}`,
-                                            teacherData: teacherData,
-                                        }}
+                                        onClick={() => this.onShowHideModal()}
                                     >
                                         Book Appointment
-                                    </Link>
-                                )}
-                                {auth.getCurrentUser() !== null && (
-                                    <div>
-                                        <Button
-                                            className="button bg-primary appointment"
-                                            onClick={() =>
-                                                this.onShowHideModal()
-                                            }
-                                        >
-                                            Book Appointment
-                                        </Button>
-                                    </div>
-                                )}
-                                <Modal
-                                    show={this.state.show}
-                                    onHide={() => this.onShowHideModal()}
-                                >
-                                    <Modal.Header closeButton>
-                                        Book Appointment
-                                    </Modal.Header>
-                                    <Modal.Body>
-                                        {this.state.teacherSchedule !==
-                                            null && (
-                                            <Dropdown>
-                                                Select Day
-                                                {[...slotsAvailable.keys()].map(
-                                                    (day, index) => {
-                                                        return (
-                                                            <div key={index}>
-                                                                <div className="radio ms-4">
-                                                                    <label>
-                                                                        <input
-                                                                            type="radio"
-                                                                            value={
-                                                                                day
-                                                                            }
-                                                                            checked={
-                                                                                this
-                                                                                    .state
-                                                                                    .selectedDay ===
-                                                                                day
-                                                                            }
-                                                                            onChange={
-                                                                                this
-                                                                                    .handleDayChange
-                                                                            }
-                                                                        />
-
-                                                                        {" " +
-                                                                            day}
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        );
-                                                    }
-                                                )}
-                                            </Dropdown>
-                                        )}
-                                        {this.state.teacherSchedule !==
-                                            null && (
-                                            <Dropdown>
-                                                Select Slot
-                                                {slotsForSpecificDay.map(
-                                                    (slot, index) => {
-                                                        return (
-                                                            <div key={index}>
-                                                                <div className="radio ms-4">
-                                                                    <label>
-                                                                        <input
-                                                                            type="radio"
-                                                                            value={
-                                                                                slot
-                                                                            }
-                                                                            checked={
-                                                                                this
-                                                                                    .state
-                                                                                    .selectedSlot ===
-                                                                                slot
-                                                                            }
-                                                                            onChange={
-                                                                                this
-                                                                                    .handleSlotChange
-                                                                            }
-                                                                        />
-
-                                                                        {" " +
-                                                                            slot}
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        );
-                                                    }
-                                                )}
-                                            </Dropdown>
-                                        )}
-                                        {this.state.teacherSchedule ===
-                                            null && (
-                                            <div>
-                                                <h5>
-                                                    Sorry, no slots available.
-                                                    This teacher is booked for
-                                                    the week!
-                                                </h5>
-                                            </div>
-                                        )}
-                                    </Modal.Body>
-                                    <Modal.Footer>
-                                        <Button
-                                            disabled={
-                                                this.state.teacherSchedule ===
-                                                null
-                                            }
-                                            onClick={() =>
-                                                this.onClickConfirmBooking()
-                                            }
-                                        >
-                                            Confirm Booking
-                                        </Button>
-                                    </Modal.Footer>
-                                </Modal>
-                                <br />
-                                <br />
-
-                                <div className="text-center appointment">
-                                    <BookStatus
-                                        teacherName={teacherData.Name}
-                                    />
+                                    </Button>
                                 </div>
+                            )}
+                            <Modal
+                                show={this.state.show}
+                                onHide={() => this.onShowHideModal()}
+                            >
+                                <Modal.Header closeButton>
+                                    Book Appointment
+                                </Modal.Header>
+                                <Modal.Body>
+                                    {this.state.teacherSchedule !== null && (
+                                        <Dropdown>
+                                            Select Day
+                                            {[...slotsAvailable.keys()].map(
+                                                (day, index) => {
+                                                    return (
+                                                        <div key={index}>
+                                                            <div className="radio ms-4">
+                                                                <label>
+                                                                    <input
+                                                                        type="radio"
+                                                                        value={
+                                                                            day
+                                                                        }
+                                                                        checked={
+                                                                            this
+                                                                                .state
+                                                                                .selectedDay ===
+                                                                            day
+                                                                        }
+                                                                        onChange={
+                                                                            this
+                                                                                .handleDayChange
+                                                                        }
+                                                                    />
+
+                                                                    {" " + day}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                }
+                                            )}
+                                        </Dropdown>
+                                    )}
+                                    {this.state.teacherSchedule !== null && (
+                                        <Dropdown>
+                                            Select Slot
+                                            {slotsForSpecificDay.map(
+                                                (slot, index) => {
+                                                    return (
+                                                        <div key={index}>
+                                                            <div className="radio ms-4">
+                                                                <label>
+                                                                    <input
+                                                                        type="radio"
+                                                                        value={
+                                                                            slot
+                                                                        }
+                                                                        checked={
+                                                                            this
+                                                                                .state
+                                                                                .selectedSlot ===
+                                                                            slot
+                                                                        }
+                                                                        onChange={
+                                                                            this
+                                                                                .handleSlotChange
+                                                                        }
+                                                                    />
+
+                                                                    {" " + slot}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                }
+                                            )}
+                                        </Dropdown>
+                                    )}
+                                    {this.state.teacherSchedule === null && (
+                                        <div>
+                                            <h5>
+                                                Sorry, no slots available. This
+                                                teacher is booked for the week!
+                                            </h5>
+                                        </div>
+                                    )}
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button
+                                        disabled={
+                                            this.state.teacherSchedule === null
+                                        }
+                                        onClick={() =>
+                                            this.onClickConfirmBooking()
+                                        }
+                                    >
+                                        Confirm Booking
+                                    </Button>
+                                </Modal.Footer>
+                            </Modal>
+
+                            <div className="mt-3 text-center appointment">
+                                <BookStatus teacherName={teacherData.Name} />
                             </div>
                         </div>
                     </div>
-                    {/* <button
-                type="button"
-                className="btn btn-dark"
-            >
-                Book Appointment
-            </button> */}
                 </div>
-                <br />
-                <br />
             </div>
-            <div className="">
-                <br />
+            <div className="row-col-sm-6 mt-4">
                 <CommentsComponent teacherId={teacherData.ID} />
             </div>
+            <div className="row-col-sm-3 mt-4" />
         </>
     );
 
