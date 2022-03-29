@@ -57,13 +57,18 @@ class BookStatus extends Component {
                             </h5> */}
                             <div className="row mt-2 ms-5">
                                 <div className="col-sm-2 font-weight-bold">
-                                    <label>Date:</label>
+                                    <div className="col">
+                                        <label>Date:</label>
+                                    </div>
                                 </div>
-                                <div className="col-sm-10 font-weight-bold">
-                                    <label>
-                                        {appointment.SlotDay},{" "}
-                                        {appointment.SlotDate}
-                                    </label>
+                                <div className="col-sm-9 font-weight-bold">
+                                    <div className="col">
+                                        <label>
+                                            {" "}
+                                            {appointment.SlotDay},{" "}
+                                            {appointment.SlotDate}
+                                        </label>
+                                    </div>
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
@@ -71,8 +76,10 @@ class BookStatus extends Component {
                                 <div className="col-sm-2 font-weight-bold">
                                     <label>Skill:</label>
                                 </div>
-                                <div className="col-sm-10 font-weight-bold">
-                                    <label> {appointment.SkillName}</label>
+                                <div className="col-sm-5 font-weight-bold">
+                                    <div className="col ">
+                                        <label> {appointment.SkillName}</label>
+                                    </div>
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
@@ -80,13 +87,14 @@ class BookStatus extends Component {
                                 <div className="col-sm-2 font-weight-bold">
                                     <label>Slot: </label>
                                 </div>
-                                <div className="col-sm-10 font-weight-bold">
-                                    <label>
-                                        {"   " +
-                                            appointment.SlotStartTime +
-                                            "-" +
-                                            appointment.SlotEndTime}
-                                    </label>
+                                <div className="col-sm-8 font-weight-bold">
+                                    <div className="col ms-3">
+                                        <label>
+                                            {appointment.SlotStartTime +
+                                                "-" +
+                                                appointment.SlotEndTime}
+                                        </label>
+                                    </div>
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
@@ -96,7 +104,7 @@ class BookStatus extends Component {
                 )}
 
                 {!appointment && (
-                    <h4 className="ms-5 mt-5 text-center text-dark font-weight-bold">
+                    <h4 className="ms-5 mt-5 text-center text-light font-weight-bold">
                         No Bookings made so far!
                     </h4>
                 )}

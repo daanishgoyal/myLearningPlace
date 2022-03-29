@@ -83,6 +83,9 @@ class TeacherSpecificDetails extends Component {
     onShowHideModal() {
         this.setState({ show: !this.state.show });
     }
+    alertFunction() {
+        alert("Your booking is  confirmed!");
+    }
 
     onBookAppointmentSelect = () => {
         try {
@@ -101,7 +104,9 @@ class TeacherSpecificDetails extends Component {
                 this.getSlotID(selectedDay, selectedSlot)
             );
             this.onShowHideModal();
+
             window.location.reload();
+            this.alertFunction();
         } catch {}
     };
 
@@ -265,7 +270,7 @@ class TeacherSpecificDetails extends Component {
                     <div className="card-group bg-dark">
                         <div className="card-specific bg-dark   ">
                             <Link
-                                className="button"
+                                className="button bg-primary appointment"
                                 to="/login"
                                 state={{
                                     from: `/teacher/${teacherData.ID}`,
@@ -282,6 +287,7 @@ class TeacherSpecificDetails extends Component {
                                     />
                                 )}
                             </div>
+                            <br />
                             <br />
                             <div className="modalClass  ">
                                 <Button
