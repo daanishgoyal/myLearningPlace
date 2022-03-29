@@ -25,7 +25,7 @@ class ContactDetails extends Component {
                     return (
                         <div className="text-center" key={index}>
                             <label className="name comment-text font-weight-bold h6">
-                                <span>&#128222; </span> Phone Number:{" "}
+                                <span>&#128222; </span>{" "}
                                 {contact.Teacher_MobileNumber}
                             </label>
                             <br />
@@ -33,7 +33,7 @@ class ContactDetails extends Component {
                             <label className=" comment-text font-weight-bold h6">
                                 {" "}
                                 <span>&#9993; </span>
-                                Email:{contact.Teacher_Email}
+                                {contact.Teacher_Email}
                             </label>
                         </div>
                     );
