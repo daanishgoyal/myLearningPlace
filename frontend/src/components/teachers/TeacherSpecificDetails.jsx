@@ -265,10 +265,14 @@ class TeacherSpecificDetails extends Component {
                     <div className="card-group bg-dark">
                         <div className="card-specific bg-dark   ">
                             <Link
-                                className="button bg-primary contact"
+                                className="button"
                                 to="/login"
+                                state={{
+                                    from: `/teacher/${teacherData.ID}`,
+                                    teacherData: teacherData,
+                                }}
                             >
-                                ContactDetails
+                                Contact Details
                             </Link>
 
                             <div>

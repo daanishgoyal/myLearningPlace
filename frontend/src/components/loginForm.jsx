@@ -1,8 +1,28 @@
 import React from "react";
 import Joi from "joi-browser";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Form from "../common/form";
 import auth from "../services/authService";
+
+export function withRouter(Children) {
+    return (props) => {
+        const navigate = useNavigate();
+        const location = useLocation();
+        try {
+            const { from, teacherData } = location.state;
+            return (
+                <Children
+                    {...props}
+                    from={from}
+                    teacherData={teacherData}
+                    navigate={navigate}
+                />
+            );
+        } catch (ex) {
+            return <Children {...props} />;
+        }
+    };
+}
 
 class LoginForm extends Form {
     state = {
@@ -20,11 +40,26 @@ class LoginForm extends Form {
             const { data } = this.state;
             await auth.login(data.username, data.password);
 
-            //const { state } = this.props.location;
-            //console.log(this.props);
-            //console.log(state);
-            //window.location = state ? state.from.pathname : "/";
-            window.location = "/";
+            if (this.props) {
+                const { from, teacherData } = this.props;
+                //console.log(this.props);
+                //console.log(state);
+                // return (
+                //     <Navigate
+                //         to={"/teacher/2"}
+                //         state={{ teacherData: teacherData }}
+                //     />
+                // );
+
+                this.props.navigate(from, {
+                    state: { teacherData: teacherData },
+                });
+                this.props.navigate(0);
+                //window.location.reload();
+                //window.location = from && teacherData ? from : "/";
+            } else {
+                window.location = "/";
+            }
         } catch (ex) {
             if (ex.response && ex.response.status === 401) {
                 const errors = { ...this.state.errors };
@@ -90,4 +125,4 @@ class LoginForm extends Form {
     }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
