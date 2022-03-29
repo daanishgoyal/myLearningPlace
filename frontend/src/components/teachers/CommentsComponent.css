@@ -13,6 +13,10 @@
     color: black;
 }
 
+.commenter
+{
+    text-emphasis: bold;
+}
 .container 
 {
     /* padding-left: 0%;

@@ -69,3 +69,6 @@
    width: 360px;
    height: 40px;
 }
+::-webkit-scrollbar {
+    display: none;
+}

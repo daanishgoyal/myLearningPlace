@@ -23,7 +23,7 @@ class ContactDetails extends Component {
                 <h6 className="d-flex flex-row align-items-center"> </h6>
                 {contactDetails.map((contact, index) => {
                     return (
-                        <div key={index}>
+                        <div className="text-center" key={index}>
                             <label className="name comment-text font-weight-bold h6">
                                 <span>&#128222; </span> Phone Number:{" "}
                                 {contact.Teacher_MobileNumber}

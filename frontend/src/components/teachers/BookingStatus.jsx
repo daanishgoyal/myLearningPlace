@@ -103,7 +103,17 @@ class BookStatus extends Component {
                     </div>
                 )}
 
-                {!appointment && (
+                <div>
+                    {auth.getCurrentUser() === null && (
+                        <div>
+                            <h4 className="ms-5 mt-5 text-center text-light font-weight-bold">
+                                Please login to see details
+                            </h4>
+                        </div>
+                    )}
+                </div>
+
+                {!appointment && auth.getCurrentUser() !== null && (
                     <h4 className="ms-5 mt-5 text-center text-light font-weight-bold">
                         No Bookings made so far!
                     </h4>
