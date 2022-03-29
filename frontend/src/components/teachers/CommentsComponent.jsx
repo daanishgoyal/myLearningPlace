@@ -61,11 +61,14 @@ class CommentsComponent extends Component {
                                 {comments &&
                                     comments.map((comment, index) => {
                                         return (
-                                            <div key={index}>
-                                                <label className="text-white ms ">
+                                            <div
+                                                className="font-weight-bold"
+                                                key={index}
+                                            >
+                                                <label className="  font-weight-bold text-primary ">
                                                     {comment.CommentBy + " :"}
                                                 </label>
-                                                <div className="text-white ms-2">
+                                                <div className=" font-weight-bold text-info ms-2">
                                                     {comment.CommentText}
                                                 </div>
                                             </div>

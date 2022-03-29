@@ -198,7 +198,7 @@ class TeacherSpecificDetails extends Component {
                             <h4>Experience</h4>
                         </div>
                         <div>
-                            <p> {teacherData.Experience} </p>
+                            <p> {teacherData.Experience} Years </p>
                         </div>
 
                         <div className=" bg-success">
@@ -411,7 +411,7 @@ class TeacherSpecificDetails extends Component {
                                 </Modal>
                                 <br />
                                 <br />
-                                <br />
+
                                 <div className="text-center appointment">
                                     <BookStatus
                                         teacherName={teacherData.Name}
