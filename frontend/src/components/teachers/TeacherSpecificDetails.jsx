@@ -87,9 +87,9 @@ class TeacherSpecificDetails extends Component {
         alert("Your booking is  confirmed!");
     }
 
-    onBookAppointmentSelect = () => {
+    onClickConfirmBooking = () => {
         try {
-            //console.log("reached onBookAppointmentSelect()");
+            //console.log("reached onClickConfirmBooking()");
             const {
                 teacherData,
                 currentUser,
@@ -269,33 +269,61 @@ class TeacherSpecificDetails extends Component {
                     <br />
                     <div className="card-group bg-dark">
                         <div className="card-specific bg-dark   ">
-                            <Link
-                                className="button bg-primary appointment"
-                                to="/login"
-                                state={{
-                                    from: `/teacher/${teacherData.ID}`,
-                                    teacherData: teacherData,
-                                }}
-                            >
-                                Contact Details
-                            </Link>
+                            {auth.getCurrentUser() === null && (
+                                <Link
+                                    className="button bg-primary appointment"
+                                    to="/login"
+                                    state={{
+                                        from: `/teacher/${teacherData.ID}`,
+                                        teacherData: teacherData,
+                                    }}
+                                >
+                                    Contact Details
+                                </Link>
+                            )}
 
                             <div>
                                 {auth.getCurrentUser() !== null && (
-                                    <ContactDetails
-                                        teacherId={teacherData.ID}
-                                    />
+                                    <div>
+                                        <Button
+                                            className="button bg-primary appointment"
+                                            aria-readonly={true}
+                                        >
+                                            Contact Details
+                                        </Button>
+                                        <ContactDetails
+                                            teacherId={teacherData.ID}
+                                        />
+                                    </div>
                                 )}
                             </div>
                             <br />
                             <br />
                             <div className="modalClass  ">
-                                <Button
-                                    className="button bg-primary appointment"
-                                    onClick={() => this.onShowHideModal()}
-                                >
-                                    Book Appointment
-                                </Button>
+                                {auth.getCurrentUser() === null && (
+                                    <Link
+                                        className="button bg-primary appointment"
+                                        to="/login"
+                                        state={{
+                                            from: `/teacher/${teacherData.ID}`,
+                                            teacherData: teacherData,
+                                        }}
+                                    >
+                                        Book Appointment
+                                    </Link>
+                                )}
+                                {auth.getCurrentUser() !== null && (
+                                    <div>
+                                        <Button
+                                            className="button bg-primary appointment"
+                                            onClick={() =>
+                                                this.onShowHideModal()
+                                            }
+                                        >
+                                            Book Appointment
+                                        </Button>
+                                    </div>
+                                )}
                                 <Modal
                                     show={this.state.show}
                                     onHide={() => this.onShowHideModal()}
@@ -374,7 +402,7 @@ class TeacherSpecificDetails extends Component {
                                     <Modal.Footer>
                                         <Button
                                             onClick={() =>
-                                                this.onBookAppointmentSelect()
+                                                this.onClickConfirmBooking()
                                             }
                                         >
                                             Confirm Booking
