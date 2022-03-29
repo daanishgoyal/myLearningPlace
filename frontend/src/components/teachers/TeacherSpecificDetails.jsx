@@ -83,8 +83,9 @@ class TeacherSpecificDetails extends Component {
     onShowHideModal() {
         this.setState({ show: !this.state.show });
     }
-    alertFunction() {
-        alert("Your booking is  confirmed!");
+
+    showAlert(message) {
+        alert(message);
     }
 
     onClickConfirmBooking = () => {
@@ -104,9 +105,10 @@ class TeacherSpecificDetails extends Component {
                 this.getSlotID(selectedDay, selectedSlot)
             );
             this.onShowHideModal();
-
+            this.showAlert(
+                "Your booking has been confirmed. Thank you for using our platform."
+            );
             window.location.reload();
-            this.alertFunction();
         } catch {}
     };
 
@@ -205,7 +207,7 @@ class TeacherSpecificDetails extends Component {
                             <h4>Fees</h4>
                         </div>
                         <div>
-                            <p> {teacherData.Fees} $ per hour </p>
+                            <p> ${teacherData.Fees} per hour </p>
                         </div>
 
                         <div className=" bg-success">
@@ -332,75 +334,97 @@ class TeacherSpecificDetails extends Component {
                                         Book Appointment
                                     </Modal.Header>
                                     <Modal.Body>
-                                        <Dropdown>
-                                            Select Day
-                                            {[...slotsAvailable.keys()].map(
-                                                (day, index) => {
-                                                    return (
-                                                        <div key={index}>
-                                                            <div className="radio ms-4">
-                                                                <label>
-                                                                    <input
-                                                                        type="radio"
-                                                                        value={
-                                                                            day
-                                                                        }
-                                                                        checked={
-                                                                            this
-                                                                                .state
-                                                                                .selectedDay ===
-                                                                            day
-                                                                        }
-                                                                        onChange={
-                                                                            this
-                                                                                .handleDayChange
-                                                                        }
-                                                                    />
+                                        {this.state.teacherSchedule !==
+                                            null && (
+                                            <Dropdown>
+                                                Select Day
+                                                {[...slotsAvailable.keys()].map(
+                                                    (day, index) => {
+                                                        return (
+                                                            <div key={index}>
+                                                                <div className="radio ms-4">
+                                                                    <label>
+                                                                        <input
+                                                                            type="radio"
+                                                                            value={
+                                                                                day
+                                                                            }
+                                                                            checked={
+                                                                                this
+                                                                                    .state
+                                                                                    .selectedDay ===
+                                                                                day
+                                                                            }
+                                                                            onChange={
+                                                                                this
+                                                                                    .handleDayChange
+                                                                            }
+                                                                        />
 
-                                                                    {" " + day}
-                                                                </label>
+                                                                        {" " +
+                                                                            day}
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    );
-                                                }
-                                            )}
-                                        </Dropdown>
-                                        <Dropdown>
-                                            Select Slot
-                                            {slotsForSpecificDay.map(
-                                                (slot, index) => {
-                                                    return (
-                                                        <div key={index}>
-                                                            <div className="radio ms-4">
-                                                                <label>
-                                                                    <input
-                                                                        type="radio"
-                                                                        value={
-                                                                            slot
-                                                                        }
-                                                                        checked={
-                                                                            this
-                                                                                .state
-                                                                                .selectedSlot ===
-                                                                            slot
-                                                                        }
-                                                                        onChange={
-                                                                            this
-                                                                                .handleSlotChange
-                                                                        }
-                                                                    />
+                                                        );
+                                                    }
+                                                )}
+                                            </Dropdown>
+                                        )}
+                                        {this.state.teacherSchedule !==
+                                            null && (
+                                            <Dropdown>
+                                                Select Slot
+                                                {slotsForSpecificDay.map(
+                                                    (slot, index) => {
+                                                        return (
+                                                            <div key={index}>
+                                                                <div className="radio ms-4">
+                                                                    <label>
+                                                                        <input
+                                                                            type="radio"
+                                                                            value={
+                                                                                slot
+                                                                            }
+                                                                            checked={
+                                                                                this
+                                                                                    .state
+                                                                                    .selectedSlot ===
+                                                                                slot
+                                                                            }
+                                                                            onChange={
+                                                                                this
+                                                                                    .handleSlotChange
+                                                                            }
+                                                                        />
 
-                                                                    {" " + slot}
-                                                                </label>
+                                                                        {" " +
+                                                                            slot}
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    );
-                                                }
-                                            )}
-                                        </Dropdown>
+                                                        );
+                                                    }
+                                                )}
+                                            </Dropdown>
+                                        )}
+                                        {this.state.teacherSchedule ===
+                                            null && (
+                                            <div>
+                                                <h5>
+                                                    Sorry, no slots available.
+                                                    This teacher is booked for
+                                                    the week!
+                                                </h5>
+                                            </div>
+                                        )}
                                     </Modal.Body>
                                     <Modal.Footer>
                                         <Button
+                                            disabled={
+                                                this.state.teacherSchedule ===
+                                                null
+                                            }
                                             onClick={() =>
                                                 this.onClickConfirmBooking()
                                             }
