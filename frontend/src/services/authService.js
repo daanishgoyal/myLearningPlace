@@ -1,4 +1,4 @@
-import jwtDecode from "jwt-decode";
+// import jwtDecode from "jwt-decode";
 import http from "./httpService";
 import config from "../config.json";
 
@@ -37,10 +37,12 @@ export function getJwt() {
     return localStorage.getItem(tokenKey);
 }
 
-export default {
+const auth = {
     login,
     loginWithJwt,
     logout,
     getCurrentUser,
     getJwt,
 };
+
+export default auth;

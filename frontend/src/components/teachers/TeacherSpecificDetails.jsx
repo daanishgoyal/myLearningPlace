@@ -41,7 +41,7 @@ class TeacherSpecificDetails extends Component {
 
     async componentDidMount() {
         try {
-            const teacherId = this.props.match.params.id;
+            // const teacherId = this.props.match.params.id;
             const { teacherData } = this.props;
             this.setState({ teacherData });
 

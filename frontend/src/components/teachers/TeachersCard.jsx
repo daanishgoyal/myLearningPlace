@@ -48,7 +48,6 @@ class TeachersCard extends Component {
             Experience,
             Fees,
             City,
-            teachingmode,
             Description,
             imagePath,
             rating,
