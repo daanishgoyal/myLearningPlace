@@ -84,7 +84,7 @@ class TeachersCard extends Component {
                             </h5>
                             <h5>Profession: {Profession}</h5>
                             <h5>Teaching Experience: {Experience} years</h5>
-                            <h5>Fees: {Fees} $ per hour</h5>
+                            <h5>Fees: ${Fees} per hour</h5>
                             <h5>Location: {City}</h5>
                             <h5>
                                 Teaching mode Online:{" "}
