@@ -42,21 +42,17 @@ class LoginForm extends Form {
 
             if (this.props) {
                 const { from, teacherData } = this.props;
-                //console.log(this.props);
-                //console.log(state);
-                // return (
-                //     <Navigate
-                //         to={"/teacher/2"}
-                //         state={{ teacherData: teacherData }}
-                //     />
-                // );
-
-                this.props.navigate(from, {
-                    state: { teacherData: teacherData },
-                });
-                this.props.navigate(0);
-                //window.location.reload();
-                //window.location = from && teacherData ? from : "/";
+                if (from && teacherData) {
+                    this.props.navigate(from, {
+                        state: { teacherData: teacherData },
+                    });
+                    this.props.navigate(0);
+                } else if (from) {
+                    this.props.navigate(from);
+                    this.props.navigate(0);
+                } else {
+                    window.location = "/";
+                }
             } else {
                 window.location = "/";
             }
