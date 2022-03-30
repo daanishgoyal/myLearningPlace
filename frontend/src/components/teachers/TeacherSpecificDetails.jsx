@@ -88,7 +88,7 @@ class TeacherSpecificDetails extends Component {
         alert(message);
     }
 
-    onClickConfirmBooking = () => {
+    onClickConfirmBooking = async () => {
         try {
             //console.log("reached onClickConfirmBooking()");
             const {
@@ -98,16 +98,21 @@ class TeacherSpecificDetails extends Component {
                 selectedDay,
                 selectedSlot,
             } = this.state;
-            const { data: bookingConfirmation } = createBooking(
+            const { data: bookingConfirmation } = await createBooking(
                 teacherData.ID,
                 currentUser.ID,
                 skill.ID,
                 this.getSlotID(selectedDay, selectedSlot)
             );
+            let message = "";
+            if (bookingConfirmation && bookingConfirmation.BookingId) {
+                message =
+                    "Your booking has been confirmed. Thank you for using our platform.";
+            } else {
+                message = "Sorry, booking failed. Please try again.";
+            }
             this.onShowHideModal();
-            this.showAlert(
-                "Your booking has been confirmed. Thank you for using our platform."
-            );
+            this.showAlert(message);
             window.location.reload();
         } catch {}
     };
