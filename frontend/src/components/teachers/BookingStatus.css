@@ -1,0 +1,19 @@
+.appointmentconfirmation
+{
+   block-size:30px;
+   border-block-width: 100px;
+   width: 300px;
+   text-align: center;
+   height: 18px;
+}
+
+.booked
+{
+    height: 60px;
+}
+
+.wbook
+{
+max-height:45px;
+}
+

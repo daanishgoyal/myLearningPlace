@@ -9,10 +9,13 @@ User selects the expert he wishes based on pricing, matching with timings, ratin
 Like that any person can learn any non-technical skill by sitting at home just through PC with internet connection.
 
 ## Team Members
-* Akshay Ganapathy - 36846922
-* Aman Pathak - 88828029
-* Daanish Goyal - 17673302
-* Yallamandaiah Nandigam - 29451349
+#### Front-End:
+  * Akshay Ganapathy - 36846922
+  * Yallamandaiah Nandigam - 29451349
+#### Back-End:
+  * Aman Pathak - 88828029
+  * Daanish Goyal - 17673302
+
 
 
 ## TechStack

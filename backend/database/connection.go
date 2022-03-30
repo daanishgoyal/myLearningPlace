@@ -3,10 +3,11 @@ package database
 import (
 	"backend/config"
 	"backend/models"
+	"log"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"log"
 )
 
 // DB Connection global object
@@ -37,6 +38,8 @@ func Connect() {
 		&models.Comments{},
 		&models.MiscImages{},
 		&models.Slot{},
+		&models.ContactDetails{},
+		&models.TeacherSchedule{},
 		&models.Booking{})
 
 	if err != nil {

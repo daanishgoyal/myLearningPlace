@@ -1,0 +1,51 @@
+.comment-section {
+    padding-left: 0%;
+    max-height: 40vh;
+    max-width: 70%;
+    background-color: hsl(128, 16%, 37%);
+    overflow-y: scroll;
+}
+.comment {
+    height: 0%;
+    padding: 0%;
+    margin: 0%;
+    background-color: #ffff;
+    color: black;
+}
+
+.commenter {
+    text-emphasis: bold;
+}
+
+.ms-2 text-white {
+    font-size: 18px;
+    padding: 4%;
+    margin: 4%;
+}
+
+.comments-card {
+    max-height: 25vh;
+    overflow-y: scroll;
+}
+
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+body {
+    background-color: #eee;
+    font-family: 'Poppins', sans-serif
+}
+
+.card {
+    border: none;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03)
+}
+
+.comment-text {
+    font-size: 12px
+}
+
+.fs-10 {
+    font-size: 12px
+} */

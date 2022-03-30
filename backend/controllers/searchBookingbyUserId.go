@@ -4,11 +4,12 @@ import (
 	"backend/database"
 	"backend/models"
 	"fmt"
-	"github.com/gofiber/fiber/v2"
-	"gorm.io/gorm"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/gofiber/fiber/v2"
+	"gorm.io/gorm"
 )
 
 type result struct {
@@ -66,6 +67,11 @@ func SearchBookingByUserId(c *fiber.Ctx) error {
 		})
 	}
 
+	// Check Valid UserId
+	if !ValidateIds(userId, models.User{}, "id") {
+		return fiber.NewError(fiber.StatusNotFound, "UserId not found")
+	}
+
 	var bookingInstance []models.Booking
 
 	var result *gorm.DB
@@ -93,4 +99,12 @@ func SearchBookingByUserId(c *fiber.Ctx) error {
 			"error":         result.Error,
 			"rows_affected": result.RowsAffected})
 	}
+}
+
+func ValidateIds(checkId int, model interface{}, IdColumnInDb string) bool {
+	checkId_ := uint(checkId)
+	var exists bool
+	query := IdColumnInDb + "= ?"
+	_ = database.DB.Model(model).Select("count(*) > 0").Where(query, checkId_).Find(&exists).Error
+	return exists
 }

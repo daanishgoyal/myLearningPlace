@@ -16,3 +16,11 @@ func Register(app *fiber.App) {
 func GetComments(app *fiber.App) {
 	app.Post("/api/getComments", controllers.GetComments)
 }
+
+func GetContactDetails(app *fiber.App) {
+	app.Post("/api/getContactDetails", controllers.GetContactDetails)
+}
+
+func GetTeacherSchedule(app *fiber.App) {
+	app.Post("/api/getTeacherSchedule", controllers.GetTeacherSchedule)
+}

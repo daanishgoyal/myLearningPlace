@@ -1,6 +1,6 @@
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Rating } from "react-simple-star-rating";
 
 class TeachersCard extends Component {
     state = {
@@ -13,6 +13,7 @@ class TeachersCard extends Component {
         Location: "",
         teachingmode: "",
         Description: "",
+        rating: "",
         imagePath: "",
     };
 
@@ -32,12 +33,11 @@ class TeachersCard extends Component {
             isTeachesOffline: teacherData.IsTeachesOffline,
             Description: teacherData.Description,
             imagePath: teacherData.ImagePath,
+            rating: teacherData.Rating,
         });
     }
-    
-    getTeachMode = (mode)=> mode ? 'Yes' :  'No';
-    
 
+    getTeachMode = (mode) => (mode ? "Yes" : "No");
 
     render() {
         const {
@@ -48,16 +48,16 @@ class TeachersCard extends Component {
             Experience,
             Fees,
             City,
-            teachingmode,
             Description,
             imagePath,
+            rating,
         } = this.state;
-//console.log(teachingmode);
-//console.log(imagePath);
+        //console.log(teachingmode);
+        //console.log(imagePath);
         return (
             <div key={ID} className="container" style={{ marginTop: "20px" }}>
                 <div className="row no-gutters">
-                    <div className="col-sm-5 bg-dark">
+                    <div className="col-sm-5 mt-3 bg-dark">
                         <img
                             className="card-img"
                             width={40}
@@ -71,12 +71,29 @@ class TeachersCard extends Component {
                             <h1 className="Name bg-success text-light">
                                 {Name}
                             </h1>
+                            <h5>
+                                <Rating
+                                    readonly={true}
+                                    allowHover={false}
+                                    initialValue={0}
+                                    ratingValue={rating * 10}
+                                    allowHalfIcon={false}
+                                    iconsCount={5}
+                                    size={25}
+                                />
+                            </h5>
                             <h5>Profession: {Profession}</h5>
                             <h5>Teaching Experience: {Experience} years</h5>
-                            <h5>Fees: {Fees} $ per hour</h5>
+                            <h5>Fees: ${Fees} per hour</h5>
                             <h5>Location: {City}</h5>
-                            <h5>Teaching mode Online: {this.getTeachMode(this.state.isTeachesOnline)}</h5>
-                            <h5>Teaching mode Offline: {this.getTeachMode(this.state.isTeachesOffline)}</h5>
+                            <h5>
+                                Teaching mode Online:{" "}
+                                {this.getTeachMode(this.state.isTeachesOnline)}
+                            </h5>
+                            <h5>
+                                Teaching mode Offline:{" "}
+                                {this.getTeachMode(this.state.isTeachesOffline)}
+                            </h5>
                             {/* {" "} */}
                             <h5> Age: {Age} years</h5>
                             <h5 className="Description">
@@ -84,9 +101,9 @@ class TeachersCard extends Component {
                             </h5>
                             <Link
                                 to={{
-                                    pathname: `/teacher/${ID}`
+                                    pathname: `/teacher/${ID}`,
                                 }}
-                                state={{teacherData: this.props.teacherData}}
+                                state={{ teacherData: this.props.teacherData }}
                                 className="text-primary"
                             >
                                 More Info

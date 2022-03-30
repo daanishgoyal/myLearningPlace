@@ -2,10 +2,11 @@ package database
 
 import (
 	"backend/models"
-	"golang.org/x/crypto/bcrypt"
 	"log"
 	"strconv"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 func PopulateUsers() {
@@ -178,21 +179,21 @@ func PopulateSlots() {
 	}
 	var startTimes = [recordcount]string{
 		"10:00 AM", "11:30 AM",
-		"10:00 AM", "11:30 AM", "12:00 PM", "03:00 PM", "04:00 PM", "05:30 PM",
-		"10:00 AM", "11:30 AM", "12:00 PM", "03:00 PM", "04:00 PM", "05:30 PM",
-		"10:00 AM", "11:30 AM", "12:00 PM", "03:00 PM", "04:00 PM", "05:30 PM",
-		"10:00 AM", "11:30 AM", "12:00 PM", "03:00 PM", "04:00 PM", "05:30 PM",
-		"10:00 AM", "11:30 AM", "12:00 PM", "03:00 PM", "04:00 PM", "05:30 PM",
-		"10:00 AM", "11:30 AM", "12:00 PM", "04:00 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "3:00 PM", "4:00 PM", "5:30 PM",
+		"10:00 AM", "11:30 AM", "12:00 PM", "4:00 PM",
 	}
 	var endTimes = [recordcount]string{
 		"11:00 AM", "12:30 AM",
-		"11:00 AM", "12:30 AM", "01:00 PM", "04:00 PM", "05:00 PM", "06:30 PM",
-		"11:00 AM", "12:30 AM", "01:00 PM", "04:00 PM", "05:00 PM", "06:30 PM",
-		"11:00 AM", "12:30 AM", "01:00 PM", "04:00 PM", "05:00 PM", "06:30 PM",
-		"11:00 AM", "12:30 AM", "01:00 PM", "04:00 PM", "05:00 PM", "06:30 PM",
-		"11:00 AM", "12:30 AM", "01:00 PM", "04:00 PM", "05:00 PM", "06:30 PM",
-		"11:00 AM", "12:30 AM", "01:00 PM", "05:00 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "4:00 PM", "5:00 PM", "6:30 PM",
+		"11:00 AM", "12:30 AM", "1:00 PM", "5:00 PM",
 	}
 
 	var slots []models.Slot
@@ -207,11 +208,52 @@ func PopulateSlots() {
 	DB.Create(&slots)
 }
 
+func PopulateContactDetails() {
+
+	const recordcount int = 7
+
+	var mobileNumber = [recordcount]string{"123456789", "098765432", "01234567", "01234567", "01234567", "01234567", "01234567"}
+	var emailId = [recordcount]string{"email1@email.com", "email2@email.com", "email3@email.com", "email4@email.com", "email5@email.com", "email6@email.com", "email7@email.com"}
+	var teacher_ids = [recordcount]uint{1, 2, 3, 4, 5, 6, 7}
+
+	var tempCD []models.ContactDetails
+	for i := 0; i < recordcount; i++ {
+		tempCD = append(tempCD, models.ContactDetails{
+			Teacher_MobileNumber: mobileNumber[i],
+			Teacher_Email:        emailId[i],
+			TeacherID:            teacher_ids[i],
+		})
+
+	}
+	DB.Create(&tempCD)
+
+}
+
+func PopulateTeacherSchedule() {
+
+	const recordcount int = 50
+
+	var slotid = [recordcount]uint{1, 12, 6, 7, 32, 1, 32, 4, 11, 34, 7, 1, 22, 28, 11, 32, 7, 16, 15, 2, 24, 25, 5, 7, 9, 6, 1, 4, 11, 15, 25, 8, 2, 9, 22, 11, 29, 31, 19, 34, 35, 15, 11, 8, 28, 29, 2, 4, 34, 36}
+	var teacher_ids = [recordcount]uint{1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7}
+	var availability = [recordcount]bool{true, false, true, false, true, true, false, true, true, false, false, false, false, true, true, true, true, true, false, true, true, true, true, true, true, false, true, false, false, true, true, true, true, true, true, true, false, true, true, false, true, false, false, true, true, true, true, true, true, true}
+	var tempTeacherSch []models.TeacherSchedule
+	for i := 0; i < recordcount; i++ {
+		tempTeacherSch = append(tempTeacherSch, models.TeacherSchedule{
+			SlotId:       slotid[i],
+			Availability: availability[i],
+			TeacherID:    teacher_ids[i],
+		})
+
+	}
+	DB.Create(&tempTeacherSch)
+
+}
+
 func PopulateBookings() {
 	location := time.Now().Location()
 	const recordcount int = 15
 	var skillId = [recordcount]uint{1, 2, 3, 3, 3, 4, 4, 4, 5, 6, 6, 6, 7, 7, 7}
-	var teacherId = [recordcount]uint{1, 2, 7, 2, 3, 1, 4, 2, 5, 7, 6, 6, 3, 5, 7}
+	var teacherId = [recordcount]uint{1, 2, 7, 2, 3, 1, 4, 2, 5, 4, 6, 6, 3, 5, 7}
 	var slotId = [recordcount]uint{12, 32, 11, 34, 1, 7, 6, 7, 4, 15, 29, 34, 22, 11, 15}
 	var userId = [recordcount]uint{1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}
 	var datebooked = [recordcount]time.Time{
@@ -257,5 +299,7 @@ func PopulateDB() {
 	Populate_Comments()
 	PopulateMiscImages()
 	PopulateSlots()
+	PopulateContactDetails()
+	PopulateTeacherSchedule()
 	PopulateBookings()
 }

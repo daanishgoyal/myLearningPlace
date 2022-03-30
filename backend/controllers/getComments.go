@@ -14,13 +14,13 @@ func GetComments(c *fiber.Ctx) error {
 		return err
 	}
 
-	teacherID := data["id"]
+	teacherID := data["teacher_id"]
 
 	var comments []models.Comments
 	type Result struct {
-		commentby   string
-		commenttext string
-		teacherid   uint
+		CommentBy   string
+		CommentText string
+		TeacherID   uint
 	}
 
 	var result []Result
@@ -44,5 +44,8 @@ func GetComments(c *fiber.Ctx) error {
 	//	return c.JSON(fiber.Map{"data": result, "error": nil, "rows_affected": len(result)})
 	//}
 
-	return c.JSON(fiber.Map{"data": result})
+	return c.JSON(fiber.Map{
+		"data":   result,
+		"status": fiber.StatusOK,
+	})
 }

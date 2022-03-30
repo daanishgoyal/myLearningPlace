@@ -3,6 +3,7 @@ package main
 import (
 	"backend/database"
 	"backend/routes"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 )
@@ -36,6 +37,10 @@ func main() {
 
 	routes.GetComments(app)
 
+	routes.GetContactDetails(app)
+
+	routes.GetSkillidByName(app)
+	routes.GetTeacherSchedule(app)
 	routes.CreateBookings(app)
 
 	routes.SearchBookingByUserId(app)

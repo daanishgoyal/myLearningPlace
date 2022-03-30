@@ -1,8 +1,28 @@
 import React from "react";
 import Joi from "joi-browser";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Form from "../common/form";
 import auth from "../services/authService";
+
+export function withRouter(Children) {
+    return (props) => {
+        const navigate = useNavigate();
+        const location = useLocation();
+        try {
+            const { from, teacherData } = location.state;
+            return (
+                <Children
+                    {...props}
+                    from={from}
+                    teacherData={teacherData}
+                    navigate={navigate}
+                />
+            );
+        } catch (ex) {
+            return <Children {...props} />;
+        }
+    };
+}
 
 class LoginForm extends Form {
     state = {
@@ -20,13 +40,24 @@ class LoginForm extends Form {
             const { data } = this.state;
             await auth.login(data.username, data.password);
 
-            //const { state } = this.props.location;
-            //console.log(this.props);
-            //console.log(state);
-            //window.location = state ? state.from.pathname : "/";
-            window.location = "/";
+            if (this.props) {
+                const { from, teacherData } = this.props;
+                if (from && teacherData) {
+                    this.props.navigate(from, {
+                        state: { teacherData: teacherData },
+                    });
+                    this.props.navigate(0);
+                } else if (from) {
+                    this.props.navigate(from);
+                    this.props.navigate(0);
+                } else {
+                    window.location = "/";
+                }
+            } else {
+                window.location = "/";
+            }
         } catch (ex) {
-            if (ex.response && ex.response.status === 400) {
+            if (ex.response && ex.response.status === 401) {
                 const errors = { ...this.state.errors };
                 errors.username = ex.response.data;
                 this.setState({ errors });
@@ -53,7 +84,12 @@ class LoginForm extends Form {
                             <div className="row mt-4" />
                             <div className="row">
                                 <div className="col-sm-8">
-                                    {this.renderInput("username", "Username", "text", true)}
+                                    {this.renderInput(
+                                        "username",
+                                        "Username",
+                                        "text",
+                                        true
+                                    )}
                                 </div>
                                 <div className="col-sm-8" />
                             </div>
@@ -85,4 +121,4 @@ class LoginForm extends Form {
     }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

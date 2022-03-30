@@ -18,6 +18,7 @@ const NavBar = ({ user }) => {
                         height="40px"
                         src={Logo}
                         className="d-inline-block align-text-center"
+                        alt=""
                     />
                     <span className="text-primary">myLearningPlace</span>
                 </NavLink>
@@ -65,6 +66,14 @@ const NavBar = ({ user }) => {
                                 {user.Email}
                             </NavLink>
                             <ul className="dropdown-menu me-5 bg-dark">
+                                <li>
+                                    <NavLink
+                                        className="dropdown-item bg-dark text-light"
+                                        to="/bookingHistory"
+                                    >
+                                        Booking History
+                                    </NavLink>
+                                </li>
                                 <li>
                                     <NavLink
                                         className="dropdown-item bg-dark text-light"
