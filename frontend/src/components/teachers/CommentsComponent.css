@@ -1,11 +1,11 @@
-.comment-section{
+.comment-section {
     padding-left: 0%;
     max-height: 40vh;
     max-width: 70%;
     background-color: hsl(128, 16%, 37%);
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
-.comment{
+.comment {
     height: 0%;
     padding: 0%;
     margin: 0%;
@@ -13,21 +13,10 @@
     color: black;
 }
 
-.commenter
-{
+.commenter {
     text-emphasis: bold;
 }
-.container 
-{
-    /* padding-left: 0%;
-    max-height: 40vh;
-    max-width: 70%;
-    background-color: hsl(128, 16%, 37%); */
-    
-   
-    
-    overflow-y:scroll; 
-}
+
 .ms-2 text-white {
     font-size: 18px;
     padding: 4%;
@@ -36,9 +25,8 @@
 
 .comments-card {
     max-height: 25vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }
-
 
 /* 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');

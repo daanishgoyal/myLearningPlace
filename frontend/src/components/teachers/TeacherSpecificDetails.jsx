@@ -155,11 +155,14 @@ class TeacherSpecificDetails extends Component {
 
     getTeacherDetails = (teacherData, slotsAvailable, slotsForSpecificDay) => (
         <>
-            <div className="card-group bg-success bg-dark text-light ">
-                <div className="card-first bg-success bg-dark text-light">
+            <div className="card-group bg-success bg-dark text-light mt-4">
+                <div className="card-first bg-success bg-dark text-light mt-2">
                     {/*  */}
                     {/* <br/>  */}
-                    <h2 className="bg-secondary" style={{ width: "30rem" }}>
+                    <h2
+                        className="bg-secondary ms-2"
+                        style={{ width: "30rem" }}
+                    >
                         {" "}
                         Name: {teacherData.Name}
                     </h2>
@@ -264,7 +267,7 @@ class TeacherSpecificDetails extends Component {
                     </div>
                 </div>
 
-                <div className="card-second bg-dark">
+                <div className="card-second bg-dark mt-2">
                     <div
                         className="card image-card bg-dark text-light"
                         style={{ width: "30rem" }}
