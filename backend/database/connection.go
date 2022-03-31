@@ -3,8 +3,6 @@ package database
 import (
 	"backend/config"
 	"backend/models"
-	"log"
-
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -19,7 +17,6 @@ func Connect() {
 	// Added Params to parse time and set local time
 
 	dsn := config.SqlUserName + ":" + config.SqlPassword + "@/" + config.SqlDatabaseName + "?parseTime=True&loc=Local"
-	log.Println(dsn)
 	connection, err := gorm.Open(mysql.Open(dsn), &gorm.Config{Logger: logger.Default.LogMode(logger.Info)})
 
 	if err != nil {
