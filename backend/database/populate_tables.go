@@ -2,10 +2,11 @@ package database
 
 import (
 	"backend/models"
-	"golang.org/x/crypto/bcrypt"
 	"log"
 	"strconv"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 func PopulateUsers() {

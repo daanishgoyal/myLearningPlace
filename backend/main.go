@@ -3,6 +3,7 @@ package main
 import (
 	"backend/database"
 	"backend/routes"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 )

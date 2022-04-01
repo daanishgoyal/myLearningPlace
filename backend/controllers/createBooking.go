@@ -5,10 +5,11 @@ import (
 	"backend/database"
 	"backend/models"
 	"fmt"
-	"github.com/gofiber/fiber/v2"
-	"gorm.io/gorm"
 	"strconv"
 	"strings"
+
+	"github.com/gofiber/fiber/v2"
+	"gorm.io/gorm"
 )
 
 type bookingresult struct {

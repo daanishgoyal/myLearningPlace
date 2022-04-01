@@ -4,11 +4,12 @@ import (
 	"backend/database"
 	"backend/models"
 	"fmt"
-	"github.com/gofiber/fiber/v2"
-	"gorm.io/gorm"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/gofiber/fiber/v2"
+	"gorm.io/gorm"
 )
 
 type result struct {
@@ -50,7 +51,6 @@ func SearchBookingByUserId(c *fiber.Ctx) error {
 
 	// Validation
 	userId, err1 := strconv.Atoi(data["userId"])
-
 	if err1 != nil {
 		return c.JSON(fiber.Map{
 			"data":   nil,
