@@ -72,6 +72,25 @@ Output:
 
 ### Go-Lang backend progress
 
+
+In this sprint, our main aim was the integration of the API with the frontend. 
+
+- We finalized the structure of what our API request and response would look like. We decided that API response should be of the format:
+
+| Field Name  | Description |  Datatype | Remarks |
+| ------------- | ------------- | ------------- | ------------- |
+| data | Consists the data entries generated in the database along with a unique ID | json | |
+| error | Returns if any error caused while registering | error | Null, if no error is raised | 
+| Rows Affected | the number of rows affected while insertion  | int |
+| status | The status code of the request | int |
+
+- We created models for the following tables:
+    - Comments
+    - Relation_Teacher_Skills
+
+- Added validation checks in the API's for validating the input requests.
+- Added unit test cases
+
 ### Unit tests Backend
 Steps to run :-
 ```
