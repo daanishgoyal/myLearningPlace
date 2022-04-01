@@ -14,6 +14,13 @@ installs the dependencies that are used inside the project
 
 starts the webserver.
 
+## Unittest
+To run the unittests, please do the following:
+Make sure you are in the backend directory:
+1. ### `go run main.go`
+2. ### `go test ./unittest`
+
+To enable verbose, ### `go test -v ./unittest`
 
 ## File Structure
 
