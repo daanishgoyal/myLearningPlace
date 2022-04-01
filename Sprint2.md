@@ -89,6 +89,9 @@ In this sprint, our main aim was the integration of the API with the frontend.
     - Relation_Teacher_Skills
 
 - Added validation checks in the API's for validating the input requests.
+- Implemented the storage and easy retrival of images of teachers that are required for the frontend.
+- Exposed the comments API, which facilitates the retrival the feedbacks for the teachers.
+-  
 - Added unit test cases for the following:
     - To check if the connection to DB is successful
     - To check if any table is empty
