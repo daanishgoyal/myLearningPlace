@@ -2,8 +2,7 @@
 
 ### Video Links:
 
-Frontend Demo - 
-Backend Demo - 
+Frontend and Backend Demo - https://www.youtube.com/watch?v=mJVc1hljB4Y
 
 
 
