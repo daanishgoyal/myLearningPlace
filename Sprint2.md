@@ -89,7 +89,11 @@ In this sprint, our main aim was the integration of the API with the frontend.
     - Relation_Teacher_Skills
 
 - Added validation checks in the API's for validating the input requests.
-- Added unit test cases
+- Added unit test cases for the following:
+    - To check if the connection to DB is successful
+    - To check if any table is empty
+    - To check if the search API is working as expected
+    - To check if the comments API is working as expected.
 
 ### Unit tests Backend
 Steps to run :-
