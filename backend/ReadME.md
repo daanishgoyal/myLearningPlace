@@ -20,7 +20,7 @@ Make sure you are in the backend directory:
 1. ### `go run main.go`
 2. ### `go test ./unittest`
 
-To enable verbose, ### `go test -v ./unittest`
+To enable verbose, use `go test -v ./unittest`
 
 ## File Structure
 
