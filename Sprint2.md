@@ -55,7 +55,7 @@ In package.json :-
 To Run :-
 ```
 cd frontend
-npm run cypress
+npx run cypress
 ```
 Output:-
 ![cypress_test](https://github.com/daanishgoyal/myLearningPlace/blob/main/frontend/src/images/img/Login_Cypress_Sprint2.png?raw=true)
