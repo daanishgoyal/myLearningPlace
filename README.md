@@ -1,24 +1,27 @@
 # myLearningPlace
 
-We would like to create a marketplace platform that connects customers with service providers.
-Mainly, this platform is for services related non – technical and extra curricular activities like Yoga, Music, and Signing etc.
-For example, a person from Gainesville wants to learn Yoga online. So, after logining into our system the person mentions their preferable timings and the price range they are willing to spend willing to pay on hourly basis. 
+We have created a marketplace platform that connects customers with tutors teaching various skills.
+This platform is for services related to non–technical and extra curricular activities like Yoga, Music, and Singing, etc.
 
-This information is shared with various service experts that are  pre-registered on our system. The group of experts then provides a quote for the service requestes.
-User selects the expert he wishes based on pricing, matching with timings, rating of the provider and the history.
-Like that any person can learn any non-technical skill by sitting at home just through PC with internet connection.
+For example, if a user from Gainesville wants to learn Yoga online; after logging into our platform, the user is able to view the list of tutors filtered by the serach containing the skill and city. The user will also be able to view the different slots/timings per week given by the tutor, and the price range (negotiable with the tutor) to pay on an hourly basis, the tutor's years of experience, mode of teaching, etc.
+
+The user then will be able to make an informed decision to select the tutor based on pricing, suitable slot timings, ratings of the tutor, years of experience of tutor in teaching that art, among various factors.
+
+In this manner, a person can choose learn any skill they wish by just sitting at home and having a PC with internet.
 
 ## Team Members
+
 #### Front-End:
-  * Akshay Ganapathy - 36846922
-  * Yallamandaiah Nandigam - 29451349
+
+-   [Akshay Ganapathy](https://github.com/akshayg1996) - 36846922
+-   [Yallamandaiah Nandigam](https://github.com/nandigamy) - 29451349
+
 #### Back-End:
-  * Aman Pathak - 88828029
-  * Daanish Goyal - 17673302
 
-
+-   [Aman Pathak](https://github.com/pathak-aman) - 88828029
+-   [Daanish Goyal](https://github.com/daanishgoyal) - 17673302
 
 ## TechStack
-* FrontEnd - ReactJS
-* BackEnd - Go
 
+-   FrontEnd - ReactJS
+-   BackEnd - Go
