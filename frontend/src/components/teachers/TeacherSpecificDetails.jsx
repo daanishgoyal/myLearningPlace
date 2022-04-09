@@ -274,7 +274,7 @@ class TeacherSpecificDetails extends Component {
                     >
                         <img
                             className="image"
-                            style={{ width: "30rem", maxHeight: "20rem" }}
+                            style={{ width: "30rem", maxHeight: "19rem" }}
                             src={require(`../../${teacherData.ImagePath}`)}
                             alt=""
                         />

@@ -75,9 +75,12 @@ class CommentsComponent extends Component {
                                                 <h4 className="  font-weight-bold text-primary ">
                                                     {comment.CommentBy + " :"}
                                                 </h4>
-                                                <div className=" comment form-group col-xs-04 col-sm-4 col-lg-7 ">
+                                                <div className=" comment  col-lg-4 ">
                                                     <textarea
                                                         id="message"
+                                                        rows="1"
+                                                        cols="15"
+                                                        // style="background-color:#99FFFF;"
                                                         placeholder={
                                                             comment.CommentText
                                                         }

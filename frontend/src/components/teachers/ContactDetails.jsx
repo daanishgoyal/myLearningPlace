@@ -14,6 +14,16 @@ class ContactDetails extends Component {
         this.setState({ contactDetails });
     }
 
+    //  sendMail() {
+    //     var link = contactDetails.map((contact, index) => {
+    //         contact.Teacher_Email}))
+    //              + "&subject=" + encodeURIComponent("Appointment Booking")
+    //              + "&body=" + encodeURIComponent(document.getElementById('myText').value)
+    //     ;
+
+    //     window.location.href = link;
+    // }
+
     render() {
         const { contactDetails } = this.state;
         // console.log(contactDetails);
@@ -33,6 +43,7 @@ class ContactDetails extends Component {
                                 //     (window.location = {contact.Teacher_Email})
                                 // }
                                 className="comment-text font-weight-bold h6"
+                                // onClick={sendMail()}
                             >
                                 &#9993; {contact.Teacher_Email}
                             </button>
