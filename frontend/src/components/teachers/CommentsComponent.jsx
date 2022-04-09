@@ -65,12 +65,29 @@ class CommentsComponent extends Component {
                                                 className="font-weight-bold"
                                                 key={index}
                                             >
-                                                <label className="  font-weight-bold text-primary ">
+                                                {/* <div class="col-sm-3 col-lg-2 hidden-xs"> */}
+                                                {/* <img
+                                                        class="img-responsive"
+                                                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                        alt=""
+                                                    /> */}
+                                                {/* </div> */}
+                                                <h4 className="  font-weight-bold text-primary ">
                                                     {comment.CommentBy + " :"}
-                                                </label>
-                                                <div className=" font-weight-bold text-info ms-2">
-                                                    {comment.CommentText}
+                                                </h4>
+                                                <div className=" comment form-group col-xs-04 col-sm-4 col-lg-7 ">
+                                                    <textarea
+                                                        id="message"
+                                                        placeholder={
+                                                            comment.CommentText
+                                                        }
+                                                        required=""
+                                                    ></textarea>
                                                 </div>
+
+                                                {/* <div className=" font-weight-bold text-info ms-2">
+                                                    {comment.CommentText}
+                                                </div> */}
                                             </div>
                                         );
                                     })}

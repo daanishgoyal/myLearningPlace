@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
+import "./TeachersCard.css";
 
 class TeachersCard extends Component {
     state = {
@@ -71,10 +72,10 @@ class TeachersCard extends Component {
                             <h1 className="Name bg-success text-light">
                                 {Name}
                             </h1>
-                            <h5>
+                            <h5 className="rating">
                                 <Rating
                                     readonly={true}
-                                    allowHover={false}
+                                    allowHover={true}
                                     initialValue={0}
                                     ratingValue={rating * 10}
                                     allowHalfIcon={false}

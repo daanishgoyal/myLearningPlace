@@ -28,9 +28,14 @@ class ContactDetails extends Component {
                                 &#128222; {contact.Teacher_MobileNumber}
                             </div>
 
-                            <div className="comment-text font-weight-bold h6">
+                            <button
+                                // onClick={() =>
+                                //     (window.location = {contact.Teacher_Email})
+                                // }
+                                className="comment-text font-weight-bold h6"
+                            >
                                 &#9993; {contact.Teacher_Email}
-                            </div>
+                            </button>
                         </div>
                     );
                 })}
