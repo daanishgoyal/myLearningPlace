@@ -62,25 +62,29 @@ class TeachersCard extends Component {
                         <img
                             className="card-img"
                             width={40}
-                            height={360}
+                            height={380}
                             src={require(`../../${imagePath}`)}
                             alt=""
                         />
                     </div>
-                    <div className="col-sm-7 bg-dark">
+                    <div className="col-sm-7 bg-dark ">
                         <div className="card-body">
                             <h1 className="Name bg-success text-light">
                                 {Name}
                             </h1>
-                            <h5 className="rating">
+                            <h5 className="rating webkit-sticky">
                                 <Rating
                                     readonly={true}
-                                    allowHover={true}
+                                    allowHover={false}
                                     initialValue={0}
                                     ratingValue={rating * 10}
                                     allowHalfIcon={false}
                                     iconsCount={5}
                                     size={25}
+                                    fillColor={"#f1a545"}
+                                    rtl={false}
+                                    transition={true}
+                                    showTooltip={false}
                                 />
                             </h5>
                             <h5>Profession: {Profession}</h5>
