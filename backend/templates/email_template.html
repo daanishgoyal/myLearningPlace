@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <style>
+        h1,h2{font-family:Verdana, sans-serif}
+        p, ul,li {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#fcfcfc;}
+        img {
+            max-width: 15%;
+            max-height: 15%;
+        }
+
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <body class="clean-body u_body" style="margin: 2em;padding: 2em;-webkit-text-size-adjust: 100%;background-color: #000000;color: #fcfcfc">
+
+            <img src="http://165.227.72.220/static/media/logo.d27e16620ace66031c28.png">
+            <h1> Booking confirmed, {{.FirstName}}! </h1>
+            <h2>
+                We've got you! <br>
+                We would help you to master <em>{{.Skill}}!</em> <br> <br>
+                Your appointment is all set.
+            </h2>
+            <h3>
+                Find the details of the appointment below:
+            </h3>
+
+            <strong>Appointment Details</strong>
+            <ul>
+                <li>BookingID: <strong>{{.BookingID}}</strong></li>
+                <li>Name: <strong>{{.Name}}</strong></li>
+                <li>Teacher's Name: <strong>{{.TeacherName}}</strong></li>
+                <li>Skill: <strong>{{.Skill}}</strong></li>
+                <li>Day: <strong>{{.Day}}</strong></li>
+                <li>Date: <strong>{{.Date}}</strong></li>
+                <li>Timings: <strong>{{.SlotStartTime}} - {{.SlotEndTime}}</strong></li>
+            </ul>
+
+
+            <p>Reach out to <a href="mailto:booking.myLearningPlace@gmail.com">booking.myLearningPlace@gmail.com</a> for any queries/feedbacks.<br></p>
+            <h2>Thank you for using myLearningPlace!</h2>
+        </body>
+    </html>
