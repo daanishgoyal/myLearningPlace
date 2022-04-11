@@ -12,19 +12,21 @@ import (
 	"gorm.io/gorm"
 )
 
-type bookingresult struct {
+type BookingDetails struct {
 	BookingId     uint
 	UserId        uint
 	TeacherId     uint
 	SkillId       uint
 	SlotId        uint
 	UserName      string
+	UserEmail     string
 	TeacherName   string
 	SkillName     string
 	SlotStartTime string
 	SlotEndTime   string
 	SlotDay       string
 	SlotDate      string
+	UserFirstName string
 }
 
 func checkAvailabilitySlot(teacherId_ uint, slotId_ uint) (bool, error) {
@@ -129,10 +131,12 @@ func CreateBooking(c *fiber.Ctx) error {
 
 	database.DB.Preload("Teacher").Preload("Skill").Preload("Slot").Preload("User").Where("booking_id = ?", booking.BookingID).Find(&booking)
 
-	bkResult := bookingresult{
+	bkResult := BookingDetails{
 		BookingId:     booking.BookingID,
 		UserId:        booking.UserID,
 		UserName:      fmt.Sprint(booking.User.FirstName + " " + booking.User.LastName),
+		UserFirstName: booking.User.FirstName,
+		UserEmail:     booking.User.Email,
 		TeacherId:     booking.TeacherID,
 		TeacherName:   booking.Teacher.Name,
 		SkillId:       booking.SkillID,
@@ -147,10 +151,19 @@ func CreateBooking(c *fiber.Ctx) error {
 	// Block slot in teacher_schedules table
 	database.DB.Model(&models.TeacherSchedule{}).Where("teacher_id = ? AND slot_id = ?", booking.TeacherID, booking.SlotID).Update("Availability", "0")
 
+	//Send Email Confirmation
+	confirmationSent := false
+	errEmail := SendHTMLEmail(bkResult)
+	if errEmail == nil {
+		confirmationSent = true
+	}
+
 	// Confirmation on booking
 	return c.JSON(fiber.Map{
-		"data":          bkResult,
-		"status":        fiber.StatusOK,
-		"error":         result.Error,
-		"rows_affected": result.RowsAffected})
+		"data":               bkResult,
+		"status":             fiber.StatusOK,
+		"error_booking":      result.Error,
+		"confirmation_sent":  confirmationSent,
+		"error_confirmation": errEmail,
+		"rows_affected":      result.RowsAffected})
 }
