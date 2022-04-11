@@ -6,7 +6,13 @@ const SqlUserName string = "root"
 const SqlPassword string = ""
 const SqlDatabaseName string = "BackEnd"
 
-// Const Map
+const SmtpHost string = "smtp.gmail.com"
+const SmtpPort int = 587
+
+const EmailAddress string = "booking.mylearningplace@gmail.com"
+const EmailPassword string = "rootroot"
+
+// GetWeekEndMap - Const Map for String to time.Weekday conversion
 func GetWeekEndMap() map[string]time.Weekday {
 	return map[string]time.Weekday{
 		"Sunday":    time.Sunday,
@@ -19,6 +25,7 @@ func GetWeekEndMap() map[string]time.Weekday {
 	}
 }
 
+// APIRoutes - Map used for running acceptance tests
 func APIRoutes() map[string]string {
 	return map[string]string{
 		"Greetings":        "http://localhost:8080/",
@@ -28,6 +35,7 @@ func APIRoutes() map[string]string {
 	}
 }
 
+// APIExpectedResponse - Map used for running acceptance tests
 func APIExpectedResponse() map[string][]byte {
 	return map[string][]byte{
 		"Greetings":        []byte(`Hello, World!`),
