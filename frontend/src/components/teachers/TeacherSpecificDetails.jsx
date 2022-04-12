@@ -164,7 +164,7 @@ class TeacherSpecificDetails extends Component {
                         style={{ width: "30rem" }}
                     >
                         {" "}
-                        Name: {teacherData.Name}
+                        {teacherData.Name}
                     </h2>
                     <h5 className="ms-2">
                         {" "}
