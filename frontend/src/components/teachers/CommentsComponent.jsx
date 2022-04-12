@@ -75,7 +75,7 @@ class CommentsComponent extends Component {
                                                 <h4 className="  font-weight-bold text-primary ">
                                                     {comment.CommentBy + " :"}
                                                 </h4>
-                                                <div className=" comment  col-lg-4 ">
+                                                {/* <div className=" comment  col-lg-4 ">
                                                     <textarea
                                                         id="message"
                                                         rows="1"
@@ -86,11 +86,11 @@ class CommentsComponent extends Component {
                                                         }
                                                         required=""
                                                     ></textarea>
-                                                </div>
-
-                                                {/* <div className=" font-weight-bold text-info ms-2">
-                                                    {comment.CommentText}
                                                 </div> */}
+
+                                                <div className=" font-weight-bold text-info ms-2">
+                                                    {comment.CommentText}
+                                                </div>
                                             </div>
                                         );
                                     })}
