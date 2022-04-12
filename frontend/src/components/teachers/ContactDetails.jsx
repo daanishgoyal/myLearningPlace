@@ -28,7 +28,7 @@ class ContactDetails extends Component {
                     return (
                         <div className="text-center" key={index}>
                             <div className="comment-text font-weight-bold h6">
-                                &#9993;
+                                &#9993;{"\t\t"}
                                 <Link
                                     to="#"
                                     onClick={(e) => {
@@ -37,12 +37,22 @@ class ContactDetails extends Component {
                                         e.preventDefault();
                                     }}
                                 >
-                                    {" "}
                                     {contact.Teacher_Email}
                                 </Link>
                             </div>
                             <div className="name comment-text font-weight-bold h6">
-                                &#128222; {contact.Teacher_MobileNumber}
+                                &#128222;{"\t\t"}
+                                <Link
+                                    to="#"
+                                    onClick={(e) => {
+                                        window.location =
+                                            "tel:" +
+                                            contact.Teacher_MobileNumber;
+                                        e.preventDefault();
+                                    }}
+                                >
+                                    {contact.Teacher_MobileNumber}
+                                </Link>
                             </div>
                         </div>
                     );
