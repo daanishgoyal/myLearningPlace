@@ -1,13 +1,9 @@
-import { render, screen, within } from "@testing-library/react";
-import TeacherSpecificDetails from "../components/teachers/TeacherSpecificDetails";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { searchTeachers } from "../services/searchService";
+import { render, screen } from "@testing-library/react";
 import auth from "../services/authService";
 import BookingHistory from "./../components/bookingHistory";
 
 test("booking History on user login", async () => {
     await auth.login("email_1@gmail.com", "password_1");
-    const user = auth.getCurrentUser();
 
     render(<BookingHistory />);
 
