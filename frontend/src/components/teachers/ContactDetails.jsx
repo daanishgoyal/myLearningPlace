@@ -8,10 +8,12 @@ class ContactDetails extends Component {
     };
 
     async componentDidMount() {
-        const { teacherId } = this.props;
-        this.setState({ teacherId });
-        const { data: contactDetails } = await getContactDetails(teacherId);
-        this.setState({ contactDetails });
+        try {
+            const { teacherId } = this.props;
+            this.setState({ teacherId });
+            const { data: contactDetails } = await getContactDetails(teacherId);
+            this.setState({ contactDetails });
+        } catch {}
     }
 
     //  sendMail() {
