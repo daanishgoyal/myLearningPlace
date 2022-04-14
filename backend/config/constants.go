@@ -2,15 +2,25 @@ package config
 
 import "time"
 
+// Sql - Const for Database Connection
 const SqlUserName string = "root"
-const SqlPassword string = ""
-const SqlDatabaseName string = "BackEnd"
+const SqlPassword string = "root"
+const SqlDatabaseName string = "test_se"
 
+// PasswordCost Const for setting the cost of Password for hashing
+const PasswordCost int = 14
+
+// Smtp - Const for sending email confirmation
 const SmtpHost string = "smtp.gmail.com"
 const SmtpPort int = 587
 
-const EmailAddress string = "booking.mylearningplace@gmail.com"
-const EmailPassword string = "rootroot"
+// AdminEmail - Const account detail of Admin
+const AdminEmailAddress string = "booking.mylearningplace@gmail.com"
+const AdminEmailPassword string = "rootroot"
+
+//// UserEmail - Const account detail of Test User
+//const UserEmailAddress string = "testuser.mylearningplace@gmail.com"
+//const UserEmailPassword string = "rootroot"
 
 // GetWeekEndMap - Const Map for String to time.Weekday conversion
 func GetWeekEndMap() map[string]time.Weekday {

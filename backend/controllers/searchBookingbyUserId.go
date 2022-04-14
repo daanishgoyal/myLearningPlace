@@ -13,13 +13,14 @@ import (
 )
 
 type result struct {
-	UserName      string
-	TeacherName   string
-	SkillName     string
-	SlotStartTime string
-	SlotEndTime   string
-	SlotDay       string
-	SlotDate      string
+	UserName       string
+	TeacherName    string
+	SkillName      string
+	SlotStartTime  string
+	SlotEndTime    string
+	SlotDay        string
+	SlotDate       string
+	BookingMessage string
 }
 
 func BookingQueryScanner(queriedBooking []models.Booking) []result {
@@ -34,6 +35,7 @@ func BookingQueryScanner(queriedBooking []models.Booking) []result {
 		scanner.SlotEndTime = queriedBooking[i].Slot.EndTime
 		scanner.SlotDay = queriedBooking[i].Slot.Day
 		scanner.SlotDate = strings.Fields(queriedBooking[i].DateBooked.String())[0]
+		scanner.BookingMessage = queriedBooking[i].BookingMessage
 
 		all_scanner = append(all_scanner, scanner)
 	}

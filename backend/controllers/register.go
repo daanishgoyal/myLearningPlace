@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"backend/config"
 	"backend/database"
 	"backend/models"
 	"github.com/gofiber/fiber/v2"
@@ -15,7 +16,7 @@ func Register(c *fiber.Ctx) error {
 		return err
 	}
 
-	password, _ := bcrypt.GenerateFromPassword([]byte(data["password"]), 12)
+	password, _ := bcrypt.GenerateFromPassword([]byte(data["password"]), config.PasswordCost)
 
 	user := models.User{
 		FirstName: data["firstName"],
