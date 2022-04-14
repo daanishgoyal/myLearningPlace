@@ -10,28 +10,30 @@ import (
 )
 
 type HtmlRenderBookingDetails struct {
-	FirstName     string
-	Name          string
-	TeacherName   string
-	Skill         string
-	Day           string
-	Date          string
-	SlotStartTime string
-	SlotEndTime   string
-	BookingID     uint
+	FirstName      string
+	Name           string
+	TeacherName    string
+	Skill          string
+	Day            string
+	Date           string
+	SlotStartTime  string
+	SlotEndTime    string
+	BookingID      uint
+	BookingMessage string
 }
 
 func parseHTML(details BookingDetails) string {
 	bookingDetails := HtmlRenderBookingDetails{
-		FirstName:     details.UserFirstName,
-		BookingID:     details.BookingId,
-		Name:          details.UserName,
-		TeacherName:   details.TeacherName,
-		Skill:         details.SkillName,
-		Day:           details.SlotDay,
-		Date:          details.SlotDate,
-		SlotStartTime: details.SlotStartTime,
-		SlotEndTime:   details.SlotEndTime,
+		FirstName:      details.UserFirstName,
+		BookingID:      details.BookingId,
+		Name:           details.UserName,
+		TeacherName:    details.TeacherName,
+		Skill:          details.SkillName,
+		Day:            details.SlotDay,
+		Date:           details.SlotDate,
+		SlotStartTime:  details.SlotStartTime,
+		SlotEndTime:    details.SlotEndTime,
+		BookingMessage: details.BookingMessage,
 	}
 
 	var t *template.Template
