@@ -290,6 +290,7 @@ func PopulateBookings() {
 		time.Date(2022, 04, 22, 0, 0, 0, 0, location),
 		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
 	}
+	var bookingMessage = [recordcount]string{"message1", "message2", "message3", "message4", "message5", "message6",  "message7", "message8", "message9", "message10", "message11", "message12", "message13", "message14", "message15"} 
 
 	var booking []models.Booking
 	for i := 0; i < recordcount; i++ {
@@ -299,6 +300,7 @@ func PopulateBookings() {
 			UserID:     userId[i],
 			SlotID:     slotId[i],
 			DateBooked: datebooked[i],
+			BookingMessage: bookingMessage[i],
 		})
 
 	}
