@@ -49,7 +49,7 @@ func PopulateTeachers() {
 
 	var names = [teachercount]string{"Bertie Yates", "Hester Hogan", "Larry Little", "Sean Walsh", "Lola Gardner", "John Matthews", "Judy King"}
 	var age = [teachercount]uint{29, 32, 36, 34, 29, 50, 24}
-	var profession = [teachercount]string{"Yoga teacher", "Yoga teacher", "Yoga teacher", "Yoga teacher", "Yoga teacher", "Master", "Astronaut"}
+	var profession = [teachercount]string{"Yoga teacher", "Yoga teacher", "Yoga teacher", "Yoga teacher", "Fast Food Worker", "Dentist", "Astronaut"}
 	var experience = [teachercount]float32{5, 3.5, 4, 8, 4.5, 10, 1}
 	var fees = [teachercount]float32{12, 13, 14, 16, 8, 23.5, 12.4}
 	var cities = [teachercount]string{"Tampa", "Orlando", "Tampa", "Ocala", "Orlando", "Miami", "Ocala"}
@@ -58,12 +58,28 @@ func PopulateTeachers() {
 		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
 		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
 		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
-		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
-		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
+		"Trained Flutist, learning Music from USC, LA,CA.",
+		"Chess Tutor and FIDE Arbiter",
 		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
 	}
-	var subject = [teachercount]string{"Yoga - beginner to intermediate", "Yoga - beginner to intermediate", "Yoga - beginner to intermediate", "Yoga - beginner to intermediate", "Yoga - beginner to intermediate", "Yoga - beginner to intermediate", "Yoga - beginner to intermediate"}
-	var education = [teachercount]string{"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria", "MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria", "MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria", "MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria", "MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria", "MS in physics (Aug, 2016–Jul, 2021) from University", "MS in physics (Aug, 2016–Jul, 2021) from University"}
+	var subject = [teachercount]string{
+		"Yoga - beginner to intermediate",
+		"Yoga - beginner to intermediate",
+		"Yoga - beginner to intermediate",
+		"Yoga - beginner to intermediate",
+		"Flute Teacher, Music, Zumba",
+		"Chess, Chess Coach, Yoga",
+		"Yoga - beginner to intermediate"}
+
+	var education = [teachercount]string{
+		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
+		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
+		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
+		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
+		"Classical Flute Performance (Aug, 2020–now) from University of Southern California, Los Angeles, CA USA",
+		"Dentistry (Sep, 2013–Jun, 2018) from Lebanese University",
+		"MS in physics (Aug, 2016–Jul, 2021) from University"}
+
 	var isTeachesOnline = [teachercount]bool{true, false, true, false, true, false, true}
 	var isTeachesOffline = [teachercount]bool{false, true, false, false, true, true, true}
 	var rating = [teachercount]float32{7, 8, 5, 10, 9, 10, 5}
@@ -73,9 +89,9 @@ func PopulateTeachers() {
 		"Namaste, My name is Hester Hogan and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 		"Namaste, My name is Larry Little and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 		"Namaste, My name is Sean Walsh and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
-		"Namaste, My name is Lola Garden and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
+		"Hello! My name is Lola Gardener. I am currently studying classical flute performance at USC Thornton school of music. I have been playing flute for 8 years and it has allowed me the opportunity to play at renown venues like Carnegie Hall as well as win and place in state wide and national competitions. I am very passionate about flute and I love to share that passion through teaching. I enjoy teaching any age and meeting the students where they are at. My goal for students is help them progress at their pace while instilling a self discipline and passion for music.",
+		"Being Lebanese Chess Champion in my age category for more than 6 consecutive years, and becoming a registered FIDE Arbiter in the International Chess Federation only at the age of 20 years old, I have a passion in teaching this strategical game to every interested person, to discover the magic behind every tactic, every opening, every endgame, and every style in each player.\nI base my lesson firstly on famous games, to analyze every move and think for the upcoming moves. Moreover, I add middle game and endgame tactics, not to forget all kinds of tactics taking into consideration each student’s level (checkmates,sacrifices, pins...). Last but not least, what makes a player more confident in playing than a strong opening repertoire in which he or she can play anytime and against anyone with no fear of the opponent !\nWith successive lessons and practices, in addition to playing against real people rather than just a computer, and most importantly playing with the love for the game, with passion, I assure you that you can reach a chess rating you deserve with the least possible time.",
 		"Namaste, My name is John Matthews and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
-		"Namaste, My name is Judy King and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 	}
 	var imagepath = [teachercount]string{
 		"img/teacher/Teacher_1.jpg",
