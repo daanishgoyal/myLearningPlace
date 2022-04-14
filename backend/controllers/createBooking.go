@@ -13,20 +13,21 @@ import (
 )
 
 type BookingDetails struct {
-	BookingId     uint
-	UserId        uint
-	TeacherId     uint
-	SkillId       uint
-	SlotId        uint
-	UserName      string
-	UserEmail     string
-	TeacherName   string
-	SkillName     string
-	SlotStartTime string
-	SlotEndTime   string
-	SlotDay       string
-	SlotDate      string
-	UserFirstName string
+	BookingId      uint
+	UserId         uint
+	TeacherId      uint
+	SkillId        uint
+	SlotId         uint
+	UserName       string
+	UserEmail      string
+	TeacherName    string
+	SkillName      string
+	SlotStartTime  string
+	SlotEndTime    string
+	SlotDay        string
+	SlotDate       string
+	UserFirstName  string
+	BookingMessage string
 }
 
 func checkAvailabilitySlot(teacherId_ uint, slotId_ uint) (bool, error) {
@@ -89,6 +90,7 @@ func CreateBooking(c *fiber.Ctx) error {
 	teacherId, err2 := strconv.Atoi(data["teacherId"])
 	skillId, err3 := strconv.Atoi(data["skillId"])
 	slotId, err4 := strconv.Atoi(data["slotId"])
+	bookingMessage := data["bookingMessage"]
 
 	if err1 != nil || err2 != nil || err3 != nil || err4 != nil {
 		return fiber.NewError(fiber.StatusNotAcceptable, "Data Validation failed. Booking failed.")
@@ -120,11 +122,12 @@ func CreateBooking(c *fiber.Ctx) error {
 	datebooked := config.GetBookingDate(slots)
 
 	booking := models.Booking{
-		TeacherID:  teacherId_,
-		SkillID:    skillId_,
-		SlotID:     slotId_,
-		UserID:     userId_,
-		DateBooked: datebooked,
+		TeacherID:      teacherId_,
+		SkillID:        skillId_,
+		SlotID:         slotId_,
+		UserID:         userId_,
+		DateBooked:     datebooked,
+		BookingMessage: bookingMessage,
 	}
 
 	result := database.DB.Create(&booking)
@@ -132,20 +135,21 @@ func CreateBooking(c *fiber.Ctx) error {
 	database.DB.Preload("Teacher").Preload("Skill").Preload("Slot").Preload("User").Where("booking_id = ?", booking.BookingID).Find(&booking)
 
 	bkResult := BookingDetails{
-		BookingId:     booking.BookingID,
-		UserId:        booking.UserID,
-		UserName:      fmt.Sprint(booking.User.FirstName + " " + booking.User.LastName),
-		UserFirstName: booking.User.FirstName,
-		UserEmail:     booking.User.Email,
-		TeacherId:     booking.TeacherID,
-		TeacherName:   booking.Teacher.Name,
-		SkillId:       booking.SkillID,
-		SkillName:     booking.Skill.SkillName,
-		SlotId:        booking.SlotID,
-		SlotDay:       booking.Slot.Day,
-		SlotStartTime: booking.Slot.StartTime,
-		SlotEndTime:   booking.Slot.EndTime,
-		SlotDate:      strings.Fields(booking.DateBooked.String())[0],
+		BookingId:      booking.BookingID,
+		UserId:         booking.UserID,
+		UserName:       fmt.Sprint(booking.User.FirstName + " " + booking.User.LastName),
+		UserFirstName:  booking.User.FirstName,
+		UserEmail:      booking.User.Email,
+		TeacherId:      booking.TeacherID,
+		TeacherName:    booking.Teacher.Name,
+		SkillId:        booking.SkillID,
+		SkillName:      booking.Skill.SkillName,
+		SlotId:         booking.SlotID,
+		SlotDay:        booking.Slot.Day,
+		SlotStartTime:  booking.Slot.StartTime,
+		SlotEndTime:    booking.Slot.EndTime,
+		SlotDate:       strings.Fields(booking.DateBooked.String())[0],
+		BookingMessage: bookingMessage,
 	}
 
 	// Block slot in teacher_schedules table
