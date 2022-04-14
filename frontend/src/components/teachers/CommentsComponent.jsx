@@ -62,34 +62,43 @@ class CommentsComponent extends Component {
                                     comments.map((comment, index) => {
                                         return (
                                             <div
-                                                className="font-weight-bold"
+                                                className="font-weight-bold comment-widgets"
                                                 key={index}
                                             >
-                                                {/* <div class="col-sm-3 col-lg-2 hidden-xs"> */}
-                                                {/* <img
-                                                        class="img-responsive"
-                                                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                                        alt=""
-                                                    /> */}
-                                                {/* </div> */}
-                                                <h4 className="  font-weight-bold text-primary ">
-                                                    {comment.CommentBy + " :"}
-                                                </h4>
-                                                {/* <div className=" comment  col-lg-4 ">
-                                                    <textarea
-                                                        id="message"
-                                                        rows="1"
-                                                        cols="15"
-                                                        // style="background-color:#99FFFF;"
-                                                        placeholder={
-                                                            comment.CommentText
-                                                        }
-                                                        required=""
-                                                    ></textarea>
-                                                </div> */}
+                                                <div class="container">
+                                                    <h1 class="comments-title"></h1>
+                                                    <div class="be-comment">
+                                                        <div class="be-img-comment">
+                                                            <a href="blog-detail-2.html">
+                                                                <img
+                                                                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                                    alt=""
+                                                                    class="be-ava-comment"
+                                                                />
+                                                            </a>
+                                                        </div>
+                                                        <div class="be-comment-content">
+                                                            <h4 className="  font-weight-bold text-primary  ">
+                                                                {comment.CommentBy +
+                                                                    " :"}
+                                                            </h4>
 
-                                                <div className=" font-weight-bold text-info ms-2">
-                                                    {comment.CommentText}
+                                                            <h6 className="  font-weight-bold text-info ">
+                                                                {
+                                                                    comment.CommentText
+                                                                }
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* <h4 className="  font-weight-bold text-primary  ">
+                                                        {comment.CommentBy +
+                                                            " :"}
+                                                    </h4>
+
+                                                    <h6 className="  font-weight-bold text-info ms-2 m-b-5 m-t-10">
+                                                        {comment.CommentText}
+                                                    </h6> */}
                                                 </div>
                                             </div>
                                         );
