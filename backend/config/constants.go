@@ -2,9 +2,11 @@ package config
 
 import "time"
 
+const PasswordCost int = 14
+
 const SqlUserName string = "root"
-const SqlPassword string = ""
-const SqlDatabaseName string = "BackEnd"
+const SqlPassword string = "root"
+const SqlDatabaseName string = "test_se"
 
 const SmtpHost string = "smtp.gmail.com"
 const SmtpPort int = 587

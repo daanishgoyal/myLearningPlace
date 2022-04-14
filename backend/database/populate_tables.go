@@ -1,6 +1,7 @@
 package database
 
 import (
+	"backend/config"
 	"backend/models"
 	"log"
 	"strconv"
@@ -10,17 +11,17 @@ import (
 )
 
 func PopulateUsers() {
-	const usercount int = 3
+	const usercount int = 4
 
-	var firstnames = [usercount]string{"ABC", "PQR", "XYZ"}
-	var lastnames = [usercount]string{"DEF", "EFG", "LMN"}
-	var emails = [usercount]string{"email_1@gmail.com", "email_2@gmail.com", "email_3@gmail.com"}
+	var firstnames = [usercount]string{"Tom", "Richard", "Jamie", "Tester_Bob"}
+	var lastnames = [usercount]string{"Taylor", "Roy", "Jones", "Bobby"}
+	var emails = [usercount]string{"email_1@gmail.com", "email_2@gmail.com", "email_3@gmail.com", "testuser.mylearningplace@gmail.com"}
 	var basePassword = "password"
 	var users = []models.User{}
 
 	for i := 0; i < usercount; i++ {
 		password := []byte(basePassword + "_" + strconv.Itoa(i+1))
-		hash, _ := bcrypt.GenerateFromPassword(password, 14)
+		hash, _ := bcrypt.GenerateFromPassword(password, config.PasswordCost)
 
 		users = append(users, models.User{
 			FirstName: firstnames[i],
