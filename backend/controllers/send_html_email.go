@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"gopkg.in/gomail.v2"
 	"html/template"
-	"log"
 )
 
 type HtmlRenderBookingDetails struct {
@@ -55,16 +54,11 @@ func parseHTML(details BookingDetails) string {
 
 func SendHTMLEmail(details BookingDetails) error {
 	body := parseHTML(details)
-
-	log.Println(body)
 	subject := "Booking Confirmed, " + details.UserFirstName + "!"
-
-	var to string
-	to = details.UserEmail
-	to = "amanpathak2909@gmail.com"
+	to := details.UserEmail
 
 	new_email := gomail.NewMessage()
-	new_email.SetHeader("From", config.EmailAddress)
+	new_email.SetHeader("From", config.AdminEmailAddress)
 	new_email.SetHeader("To", to)
 
 	new_email.SetHeader("Subject", subject)
@@ -73,8 +67,8 @@ func SendHTMLEmail(details BookingDetails) error {
 	new_dialer := gomail.NewDialer(
 		config.SmtpHost,
 		config.SmtpPort,
-		config.EmailAddress,
-		config.EmailPassword)
+		config.AdminEmailAddress,
+		config.AdminEmailPassword)
 
 	err2 := new_dialer.DialAndSend(new_email)
 	if err2 != nil {
