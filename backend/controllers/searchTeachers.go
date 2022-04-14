@@ -14,10 +14,10 @@ func Search(c *fiber.Ctx) error {
 		return err
 	}
 
-	queryCity, containsCity := data["city"]
-	querySkill, containsSkill := data["skill"]
+	queryCity := data["city"]
+	querySkill := data["skill"]
 
-	if containsCity && containsSkill {
+	if len(queryCity) != 0 && len(querySkill) != 0 {
 		//	search by skill and location
 
 		var skill = models.Skill{}
@@ -42,7 +42,7 @@ func Search(c *fiber.Ctx) error {
 			return c.JSON(fiber.Map{"data": teacher, "error": nil, "rows_affected": len(teacher), "status": fiber.StatusOK})
 		}
 
-	} else if containsCity {
+	} else if len(queryCity) != 0 && len(querySkill) == 0 {
 		// Search by city
 		var teachers []models.Teacher
 
@@ -54,7 +54,7 @@ func Search(c *fiber.Ctx) error {
 			return c.JSON(fiber.Map{"data": teachers, "error": nil, "rows_affected": result.RowsAffected, "status": fiber.StatusOK})
 		}
 
-	} else {
+	} else if len(queryCity) == 0 && len(querySkill) != 0 {
 		//	Search by skill
 
 		var skill = models.Skill{}
@@ -77,6 +77,8 @@ func Search(c *fiber.Ctx) error {
 		} else {
 			return c.JSON(fiber.Map{"data": teacher, "error": nil, "rows_affected": len(teacher), "status": fiber.StatusOK})
 		}
+	} else {
+		return c.JSON(fiber.Map{"error": "no input given", "rows_affected": nil})
 	}
 
 }
