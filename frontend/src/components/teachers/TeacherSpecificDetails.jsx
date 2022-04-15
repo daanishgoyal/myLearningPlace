@@ -5,7 +5,13 @@ import "../teachers/ContactAppointment.css";
 import auth from "../../services/authService";
 import CommentsComponent from "./CommentsComponent";
 import ContactDetails from "./ContactDetails";
-import { Button, Modal, Dropdown } from "react-bootstrap";
+import {
+    Button,
+    Modal,
+    Dropdown,
+    FormControl,
+    InputGroup,
+} from "react-bootstrap";
 import { getTeacherSchedule } from "../../services/getTeacherScheduleService";
 import { getSkillId } from "../../services/getSkillIDService";
 import { createBooking } from "../../services/createBookingService";
@@ -37,11 +43,11 @@ class TeacherSpecificDetails extends Component {
         selectedSlot: "",
         slotsForSpecificDay: [],
         skill: {},
+        noteTeacher: "",
     };
 
     async componentDidMount() {
         try {
-            // const teacherId = this.props.match.params.id;
             const { teacherData } = this.props;
             this.setState({ teacherData });
 
@@ -90,19 +96,20 @@ class TeacherSpecificDetails extends Component {
 
     onClickConfirmBooking = async () => {
         try {
-            //console.log("reached onClickConfirmBooking()");
             const {
                 teacherData,
                 currentUser,
                 skill,
                 selectedDay,
                 selectedSlot,
+                noteTeacher,
             } = this.state;
             const { data: bookingConfirmation } = await createBooking(
                 teacherData.ID,
                 currentUser.ID,
                 skill.ID,
-                this.getSlotID(selectedDay, selectedSlot)
+                this.getSlotID(selectedDay, selectedSlot),
+                noteTeacher
             );
             let message = "";
             if (bookingConfirmation && bookingConfirmation.BookingId) {
@@ -119,7 +126,6 @@ class TeacherSpecificDetails extends Component {
 
     handleDayChange = (changeEvent) => {
         const day = changeEvent.target.value;
-        //console.log(day);
         const slotsForSpecificDay = this.state.slotsAvailable.get(day);
         const selectedSlot = slotsForSpecificDay[0];
         this.setState({
@@ -130,7 +136,6 @@ class TeacherSpecificDetails extends Component {
     };
 
     handleSlotChange = (changeEvent) => {
-        //console.log(changeEvent.target.value);
         this.setState({
             selectedSlot: changeEvent.target.value,
         });
@@ -157,8 +162,6 @@ class TeacherSpecificDetails extends Component {
         <>
             <div className="card-group bg-success bg-dark text-light mt-4">
                 <div className="card-first bg-success bg-dark text-light mt-2">
-                    {/*  */}
-                    {/* <br/>  */}
                     <h2
                         className="bg-secondary ms-2"
                         style={{ width: "30rem" }}
@@ -178,9 +181,6 @@ class TeacherSpecificDetails extends Component {
                             size={25}
                         />
                     </h5>
-                    {/* <div className="card" style={{ width: "30rem" }}>
-                        <img className="image" style={{ width: "30rem" ,maxHeight:"20rem"}} src={require(`../../${teacherData.ImagePath}`)} alt="" />
-                    </div> */}
                     <div
                         className="bg-success p-3 bg-dark text-light"
                         style={{ width: "30rem" }}
@@ -189,7 +189,7 @@ class TeacherSpecificDetails extends Component {
                             <h4>About Me</h4>
                         </div>
                         <div>
-                            <p> {teacherData.Bio} </p>
+                            <p align="justify"> {teacherData.Bio} </p>
                         </div>
                         <div className=" bg-success">
                             <h4>Subjects</h4>
@@ -247,23 +247,6 @@ class TeacherSpecificDetails extends Component {
                                     : "No"}{" "}
                             </p>
                         </div>
-
-                        {/* <div>
-                            <h4>Teaches at Student Home: </h4>
-                            <p> {teacherData.studenthome} </p>
-                        </div> */}
-                        {/* <input
-                            type="text"
-                            size="50"
-                            placeholder="Comments"
-                            style={{ width: "8", height: "20" }}
-                        /> 
-                         
-                        <button> Submit</button> */}
-
-                        {/* <textarea class="scrollabletextbox" name="note">
-                 Comments 
-                 </textarea> */}
                     </div>
                 </div>
 
@@ -420,16 +403,28 @@ class TeacherSpecificDetails extends Component {
                                     )}
                                 </Modal.Body>
                                 <Modal.Footer>
-                                    <Button
-                                        disabled={
-                                            this.state.teacherSchedule === null
-                                        }
-                                        onClick={() =>
-                                            this.onClickConfirmBooking()
-                                        }
-                                    >
-                                        Confirm Booking
-                                    </Button>
+                                    <InputGroup>
+                                        <FormControl
+                                            placeholder="Send a note"
+                                            value={this.state.noteTeacher}
+                                            onChange={(e) => {
+                                                this.setState({
+                                                    noteTeacher: e.target.value,
+                                                });
+                                            }}
+                                        />
+                                        <Button
+                                            disabled={
+                                                this.state.teacherSchedule ===
+                                                null
+                                            }
+                                            onClick={() =>
+                                                this.onClickConfirmBooking()
+                                            }
+                                        >
+                                            Confirm Booking
+                                        </Button>
+                                    </InputGroup>
                                 </Modal.Footer>
                             </Modal>
 
@@ -450,9 +445,6 @@ class TeacherSpecificDetails extends Component {
     render() {
         const { teacherData } = this.props;
         const { slotsAvailable, slotsForSpecificDay } = this.state;
-        // let name = "";
-        // const { currentUser } = this.state;
-        // name = currentUser.FirstName + " " + currentUser.LastName;
         return (
             <>
                 {teacherData &&
