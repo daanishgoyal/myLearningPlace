@@ -42,6 +42,7 @@ func main() {
 	routes.CreateBookings(app)
 
 	routes.SearchBookingByUserId(app)
+	routes.CancelAppointment(app)
 
 	// Add "/api/search route
 	routes.Search(app)
