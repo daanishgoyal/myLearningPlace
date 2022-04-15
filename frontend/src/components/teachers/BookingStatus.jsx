@@ -42,10 +42,8 @@ class BookStatus extends Component {
                 <div className="row " />
                 <div className="row  booked font-weight-bold ">
                     <br />
-                    <div className="card bg-success wbook">
-                        <h6 className=" font-weight-bold ms-3 mt-2 appointmentconfirmation">
-                            Last Booked Appointment Details :{" "}
-                        </h6>
+                    <div className="button bg-success appointment">
+                        Last Booked Appointment Details:{" "}
                     </div>
                 </div>
                 {appointment && (
@@ -106,7 +104,7 @@ class BookStatus extends Component {
                 <div>
                     {auth.getCurrentUser() === null && (
                         <div>
-                            <h4 className="ms-5 mt-5 text-center text-light font-weight-bold">
+                            <h4 className="mt-3 text-center text-light font-weight-bold">
                                 Please login to see details
                             </h4>
                         </div>
@@ -114,7 +112,7 @@ class BookStatus extends Component {
                 </div>
 
                 {!appointment && auth.getCurrentUser() !== null && (
-                    <h4 className="ms-5 mt-5 text-center text-light font-weight-bold">
+                    <h4 className="mt-3 text-center text-light font-weight-bold">
                         No Bookings made so far!
                     </h4>
                 )}
