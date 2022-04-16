@@ -66,7 +66,6 @@ class CommentsComponent extends Component {
                                                 key={index}
                                             >
                                                 <div className="container">
-                                                    <h1 className="comments-title"></h1>
                                                     <div className="be-comment">
                                                         <div className="be-img-comment">
                                                             <a href="blog-detail-2.html">
