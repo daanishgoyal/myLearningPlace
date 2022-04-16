@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import auth from "../services/authService";
 import { getBookingHistory } from "../services/bookingHistoryService";
-import { Button, ButtonGroup, Modal, ModalFooter } from "react-bootstrap";
+import { Button, Modal, ModalFooter } from "react-bootstrap";
+import { cancelBooking } from "../services/cancelBookingService";
+
 class BookingHistory extends Component {
     state = {
         appointments: [],
@@ -22,6 +24,31 @@ class BookingHistory extends Component {
 
     onShowHideModal() {
         this.setState({ show: !this.state.show });
+    }
+
+    showAlert(message) {
+        alert(message);
+    }
+
+    async onClickCancelBooking(bookingID) {
+        try {
+            const { data: cancelBookingConfirmation } = await cancelBooking(
+                bookingID
+            );
+            let message = "";
+            if (
+                cancelBookingConfirmation !== null &&
+                cancelBookingConfirmation !== ""
+            ) {
+                message = "Your booking has been cancelled successfully";
+            } else {
+                message =
+                    "Sorry, booking cancellation failed. Please try again.";
+            }
+            this.onShowHideModal();
+            this.showAlert(message);
+            window.location.reload();
+        } catch {}
     }
 
     render() {
@@ -73,8 +100,6 @@ class BookingHistory extends Component {
                         {appointments.map((appointment, index) => {
                             const date = new Date(appointment.SlotDate);
                             const todaysDate = new Date();
-                            console.log("todays date = " + todaysDate);
-                            console.log("date = " + date);
                             return (
                                 <div
                                     key={index}
@@ -100,28 +125,46 @@ class BookingHistory extends Component {
                                             >
                                                 Cancel this appointment?
                                             </Button>
+                                            <Modal
+                                                show={this.state.show}
+                                                onHide={() =>
+                                                    this.onShowHideModal()
+                                                }
+                                            >
+                                                <Modal.Header closeButton>
+                                                    Cancel Appointment
+                                                </Modal.Header>
+                                                <Modal.Body>
+                                                    Are you sure you want to
+                                                    cancel your appointment on{" "}
+                                                    {appointment.SlotDay +
+                                                        ", " +
+                                                        date
+                                                            .toDateString()
+                                                            .substring(4)}
+                                                    ?
+                                                </Modal.Body>
+                                                <ModalFooter>
+                                                    <Button
+                                                        onClick={() =>
+                                                            this.onClickCancelBooking(
+                                                                appointment.BookingID
+                                                            )
+                                                        }
+                                                    >
+                                                        Yes
+                                                    </Button>
+                                                    <Button
+                                                        onClick={() =>
+                                                            this.onShowHideModal()
+                                                        }
+                                                    >
+                                                        No
+                                                    </Button>
+                                                </ModalFooter>
+                                            </Modal>
                                         </div>
                                     )}
-                                    <Modal
-                                        show={this.state.show}
-                                        onHide={() => this.onShowHideModal()}
-                                    >
-                                        <Modal.Header closeButton>
-                                            Cancel Appointment
-                                        </Modal.Header>
-                                        <Modal.Body>
-                                            Are you sure you want to cancel your
-                                            appointment on{" "}
-                                            {appointment.SlotDay +
-                                                " " +
-                                                date.toDateString()}
-                                            ?
-                                        </Modal.Body>
-                                        <ModalFooter>
-                                            <Button>Yes</Button>
-                                            <Button>No</Button>
-                                        </ModalFooter>
-                                    </Modal>
                                     <div className="row mt-2 ms-5 ">
                                         <div className="col-sm-1 h4">
                                             <label>Teacher:</label>
