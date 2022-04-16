@@ -24,8 +24,8 @@ class BookStatus extends Component {
                 return value.TeacherName === teacherName;
             }
             if (list.length > 0) {
-                let length = list.length - 1;
-                const appointment = list[length];
+                //let length = list.length - 1;
+                const appointment = list[0];
                 this.setState({ appointment });
             } else {
                 this.setState({ appointment: null });
@@ -43,7 +43,7 @@ class BookStatus extends Component {
                 <div className="row  booked font-weight-bold ">
                     <br />
                     <div className="button bg-success appointment">
-                        Last Booked Appointment Details:{" "}
+                        Recently Booked Appointment Details:{" "}
                     </div>
                 </div>
                 {appointment && (

@@ -20,16 +20,16 @@ class CommentsComponent extends Component {
     render() {
         const { comments } = this.state;
         return (
-            //   <div class="container mt-3 d-flex justify-content-center">
-            //     <div class="row d-flex justify-content-center">
-            //       <div class="col-md-8">
-            //         <div class="text-left">
+            //   <div className="container mt-3 d-flex justify-content-center">
+            //     <div className="row d-flex justify-content-center">
+            //       <div className="col-md-8">
+            //         <div className="text-left">
             //           <h6>Comments</h6>
             //         </div>
-            //         <div class="card p-3 mb-2">
-            //           <div class="d-flex flex-row">
+            //         <div className="card p-3 mb-2">
+            //           <div className="d-flex flex-row">
             //             {" "}
-            //             <div class="d-flex flex-column ms-2">
+            //             <div className="d-flex flex-column ms-2">
             //               {comments.map((comment, index) => {
             //                 return (
             //                   <div key={index}>
@@ -42,7 +42,7 @@ class CommentsComponent extends Component {
             //               })}
             //             </div>
             //           </div>
-            //           {/* <div class="d-flex justify-content-between"></div> */}
+            //           {/* <div className="d-flex justify-content-between"></div> */}
             //         </div>
             //       </div>
             //     </div>
@@ -65,19 +65,18 @@ class CommentsComponent extends Component {
                                                 className="font-weight-bold comment-widgets"
                                                 key={index}
                                             >
-                                                <div class="container">
-                                                    <h1 class="comments-title"></h1>
-                                                    <div class="be-comment">
-                                                        <div class="be-img-comment">
+                                                <div className="container">
+                                                    <div className="be-comment">
+                                                        <div className="be-img-comment">
                                                             <a href="blog-detail-2.html">
                                                                 <img
                                                                     src="https://bootdey.com/img/Content/avatar/avatar1.png"
                                                                     alt=""
-                                                                    class="be-ava-comment"
+                                                                    className="be-ava-comment"
                                                                 />
                                                             </a>
                                                         </div>
-                                                        <div class="be-comment-content">
+                                                        <div className="be-comment-content">
                                                             <h4 className="  font-weight-bold text-primary  ">
                                                                 {comment.CommentBy +
                                                                     " :"}
