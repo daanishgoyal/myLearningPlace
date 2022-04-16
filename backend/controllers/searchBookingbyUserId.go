@@ -78,9 +78,9 @@ func SearchBookingByUserId(c *fiber.Ctx) error {
 
 	var result *gorm.DB
 	if includePast {
-		result = database.DB.Preload("Teacher").Preload("Skill").Preload("Slot").Preload("User").Where("user_id = ?", userId).Find(&bookingInstance)
+		result = database.DB.Preload("Teacher").Preload("Skill").Preload("Slot").Preload("User").Where("user_id = ?", userId).Order("date_booked desc").Find(&bookingInstance)
 	} else {
-		result = database.DB.Preload("Teacher").Preload("Skill").Preload("Slot").Preload("User").Where("user_id = ? AND date_booked > ?", userId, time.Now()).Find(&bookingInstance)
+		result = database.DB.Preload("Teacher").Preload("Skill").Preload("Slot").Preload("User").Where("user_id = ? AND date_booked > ?", userId, time.Now()).Order("date_booked desc").Find(&bookingInstance)
 	}
 
 	if len(bookingInstance) == 0 {
