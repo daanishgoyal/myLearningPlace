@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import auth from "../services/authService";
 import { getBookingHistory } from "../services/bookingHistoryService";
-
+import { Button, ButtonGroup, Modal, ModalFooter } from "react-bootstrap";
 class BookingHistory extends Component {
     state = {
         appointments: [],
         currentUser: {},
+        show: false,
     };
 
     async componentDidMount() {
@@ -17,6 +18,10 @@ class BookingHistory extends Component {
             );
             this.setState({ appointments });
         } catch {}
+    }
+
+    onShowHideModal() {
+        this.setState({ show: !this.state.show });
     }
 
     render() {
@@ -67,6 +72,9 @@ class BookingHistory extends Component {
                     <div className="row col-sm-16 ms-5 bg-dark text-light">
                         {appointments.map((appointment, index) => {
                             const date = new Date(appointment.SlotDate);
+                            const todaysDate = new Date();
+                            console.log("todays date = " + todaysDate);
+                            console.log("date = " + date);
                             return (
                                 <div
                                     key={index}
@@ -83,6 +91,37 @@ class BookingHistory extends Component {
                                             date.toDateString().substring(4)
                                         }
                                     </h3>
+                                    {todaysDate <= date && (
+                                        <div align="right">
+                                            <Button
+                                                onClick={() =>
+                                                    this.onShowHideModal()
+                                                }
+                                            >
+                                                Cancel this appointment?
+                                            </Button>
+                                        </div>
+                                    )}
+                                    <Modal
+                                        show={this.state.show}
+                                        onHide={() => this.onShowHideModal()}
+                                    >
+                                        <Modal.Header closeButton>
+                                            Cancel Appointment
+                                        </Modal.Header>
+                                        <Modal.Body>
+                                            Are you sure you want to cancel your
+                                            appointment on{" "}
+                                            {appointment.SlotDay +
+                                                " " +
+                                                date.toDateString()}
+                                            ?
+                                        </Modal.Body>
+                                        <ModalFooter>
+                                            <Button>Yes</Button>
+                                            <Button>No</Button>
+                                        </ModalFooter>
+                                    </Modal>
                                     <div className="row mt-2 ms-5 ">
                                         <div className="col-sm-1 h4">
                                             <label>Teacher:</label>
