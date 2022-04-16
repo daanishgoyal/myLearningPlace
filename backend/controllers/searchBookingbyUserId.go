@@ -21,6 +21,7 @@ type result struct {
 	SlotDay        string
 	SlotDate       string
 	BookingMessage string
+	BookingID      uint
 }
 
 func BookingQueryScanner(queriedBooking []models.Booking) []result {
@@ -36,6 +37,7 @@ func BookingQueryScanner(queriedBooking []models.Booking) []result {
 		scanner.SlotDay = queriedBooking[i].Slot.Day
 		scanner.SlotDate = strings.Fields(queriedBooking[i].DateBooked.String())[0]
 		scanner.BookingMessage = queriedBooking[i].BookingMessage
+		scanner.BookingID = queriedBooking[i].BookingID
 
 		all_scanner = append(all_scanner, scanner)
 	}
