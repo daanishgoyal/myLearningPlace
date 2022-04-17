@@ -397,7 +397,9 @@ class TeacherSpecificDetails extends Component {
                                         <div>
                                             <h5>
                                                 Sorry, no slots available. This
-                                                teacher is booked for the week!
+                                                teacher slots are booked for
+                                                this week!. You can try booking
+                                                after few days.
                                             </h5>
                                         </div>
                                     )}
