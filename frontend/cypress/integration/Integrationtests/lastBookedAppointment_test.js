@@ -20,7 +20,7 @@ it(" book appointment click redirecting to login", () => {
     // cy.contains("Select Slot");
     // cy.contains("Confirm Booking");
     // cy.get(".modal-footer > .btn").click();
-    cy.contains("Last Booked Appointment Details");
+    cy.contains("Recently Booked Appointment Details");
     cy.contains("Date");
     cy.contains("Skill");
     cy.contains("Slot");
