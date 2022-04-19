@@ -49,32 +49,32 @@ func PopulateTeachers() {
 
 	var names = [teachercount]string{"Bertie Yates", "Hester Hogan", "Larry Little", "Sean Walsh", "Lola Gardner", "John Matthews", "Judy King"}
 	var age = [teachercount]uint{29, 32, 36, 34, 29, 50, 24}
-	var profession = [teachercount]string{"Yoga teacher", "Yoga teacher", "Yoga teacher", "Yoga teacher", "Fast Food Worker", "Dentist", "Astronaut"}
+	var profession = [teachercount]string{"Pilates Trainer", "Meditation Practitioner", "Weight Loss Coach", "Yoga teacher", "Fast Food Worker", "Dentist", "Astronaut"}
 	var experience = [teachercount]float32{5, 3.5, 4, 8, 4.5, 10, 1}
 	var fees = [teachercount]float32{12, 13, 14, 16, 8, 23.5, 12.4}
 	var cities = [teachercount]string{"Tampa", "Orlando", "Tampa", "Ocala", "Orlando", "Miami", "Ocala"}
 	var descriptions = [teachercount]string{
-		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
-		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
-		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
+		"I am a certified Pilates trainer. Mat Pilates training certified from Yoga alliance international",
+		"I am a trained vipasana meditator. I have taken training from Vipasana International Meditation centre, Mumbai- India",
+		"I am a certified Weight Loss Coach. I am Certified from LA Fitness Trainining Institute-LA",
 		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
 		"Trained Flutist, learning Music from USC, LA,CA.",
 		"Chess Tutor and FIDE Arbiter",
 		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
 	}
 	var subject = [teachercount]string{
-		"Yoga - beginner to intermediate",
-		"Yoga - beginner to intermediate",
-		"Yoga - beginner to intermediate",
+		"Pilates & Yoga - Beginner, intermediate and Advanced",
+		"Yoga & Meditation - beginner to intermediate",
+		"Weight Loss training through Yoga - beginner to intermediate",
 		"Yoga - beginner to intermediate",
 		"Flute Teacher, Music, Zumba",
 		"Chess, Chess Coach, Yoga",
 		"Yoga - beginner to intermediate"}
 
 	var education = [teachercount]string{
-		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
-		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
-		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
+		"MS in Computer Scince (Aug, 2014–Jul, 2019) from University of Alabama, Birmingham-USA",
+		"MS in Aeronautical Engineering (Aug, 2015–Jul, 2020) from University of Daytona, FL-USA",
+		"MBA from ISB (Aug, 2017–June, 2019) from Indian School of Business, India",
 		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
 		"Classical Flute Performance (Aug, 2020–now) from University of Southern California, Los Angeles, CA USA",
 		"Dentistry (Sep, 2013–Jun, 2018) from Lebanese University",
@@ -85,9 +85,9 @@ func PopulateTeachers() {
 	var rating = [teachercount]float32{7, 8, 5, 10, 9, 10, 5}
 	var canCommute = [teachercount]bool{false, false, true, false, true, false, false}
 	var bio = [teachercount]string{
-		"Namaste, My name is Bertie Yates and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
-		"Namaste, My name is Hester Hogan and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
-		"Namaste, My name is Larry Little and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
+		"Namaste, My name is Bertie Yates and I am a Pilates and yoga teacher.  In the field of fitness I am associated for more than 5 years now. I'm a LEVEL 4 PERSONAL TRAINER recognized from EREPS(European Registrar of Exercise Professionals) and a CERTIFIED NUTRITIONIST from ACE(American Council On Exercise). My scope of training is really vast which included posture correction, lifestyle management, fat loss, muscle gain, performance enhancement to lower back pain rectification. My guidance includes both in terms of exercise and also with diet.",
+		"Namaste, My name is Hester Hogan and I am a Meditation yoga teacher. 'm a highly motivated yoga instructor with people of all ages and has deep knowledge about Asana . I can instruct the student with correct posture and help them to improve the posture if they have any difficulty, and also can give variations if any . I can give students In depth understanding of breathing techniques and informing the precautions before doing any Asana. And also I can provide guided meditation to help students for connect with their highest self. Giving relaxation before and end of the each class to focus more about body and mind.",
+		"Namaste, My name is Larry Little and I am a Weight loss coach. I’m a professional trainer. I use to train ppl based on thr goals. It depends on how they want to train. I’m expert in Strength training, bodyweight training, weight loss. And I’m more expert in functional training. This will help ppl to improve strength, endurance and posture. I use to train ppl according to thr needs and goals. I will advice them with basic diet and help them to achieve goals. I can take online classes and offline it is totally depends on the client. I’m willing to travel.",
 		"Namaste, My name is Sean Walsh and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
 		"Hello! My name is Lola Gardener. I am currently studying classical flute performance at USC Thornton school of music. I have been playing flute for 8 years and it has allowed me the opportunity to play at renown venues like Carnegie Hall as well as win and place in state wide and national competitions. I am very passionate about flute and I love to share that passion through teaching. I enjoy teaching any age and meeting the students where they are at. My goal for students is help them progress at their pace while instilling a self discipline and passion for music.",
 		"Being Lebanese Chess Champion in my age category for more than 6 consecutive years, and becoming a registered FIDE Arbiter in the International Chess Federation only at the age of 20 years old, I have a passion in teaching this strategical game to every interested person, to discover the magic behind every tactic, every opening, every endgame, and every style in each player.\nI base my lesson firstly on famous games, to analyze every move and think for the upcoming moves. Moreover, I add middle game and endgame tactics, not to forget all kinds of tactics taking into consideration each student’s level (checkmates,sacrifices, pins...). Last but not least, what makes a player more confident in playing than a strong opening repertoire in which he or she can play anytime and against anyone with no fear of the opponent !\nWith successive lessons and practices, in addition to playing against real people rather than just a computer, and most importantly playing with the love for the game, with passion, I assure you that you can reach a chess rating you deserve with the least possible time.",
