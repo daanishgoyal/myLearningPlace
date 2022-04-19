@@ -47,51 +47,51 @@ func PopulateSkills() {
 func PopulateTeachers() {
 	const teachercount int = 7
 
-	var names = [teachercount]string{"Bertie Yates", "Hester Hogan", "Larry Little", "Sean Walsh", "Lola Gardner", "John Matthews", "Judy King"}
+	var names = [teachercount]string{"Bertie Yates", "Hester Hogan", "Larry Little", "Sean Walsh", "Lola Gardener", "John Matthews", "Judy King"}
 	var age = [teachercount]uint{29, 32, 36, 34, 29, 50, 24}
-	var profession = [teachercount]string{"Pilates Trainer", "Meditation Practitioner", "Weight Loss Coach", "Yoga teacher", "Fast Food Worker", "Dentist", "Astronaut"}
+	var profession = [teachercount]string{"Pilates Trainer", "Meditation Practitioner", "Weight Loss Coach", "Programming Teacher", "Fast Food Worker", "Dentist", "Astronaut"}
 	var experience = [teachercount]float32{5, 3.5, 4, 8, 4.5, 10, 1}
 	var fees = [teachercount]float32{12, 13, 14, 16, 8, 23.5, 12.4}
 	var cities = [teachercount]string{"Tampa", "Orlando", "Tampa", "Ocala", "Orlando", "Miami", "Ocala"}
 	var descriptions = [teachercount]string{
-		"I am a certified Pilates trainer. Mat Pilates training certified from Yoga alliance international",
+		"Mat Pilates training certified from Yoga alliance international",
 		"I am a trained vipasana meditator. I have taken training from Vipasana International Meditation centre, Mumbai- India",
-		"I am a certified Weight Loss Coach. I am Certified from LA Fitness Trainining Institute-LA",
-		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
+		"Certified Weight Loss Coach. I am Certified from LA Fitness Trainining Institute-LA",
+		"Instructor I (Dec, 2013–Present) at Nueva Vizcaya State University\nTeaching Programming Subjects using java,c++, python and VB.NET programming languages.",
 		"Trained Flutist, learning Music from USC, LA,CA.",
 		"Chess Tutor and FIDE Arbiter",
-		"I am a certified yoga trainer. YTT 200 certified from Yoga alliance international",
+		"Singer, Stage show Artist",
 	}
 	var subject = [teachercount]string{
 		"Pilates & Yoga - Beginner, intermediate and Advanced",
 		"Yoga & Meditation - beginner to intermediate",
 		"Weight Loss training through Yoga - beginner to intermediate",
-		"Yoga - beginner to intermediate",
+		"Information Technology, Computer Science",
 		"Flute Teacher, Music, Zumba",
 		"Chess, Chess Coach, Yoga",
-		"Yoga - beginner to intermediate"}
+		"Singer, Female Playback Singer"}
 
 	var education = [teachercount]string{
-		"MS in Computer Scince (Aug, 2014–Jul, 2019) from University of Alabama, Birmingham-USA",
+		"MS in Computer Science (Aug, 2014–Jul, 2019) from University of Alabama, Birmingham-USA",
 		"MS in Aeronautical Engineering (Aug, 2015–Jul, 2020) from University of Daytona, FL-USA",
 		"MBA from ISB (Aug, 2017–June, 2019) from Indian School of Business, India",
-		"MS in physics (Aug, 2016–Jul, 2021) from University of Port Harcourt, Nigeria",
+		"Master in Information Technology (Jun, 2017–Sep, 2020) from Isabela State University/Echague Isabela",
 		"Classical Flute Performance (Aug, 2020–now) from University of Southern California, Los Angeles, CA USA",
 		"Dentistry (Sep, 2013–Jun, 2018) from Lebanese University",
-		"MS in physics (Aug, 2016–Jul, 2021) from University"}
+		"Hindustani Classical Vocal (Oct, 2020–now) from Shankar Mahadev Academy\nHindustani Classical Voice Training and Light music (May, 2016–Dec, 2018) from Individual Teacher Mumbai\nHindustani Classical (Aug, 2012–Jun, 2014) from Ajivasan"}
 
 	var isTeachesOnline = [teachercount]bool{true, false, true, false, true, false, true}
 	var isTeachesOffline = [teachercount]bool{false, true, false, false, true, true, true}
 	var rating = [teachercount]float32{7, 8, 5, 10, 9, 10, 5}
 	var canCommute = [teachercount]bool{false, false, true, false, true, false, false}
 	var bio = [teachercount]string{
-		"Namaste, My name is Bertie Yates and I am a Pilates and yoga teacher.  In the field of fitness I am associated for more than 5 years now. I'm a LEVEL 4 PERSONAL TRAINER recognized from EREPS(European Registrar of Exercise Professionals) and a CERTIFIED NUTRITIONIST from ACE(American Council On Exercise). My scope of training is really vast which included posture correction, lifestyle management, fat loss, muscle gain, performance enhancement to lower back pain rectification. My guidance includes both in terms of exercise and also with diet.",
-		"Namaste, My name is Hester Hogan and I am a Meditation yoga teacher. 'm a highly motivated yoga instructor with people of all ages and has deep knowledge about Asana . I can instruct the student with correct posture and help them to improve the posture if they have any difficulty, and also can give variations if any . I can give students In depth understanding of breathing techniques and informing the precautions before doing any Asana. And also I can provide guided meditation to help students for connect with their highest self. Giving relaxation before and end of the each class to focus more about body and mind.",
-		"Namaste, My name is Larry Little and I am a Weight loss coach. I’m a professional trainer. I use to train ppl based on thr goals. It depends on how they want to train. I’m expert in Strength training, bodyweight training, weight loss. And I’m more expert in functional training. This will help ppl to improve strength, endurance and posture. I use to train ppl according to thr needs and goals. I will advice them with basic diet and help them to achieve goals. I can take online classes and offline it is totally depends on the client. I’m willing to travel.",
-		"Namaste, My name is Sean Walsh and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
+		"Hi, I'm Bertie Yates and I am a Pilates and yoga teacher. In the field of fitness I am associated for more than 5 years now. I'm a LEVEL 4 PERSONAL TRAINER recognized from EREPS(European Registrar of Exercise Professionals) and a CERTIFIED NUTRITIONIST from ACE(American Council On Exercise). My scope of training is really vast which included posture correction, lifestyle management, fat loss, muscle gain, performance enhancement to lower back pain rectification. My guidance includes both in terms of exercise and also with diet.",
+		"Hey, Go getter! I'm a highly motivated yoga instructor with people of all ages and has deep knowledge about Asana . I can instruct the student with correct posture and help them to improve the posture if they have any difficulty, and also can give variations if any . I can give students In depth understanding of breathing techniques and informing the precautions before doing any Asana. And also I can provide guided meditation to help students for connect with their highest self. Giving relaxation before and end of the each class to focus more about body and mind.",
+		"I’m a professional trainer. I use to train ppl based on thr goals. It depends on how they want to train. I’m expert in Strength training, bodyweight training, weight loss. And I’m more expert in functional training. This will help ppl to improve strength, endurance and posture. I use to train ppl according to thr needs and goals. I will advice them with basic diet and help them to achieve goals. I can take online classes and offline it is totally depends on the client. I’m willing to travel.",
+		"Namaste, My name is Sean Walsh. I am a College Instructor since 2013. I handled programming subjects (c++, java,python and vb.net). I assigned to teach fundamentals of programming to all the beginners of our course, BSIT,BSCS and BSIS. I always make sure that they understand every topic. I have the passion to teach so I enjoy teaching. The results of my teaching is, I am consistently received \"outstanding\" evaluation from my students. This is my first time to apply as an online teacher. I can also help you to your assignments and I will do the best that I can to deliver quality education. I am a hardworking teacher, currently I have a full time job but I also seeking some other sources to maximize my ability to teach and also to earn some cash. I can be your friend, a teacher, and a sister once you gave me an opportunity to be your instructor or a tutor. A good teacher, teaches from the heart and I apply it to my teaching method so that my students can learn from me. ",
 		"Hello! My name is Lola Gardener. I am currently studying classical flute performance at USC Thornton school of music. I have been playing flute for 8 years and it has allowed me the opportunity to play at renown venues like Carnegie Hall as well as win and place in state wide and national competitions. I am very passionate about flute and I love to share that passion through teaching. I enjoy teaching any age and meeting the students where they are at. My goal for students is help them progress at their pace while instilling a self discipline and passion for music.",
 		"Being Lebanese Chess Champion in my age category for more than 6 consecutive years, and becoming a registered FIDE Arbiter in the International Chess Federation only at the age of 20 years old, I have a passion in teaching this strategical game to every interested person, to discover the magic behind every tactic, every opening, every endgame, and every style in each player.\nI base my lesson firstly on famous games, to analyze every move and think for the upcoming moves. Moreover, I add middle game and endgame tactics, not to forget all kinds of tactics taking into consideration each student’s level (checkmates,sacrifices, pins...). Last but not least, what makes a player more confident in playing than a strong opening repertoire in which he or she can play anytime and against anyone with no fear of the opponent !\nWith successive lessons and practices, in addition to playing against real people rather than just a computer, and most importantly playing with the love for the game, with passion, I assure you that you can reach a chess rating you deserve with the least possible time.",
-		"Namaste, My name is John Matthews and I am a yoga teacher. I have studied physics from University of Port Harcourt, Nigeria but my passion for yoga led me to become a yoga teacher and I have been teaching yoga for over two years now",
+		"Music is Life, when you let it in through your breaths.. Music is all there is.\"\nI'm a passionate Singer who believes that Singing isn't a skill, but the voice and expression of one's own heart. I have more than 6 years of formal Hindustani Classical training from Ajivasan, India (Suresh Wadkar's Music Academy) and other renowned Indian musicians.\n\nHere's the structure of my class:\n1) We'll do a warm up, starting with om chanting and Alankaars or swara patterns.\n2) 10 mins of song exploration based on your interests. For Classical music, we'll discuss fundamentals of Raaga and compositions.\n3) 30 min vocal practice where we will focus on internalizing the concepts and building memory .\n4) 10 min reviewing and providing feedback and practice plan.\n\nIf you want to experience the beauty of Indian melody and sing along to the tunes of beautiful Indian compositions: classical and Light Music, join my class! I prefer 1:1 classes or group batches of no more than 2 students.\n\nSo excited to get started with you on a musical journey!",
 	}
 	var imagepath = [teachercount]string{
 		"img/teacher/Teacher_1.jpg",
@@ -290,16 +290,16 @@ func PopulateBookings() {
 		time.Date(2022, 04, 22, 0, 0, 0, 0, location),
 		time.Date(2022, 03, 26, 0, 0, 0, 0, location),
 	}
-	var bookingMessage = [recordcount]string{"message1", "message2", "message3", "message4", "message5", "message6",  "message7", "message8", "message9", "message10", "message11", "message12", "message13", "message14", "message15"} 
+	var bookingMessage = [recordcount]string{"message1", "message2", "message3", "message4", "message5", "message6", "message7", "message8", "message9", "message10", "message11", "message12", "message13", "message14", "message15"}
 
 	var booking []models.Booking
 	for i := 0; i < recordcount; i++ {
 		booking = append(booking, models.Booking{
-			SkillID:    skillId[i],
-			TeacherID:  teacherId[i],
-			UserID:     userId[i],
-			SlotID:     slotId[i],
-			DateBooked: datebooked[i],
+			SkillID:        skillId[i],
+			TeacherID:      teacherId[i],
+			UserID:         userId[i],
+			SlotID:         slotId[i],
+			DateBooked:     datebooked[i],
 			BookingMessage: bookingMessage[i],
 		})
 

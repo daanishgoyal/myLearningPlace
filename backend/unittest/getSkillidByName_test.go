@@ -26,7 +26,7 @@ func TestGetSkillidByName(t *testing.T) {
 	client := &http.Client{}
 	response, error2 := client.Do(request)
 	if error2 != nil {
-		t.Error(error)
+		t.Error(error2)
 	}
 	defer response.Body.Close()
 
