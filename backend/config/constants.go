@@ -19,7 +19,8 @@ const AdminEmailAddress string = "booking.mylearningplace@gmail.com"
 const AdminEmailPassword string = "rootroot"
 
 //// UserEmail - Const account detail of Test User
-//const UserEmailAddress string = "testuser.mylearningplace@gmail.com"
+const UserEmailAddress string = "testuser.mylearningplace@gmail.com"
+
 //const UserEmailPassword string = "rootroot"
 
 // GetWeekEndMap - Const Map for String to time.Weekday conversion
