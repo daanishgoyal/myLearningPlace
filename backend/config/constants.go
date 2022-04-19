@@ -4,7 +4,7 @@ import "time"
 
 // Sql - Const for Database Connection
 const SqlUserName string = "root"
-const SqlPassword string = "root"
+const SqlPassword string = ""
 const SqlDatabaseName string = "test_se"
 
 // PasswordCost Const for setting the cost of Password for hashing
