@@ -38,7 +38,7 @@ func TestGetSkillidByName(t *testing.T) {
 	var expectedResponse = config.APIExpectedResponse()["GetSkillidByName"]
 
 	if !utils.AssertEqual(outputResponse, expectedResponse) {
-		t.Error("Assertion Failed. Output repsonse doesn't matches the expected response.")
+		t.Error("Assertion Failed. Output response doesn't matches the expected response.")
 		t.Fail()
 	}
 }

@@ -23,6 +23,7 @@ func TestGetComments(t *testing.T) {
 
 	if query.RowsAffected <= 0 {
 		t.Errorf("No comments in the Table.")
+		t.Fail()
 	}
 
 }

@@ -32,5 +32,6 @@ func TestGetSearchAttributes(t *testing.T) {
 	query2 := DB.Find(&skills)
 	if query1.RowsAffected <= 0 && query2.RowsAffected <= 0 {
 		t.Errorf("Search Attributes Not being Fetched from DB")
+		t.Fail()
 	}
 }

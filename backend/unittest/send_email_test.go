@@ -16,7 +16,7 @@ func TestSendEmail(t *testing.T) {
 
 	new_email.SetHeader("Subject", subject)
 
-	new_email.SetBody("text/text", "UnitTest_Passed. Email delivered_successfully!")
+	new_email.SetBody("text/plain", "UnitTest_Passed. Email delivered_successfully!")
 	new_dialer := gomail.NewDialer(
 		config.SmtpHost,
 		config.SmtpPort,

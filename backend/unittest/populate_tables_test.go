@@ -36,6 +36,7 @@ func TestPopulateTables(t *testing.T) {
 		count := DB.Find(&tableModels[i])
 		if count.RowsAffected <= 0 {
 			t.Errorf("Table " + table[i] + " is empty. Please populate the tables first.")
+			t.Fail()
 		}
 	}
 }
