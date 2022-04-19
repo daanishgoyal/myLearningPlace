@@ -13,6 +13,7 @@ func TestConnection(t *testing.T) {
 
 	if err != nil {
 		t.Errorf("Connection to DB Failed")
+		t.Fail()
 	}
 
 }
