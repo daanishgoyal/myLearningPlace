@@ -3,7 +3,10 @@
 ### Video Links:
 
 Frontend and Backend Demo - 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YSyotp1k4BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+https://user-images.githubusercontent.com/80367396/164141937-886095d6-275a-4ea6-8d9b-266b8ba8a151.mp4
+
 
 test case and updated the screenshot after running tests
 
@@ -65,8 +68,11 @@ Output:-
 
 ### Cypress Test Video
 
-Link : 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SH3PCLiljhk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+https://user-images.githubusercontent.com/80367396/164141995-b885f6bc-11d4-4a49-923e-7f04376aec1b.mp4
+
+
 
 ### Jest Unit Tests - Frontend
 Steps to run :-
