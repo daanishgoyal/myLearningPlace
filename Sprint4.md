@@ -8,7 +8,6 @@ Frontend and Backend Demo -
 https://user-images.githubusercontent.com/80367396/164141937-886095d6-275a-4ea6-8d9b-266b8ba8a151.mp4
 
 
-test case and updated the screenshot after running tests
 
 
 
