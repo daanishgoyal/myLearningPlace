@@ -18,11 +18,18 @@ In this manner, a person can choose learn any skill they wish by just sitting at
 
 ### Project Demo - 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YSyotp1k4BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+https://user-images.githubusercontent.com/80367396/164142114-28122004-0ad9-46ec-a75d-ab8d4e11ed53.mp4
+
 
 
 ### Cypress test video - 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SH3PCLiljhk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+https://user-images.githubusercontent.com/80367396/164142123-4c2b82f0-6dbb-4f7b-8455-07b98fdb8530.mp4
+
 
 
 ### Backend unit test video - 
