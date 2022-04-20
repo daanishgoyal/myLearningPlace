@@ -129,7 +129,7 @@ In this sprint, our focus were:
 
 ![pc_screenshot](https://github.com/daanishgoyal/myLearningPlace/blob/main/backend/img/pc_email_confirmation.png?raw=true)
 
-![phone_screenshot](https://github.com/daanishgoyal/myLearningPlace/blob/main/backend/img/mobile_email_confirmation.jpg?raw=true)
+<img src= "https://user-images.githubusercontent.com/34034237/164143123-9f4b7a37-628b-46e3-865b-c2319db723eb.jpg" width = 60%, height = 70%>
 
 **Other tasks**
 - Updated the responses of createBookingAPI and searchBookingAPI to accomodate new changes developed for the cancelBookingAPI
