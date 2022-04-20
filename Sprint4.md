@@ -2,6 +2,7 @@
 
 ### Video Links:
 
+
 Frontend and Backend Demo - 
 
 
@@ -99,7 +100,7 @@ go test -v
 To enable verbose, run `go test -v ./unittest`
 Output:-
 
-![back_end_unit_tests](https://github.com/daanishgoyal/myLearningPlace/blob/main/backend/unittest/unittest_passed_sprint_3.png?raw=True)
+<img width="1511" alt="Screen Shot 2022-04-20 at 9 00 11 AM" src="https://user-images.githubusercontent.com/80367396/164236220-3965947f-4805-4b3a-a8b4-7e45cd6ca82e.png">
 
 In this sprint, our focus were:
 1. To extend the features of the platform.
