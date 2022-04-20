@@ -35,8 +35,6 @@ https://user-images.githubusercontent.com/80367396/164142123-4c2b82f0-6dbb-4f7b-
 ### Backend unit test video - 
 
 
-https://user-images.githubusercontent.com/80367396/164243180-87e59783-480a-476c-8ab8-21b511e54202.mp4
-
 
 
 
