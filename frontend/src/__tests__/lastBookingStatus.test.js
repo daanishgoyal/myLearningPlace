@@ -6,9 +6,9 @@ describe("BookingStatusComponent", () => {
     it("renders BookingStatusComponent checking", () => {
         render(<BookingStatusComponent />);
 
-        const heading = screen.getByRole("heading", {
-            name: /last booked appointment details :/i,
-        });
+        const heading = screen.getByText(
+            /recently booked appointment details:/i
+        );
 
         expect(heading).toBeInTheDocument();
     });

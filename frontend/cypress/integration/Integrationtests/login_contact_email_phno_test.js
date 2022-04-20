@@ -16,7 +16,7 @@ it(" contact details click redirecting to login", () => {
     cy.url().should("include", "/teacher/2");
     cy.contains("Contact Details");
 
-    cy.contains("098765432").click({ force: true });
-    cy.get("@windowOpen").should("be.called");
-    cy.contains("email2@email.com").click({ force: true });
+    cy.contains("098765432");
+
+    cy.contains("email2@email.com");
 });
