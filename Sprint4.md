@@ -2,7 +2,6 @@
 
 ### Video Links:
 
-
 Frontend and Backend Demo - 
 
 
@@ -102,6 +101,15 @@ Output:-
 
 <img width="1511" alt="Screen Shot 2022-04-20 at 9 00 11 AM" src="https://user-images.githubusercontent.com/80367396/164236220-3965947f-4805-4b3a-a8b4-7e45cd6ca82e.png">
 
+
+### Backend Unit test video
+
+
+
+https://user-images.githubusercontent.com/80367396/164242048-df4e8122-f931-434a-a654-a1a02a949542.mp4
+
+
+
 In this sprint, our focus were:
 1. To extend the features of the platform.
     a. CancelBooking API
@@ -145,4 +153,39 @@ In this sprint, our focus were:
 Below are the API documentation of the services introduced in this sprint:
 
 
+<details>
+    <summary> Cancel Booking </summary>
+    <p><br>
+        This API is used to cancel a booking/appointment made by the user with the respective teacher.
+    </p>
+    
+<h3>Target URL </h3>
+    
+    localhost:8080 +/api/cancelbooking
+   
+<h3>Request Method   </h3>
+    
+    POST
+  
+<h3>Request Header </h3>
+    
+    {"bookingID": 1}
+       
+<h3> Request Fields </h3>
+    
+| Field Name  | Description |  Datatype |
+| ------------- | ------------- | ------------- | 
+| bookingID | The id of the booking made | int |
 
+<h3> Response Examples </h3>
+
+
+**Response body**
+
+> ```json
+> {
+>     "data" : booking cancelled
+>     "status": 200
+> }
+> ```
+</details>
