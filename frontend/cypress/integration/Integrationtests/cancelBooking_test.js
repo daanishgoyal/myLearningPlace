@@ -17,9 +17,11 @@ it(" cancel Booking feature ", () => {
     cy.contains("Booking History");
     cy.url().should("include", "/bookingHistory");
 
-    cy.get(".btn").click({ force: true });
+    cy.get(':nth-child(1) > [align="right"] > .btn').click({ force: true });
     cy.contains("Are you sure you want to cancel your appointment on");
 
-    cy.get(".modal-footer > :nth-child(1)").click({ force: true });
-    cy.contains("Your booking has been cancelled successfully");
+    cy.get(
+        ":nth-child(6) > .modal-dialog > .modal-content > .modal-footer > :nth-child(1)"
+    ).click({ force: true });
+    cy.url().should("include", "/");
 });
